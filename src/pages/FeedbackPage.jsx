@@ -3,7 +3,7 @@ import { classify } from '../engine/classifier.js'
 import { recommend } from '../engine/recommender.js'
 import { loadProfileFromUrl } from '../utils/shareUrl.js'
 import { showToast } from '../components/common/Toast.jsx'
-import { sendTrackingEvent, getSessionId } from '../utils/tracker.js'
+import { sendTrackingEvent, getSessionId, nowKST } from '../utils/tracker.js'
 
 const ratings = [
   { value: 'very_helpful', label: '매우 도움됨', emoji: '🎯' },
@@ -48,7 +48,7 @@ export default function FeedbackPage({ onBack, answers, shareActions }) {
     setSubmitting(true)
 
     const payload = {
-      timestamp: new Date().toISOString(),
+      timestamp: nowKST(),
       type: 'feedback',
       sessionId: getSessionId(),
       rating,

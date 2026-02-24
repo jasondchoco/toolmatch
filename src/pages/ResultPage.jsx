@@ -2,7 +2,7 @@ import { useMemo, useEffect, useRef } from 'react'
 import { classify } from '../engine/classifier.js'
 import { recommend } from '../engine/recommender.js'
 import { loadProfileFromUrl, generateShareUrl } from '../utils/shareUrl.js'
-import { sendTrackingEvent, getSessionId } from '../utils/tracker.js'
+import { sendTrackingEvent, getSessionId, nowKST } from '../utils/tracker.js'
 import SummaryCard from '../components/result/SummaryCard.jsx'
 import ToolCard from '../components/result/ToolCard.jsx'
 import UsageGuide from '../components/result/UsageGuide.jsx'
@@ -37,7 +37,7 @@ export default function ResultPage({ answers, onRestart, onOpenFeedback, onShare
     tracked.current = true
 
     sendTrackingEvent({
-      timestamp: new Date().toISOString(),
+      timestamp: nowKST(),
       type: 'view',
       sessionId: getSessionId(),
       rating: '',

@@ -1,5 +1,9 @@
 const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzD7osekZREvpvqlfpmXUNmXe3G6A2khZJ-UCAtlQGlaW1T7kc_sR015WWPdyjiI3N7/exec'
 
+function nowKST() {
+  return new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Seoul' }).replace('T', ' ')
+}
+
 let sessionId = null
 
 export function getSessionId() {
@@ -8,6 +12,8 @@ export function getSessionId() {
   }
   return sessionId
 }
+
+export { nowKST }
 
 export function sendTrackingEvent(payload) {
   try {
