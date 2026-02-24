@@ -5,8 +5,10 @@ export default function QuestionCard({ question, currentIndex, total, selectedVa
     <div>
       <p className="survey-step">{currentIndex + 1} / {total}</p>
       <h2 className="survey-question">{question.text}</h2>
-      {question.subtext && (
+      {question.subtext ? (
         <p className="survey-subtext">{question.subtext}</p>
+      ) : (
+        <div style={{ marginBottom: 24 }} />
       )}
       <div className="survey-options">
         {question.options.map((opt) => (

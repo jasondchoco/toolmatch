@@ -2,7 +2,7 @@
   "version": "1.0",
   "pitchIntro": "팀에 설명할 때 이렇게 말해보세요 (20초)",
   "pitchNote": "위 스크립트는 실제 사용자 리뷰와 공개 데이터를 기반으로 작성되었습니다.",
-  "feedbackFormUrl": "https://tally.so/r/D4NLAZ",
+  "feedbackFormUrl": "",
   "disclaimerText": "이 추천은 공개 리뷰와 커뮤니티 논의를 요약한 가이드입니다. 정답이 아닌 출발점으로 활용해주세요.",
   "lastUpdatedLabel": "마지막 업데이트"
 }
