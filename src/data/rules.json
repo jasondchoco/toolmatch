@@ -1,0 +1,113 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-24",
+  "personas": {
+    "idea_demo": { "label": "아이디어를 빠르게 데모로", "description": "아이디어를 빠르게 눈에 보이는 데모로 만들고 싶은 유형" },
+    "pm_research": { "label": "리서치·기획 생산성 향상", "description": "리서치, 기획, 문서 작성 속도를 높이고 싶은 유형" },
+    "solo_dev": { "label": "솔로 개발 생산성 향상", "description": "혼자서 개발 속도를 끌어올리고 싶은 유형" },
+    "team_lead": { "label": "팀 작업 분산·운영", "description": "팀의 작업을 분산하고 효율적으로 운영하고 싶은 유형" }
+  },
+  "rules": [
+    {
+      "id": "r01",
+      "conditions": { "persona": "idea_demo", "skill": "low" },
+      "primary": ["lovable"],
+      "also": ["chatgpt", "claude"],
+      "reason": "코드 없이 대화만으로 앱을 만들 수 있는 도구가 가장 잘 맞습니다. Lovable에서 아이디어를 말로 설명하면 바로 동작하는 데모를 얻을 수 있어요.",
+      "pitch": "AI 빌더를 도입하면, 아이디어를 말로 설명하는 것만으로 10분 안에 동작하는 데모를 만들 수 있습니다. 개발 리소스 없이도 고객 피드백을 빠르게 받을 수 있어요."
+    },
+    {
+      "id": "r02",
+      "conditions": { "persona": "idea_demo", "skill": "med" },
+      "primary": ["lovable", "bolt"],
+      "also": ["cursor"],
+      "reason": "약간의 코드 이해가 있으시니, Lovable이나 Bolt.new에서 생성한 코드를 직접 미세 조정할 수도 있습니다. 더 빠르게 원하는 결과를 얻을 수 있어요.",
+      "pitch": "AI 앱 빌더로 데모를 만들고, 간단한 코드 수정으로 완성도를 높이면 전문 개발자 없이도 MVP 검증이 가능합니다."
+    },
+    {
+      "id": "r03",
+      "conditions": { "persona": "idea_demo", "skill": "high" },
+      "primary": ["bolt", "cursor"],
+      "also": ["chatgpt"],
+      "reason": "코딩에 익숙하시니 Bolt.new로 기본 뼈대를 자동 생성한 뒤 Cursor에서 세밀하게 다듬는 조합이 효율적입니다.",
+      "pitch": "AI 빌더로 뼈대를 잡고 AI IDE로 코드를 다듬으면, 기존 개발 시간을 절반 이하로 줄일 수 있습니다."
+    },
+    {
+      "id": "r04",
+      "conditions": { "persona": "pm_research", "ecosystem": "google" },
+      "primary": ["gemini"],
+      "also": ["chatgpt", "lovable"],
+      "reason": "Google 생태계를 선호하시니 Gemini의 Deep Research와 Gmail·Drive 연동이 특히 유용합니다. 리서치 자료를 바로 Docs로 내보낼 수 있어요.",
+      "pitch": "Gemini Deep Research를 활용하면 리서치 자료를 자동으로 종합하고 Google Docs로 바로 내보낼 수 있습니다."
+    },
+    {
+      "id": "r05",
+      "conditions": { "persona": "pm_research" },
+      "primary": ["chatgpt", "claude"],
+      "also": ["gemini", "lovable"],
+      "reason": "기획·리서치가 주 업무이시니, AI 챗 도구로 초안 작성, 자료 분석, 브레인스토밍 속도를 크게 높일 수 있습니다.",
+      "pitch": "AI 챗 도구를 활용하면 기획서 초안을 30분 만에 완성하고, 리서치 자료를 자동으로 요약받을 수 있습니다."
+    },
+    {
+      "id": "r06",
+      "conditions": { "persona": "solo_dev", "skill": "high" },
+      "primary": ["cursor", "claude_code"],
+      "also": ["chatgpt"],
+      "reason": "숙련된 개발자에게 Cursor는 레포 전체를 이해하는 AI 에이전트로서 강력한 파트너입니다. Claude Code는 터미널에서 장시간 작업에 적합해요.",
+      "pitch": "AI 코딩 도구를 도입하면 코드 검토, 코드 정리, 테스트 작성까지 AI가 보조해서 1인 개발의 한계를 크게 넓힐 수 있습니다."
+    },
+    {
+      "id": "r07",
+      "conditions": { "persona": "solo_dev", "skill": "med" },
+      "primary": ["cursor", "copilot"],
+      "also": ["chatgpt", "claude"],
+      "reason": "코드 수정이 가능한 개발자에게는 AI 코딩 도구가 가장 직접적으로 생산성을 높여줍니다. Copilot의 자동 제안과 Cursor의 에이전트를 활용해보세요.",
+      "pitch": "AI 코딩 도구를 쓰면 반복적인 코드 작성 시간을 50% 이상 절약할 수 있습니다."
+    },
+    {
+      "id": "r08",
+      "conditions": { "persona": "solo_dev", "skill": "low" },
+      "primary": ["copilot", "lovable"],
+      "also": ["chatgpt"],
+      "reason": "코드에 익숙하지 않더라도 Copilot의 자동 제안이 학습을 도와주고, Lovable로 코드 없이 프로토타입을 만들 수 있어요.",
+      "pitch": "AI 코딩 도구의 자동 제안 기능으로 코드 작성을 배우면서 동시에 생산성도 높일 수 있습니다."
+    },
+    {
+      "id": "r09",
+      "conditions": { "persona": "team_lead" },
+      "primary": ["cursor", "copilot"],
+      "also": ["chatgpt", "claude"],
+      "reason": "팀의 개발 속도를 높이려면 Cursor와 Copilot이 팀 전체에 가장 쉽게 도입할 수 있는 조합입니다. 자동 코딩 에이전트 도구는 곧 추가될 예정이에요.",
+      "pitch": "팀 전체에 AI 코딩 도구를 도입하면 코드 검토와 반복 작업 시간이 줄어 고부가가치 작업에 집중할 수 있습니다."
+    },
+    {
+      "id": "r10",
+      "conditions": {},
+      "primary": ["chatgpt", "lovable"],
+      "also": ["cursor"],
+      "reason": "가장 범용적으로 쓸 수 있는 AI 챗 도구와 노코드 빌더 조합을 추천합니다. 챗으로 기획하고 빌더로 만들어보세요.",
+      "pitch": "AI 챗으로 아이디어를 정리하고, AI 빌더로 바로 프로토타입을 만들면 가장 빠르게 시작할 수 있습니다."
+    }
+  ],
+  "constraintModifiers": [
+    {
+      "condition": { "ecosystem": "google" },
+      "boost": ["gemini"],
+      "note": "Google 생태계 선호 → Gemini의 Gmail·Drive 연동이 특히 유용합니다."
+    },
+    {
+      "condition": { "ecosystem": "openai" },
+      "boost": ["chatgpt"],
+      "note": "OpenAI 생태계 선호 → ChatGPT와의 연동이 자연스럽습니다."
+    },
+    {
+      "condition": { "security": "high" },
+      "note": "보안이 중요한 환경에서는 각 도구의 데이터 처리 정책을 반드시 확인하세요."
+    },
+    {
+      "condition": { "urgency": "today" },
+      "boost": ["lovable", "chatgpt"],
+      "note": "지금 바로 시작 가능한 도구를 우선 추천합니다."
+    }
+  ]
+}

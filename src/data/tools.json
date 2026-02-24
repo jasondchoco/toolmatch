@@ -1,0 +1,223 @@
+{
+  "last_updated": "2026-02-24",
+  "tools": [
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "category": "builder",
+      "categoryLabel": "앱 빌더",
+      "bestFor": "비개발자가 대화만으로 MVP 데모를 빠르게 만들 때",
+      "url": "https://lovable.dev",
+      "pricing": "무료 + 유료 ~$20/월",
+      "praisedKeywords": [
+        "매우 빠른 MVP 프로토타이핑",
+        "노코드 바이브 코딩",
+        "GitHub에 코드 저장 & 내 코드를 직접 관리 가능",
+        "데이터 저장·관리 기능 자동 연결 (Supabase)"
+      ],
+      "criticizedKeywords": [
+        "크레딧 기반 과금이 부담",
+        "복잡한 기능에서 플랫폼 한계",
+        "사용 기술이 고정되어 자유도 낮음"
+      ],
+      "howToStart": [
+        "lovable.dev 접속 → 무료 계정 생성",
+        "채팅창에 만들고 싶은 것을 말로 설명 (예: '할 일 관리 앱 만들어줘')",
+        "생성된 앱을 바로 미리보기, 수정은 대화로 계속 요청"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://lovable.dev" },
+        { "label": "G2 리뷰", "url": "https://www.g2.com/products/lovable/reviews" }
+      ]
+    },
+    {
+      "id": "bolt",
+      "name": "Bolt.new",
+      "category": "builder",
+      "categoryLabel": "앱 빌더",
+      "bestFor": "브라우저만으로 완전한 앱을 빠르게 시험 제작할 때",
+      "url": "https://bolt.new",
+      "pricing": "무료 (1M 토큰/월) / Pro $25/월",
+      "praisedKeywords": [
+        "브라우저에서 바로 실행",
+        "빠른 프로토타이핑 속도",
+        "전체 코드 내보내기 가능",
+        "Figma 디자인 가져오기 지원"
+      ],
+      "criticizedKeywords": [
+        "토큰 소진이 빠를 수 있음",
+        "복잡한 비즈니스 로직 한계"
+      ],
+      "howToStart": [
+        "bolt.new 접속 → 무료 계정 생성",
+        "프롬프트에 만들 앱을 설명하면 코드가 자동 생성",
+        "실시간 미리보기에서 확인 후 GitHub로 내보내기"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://bolt.new" },
+        { "label": "요금제", "url": "https://bolt.new/pricing" }
+      ]
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "ide",
+      "categoryLabel": "코딩 도구 (IDE)",
+      "bestFor": "코드 편집기에서 AI와 함께 기존 프로젝트를 빠르게 개발할 때",
+      "url": "https://cursor.com",
+      "pricing": "무료 제한 / Pro ~$20/월",
+      "praisedKeywords": [
+        "강력한 자동완성 (Tab)",
+        "프로젝트 전체를 이해하는 AI 에이전트",
+        "실제 코드베이스 반복 작업에 강함"
+      ],
+      "criticizedKeywords": [
+        "AI가 같은 수정을 반복하는 경우 있음",
+        "AI에게 전달할 정보 범위 설정이 번거로울 때 있음"
+      ],
+      "howToStart": [
+        "cursor.com에서 데스크탑 앱 다운로드 (VS Code와 비슷)",
+        "기존 프로젝트 폴더를 열거나 새 프로젝트 시작",
+        "Cmd+K로 AI에게 코드 수정 요청, 채팅창에서 질문"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://cursor.com" },
+        { "label": "G2 리뷰", "url": "https://www.g2.com/products/cursor/reviews" }
+      ]
+    },
+    {
+      "id": "copilot",
+      "name": "GitHub Copilot",
+      "category": "ide",
+      "categoryLabel": "코딩 도구 (IDE)",
+      "bestFor": "이미 쓰는 에디터에서 AI 코드 제안을 받고 싶을 때",
+      "url": "https://github.com/copilot",
+      "pricing": "무료 (2,000 completions/월) / $10/월",
+      "praisedKeywords": [
+        "업계 표준, 가장 널리 쓰이는 도구",
+        "가성비 좋고 다양한 모델 선택",
+        "초보자도 쉽게 접근 가능",
+        "다양한 IDE 지원"
+      ],
+      "criticizedKeywords": [
+        "코드베이스 깊은 이해 부족",
+        "복잡한 멀티파일 작업에서 한계"
+      ],
+      "howToStart": [
+        "GitHub 계정으로 Copilot 무료 플랜 활성화",
+        "VS Code에서 GitHub Copilot 확장 설치",
+        "코드를 작성하면 자동 제안 → Tab으로 수락"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://github.com/copilot" }
+      ]
+    },
+    {
+      "id": "claude_code",
+      "name": "Claude Code",
+      "category": "ide",
+      "categoryLabel": "코딩 도구 (IDE)",
+      "bestFor": "명령줄(터미널)에서 파일 편집 + 명령 실행까지 한번에 하고 싶을 때",
+      "url": "https://claude.ai",
+      "pricing": "Claude Pro $20/월",
+      "praisedKeywords": [
+        "터미널에서 파일 편집 + 명령 실행",
+        "긴 작업도 맡겨놓고 다른 일 할 수 있음",
+        "큰 프로젝트도 잘 파악해서 작업"
+      ],
+      "criticizedKeywords": [
+        "명령줄 사용법 학습 필요",
+        "위험 작업 시 권한 설정 필수"
+      ],
+      "howToStart": [
+        "Claude Pro 구독 후 터미널에서 claude 명령 설치",
+        "프로젝트 폴더에서 claude 실행",
+        "자연어로 코드 수정, 테스트 실행 등 요청"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://claude.ai" }
+      ]
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "category": "chat",
+      "categoryLabel": "AI 챗",
+      "bestFor": "기획서 초안, 아이디어 브레인스토밍, 범용 문제 해결",
+      "url": "https://chat.openai.com",
+      "pricing": "무료 / Plus $20/월",
+      "praisedKeywords": [
+        "기획서 · 아키텍처 스케치에 강함",
+        "빠른 아이디어 반복",
+        "다방면으로 활용 가능",
+        "웹 검색 · 이미지 생성 통합"
+      ],
+      "criticizedKeywords": [
+        "환각 가능 — 중요 사실은 반드시 검증",
+        "검색/요약에 편향 가능성"
+      ],
+      "howToStart": [
+        "chat.openai.com 접속 → 무료 계정 생성",
+        "채팅창에 질문이나 요청을 입력 (한국어 가능)",
+        "답변을 토대로 대화를 이어가며 결과물 다듬기"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://chat.openai.com" }
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "category": "chat",
+      "categoryLabel": "AI 챗",
+      "bestFor": "긴 문서 분석, 구조화된 글쓰기, 꼼꼼한 사고가 필요할 때",
+      "url": "https://claude.ai",
+      "pricing": "무료 / Pro $20/월",
+      "praisedKeywords": [
+        "긴 문서도 맥락을 놓치지 않고 분석",
+        "높은 글쓰기 · 분석 품질",
+        "구조화된 사고에 강함",
+        "환각이 상대적으로 적음"
+      ],
+      "criticizedKeywords": [
+        "코드 편집기처럼 코드를 직접 실행하지 않음",
+        "자동 작업 기능은 요금제에 따라 다름"
+      ],
+      "howToStart": [
+        "claude.ai 접속 → 무료 계정 생성",
+        "긴 문서를 붙여넣거나 파일 업로드해서 분석 요청",
+        "대화를 이어가며 기획서, 보고서 등 결과물 완성"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://claude.ai" }
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "category": "chat",
+      "categoryLabel": "AI 챗",
+      "bestFor": "딥 리서치, Google Workspace 연동, 최신 정보 활용",
+      "url": "https://gemini.google.com",
+      "pricing": "무료 / AI Pro $19.99/월",
+      "praisedKeywords": [
+        "Deep Research로 자료 종합 리포트",
+        "Gmail · Drive · Chat 연동",
+        "무료 티어가 넉넉함",
+        "최신 정보 실시간 활용"
+      ],
+      "criticizedKeywords": [
+        "코딩 도움은 들쭉날쭉",
+        "대화 맥락을 놓치는 경우가 보고됨"
+      ],
+      "howToStart": [
+        "gemini.google.com 접속 → Google 계정 로그인",
+        "'Deep Research' 기능으로 주제 입력 → 종합 리서치 리포트 생성",
+        "Google Docs로 바로 내보내기하여 팀과 공유"
+      ],
+      "references": [
+        { "label": "공식 사이트", "url": "https://gemini.google.com" }
+      ]
+    }
+  ]
+}

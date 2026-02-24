@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "q_role",
+      "order": 1,
+      "text": "당신의 주 역할은 무엇인가요?",
+      "subtext": "가장 가까운 것 하나를 골라주세요",
+      "options": [
+        { "value": "pm", "label": "PM / 기획 / 전략" },
+        { "value": "dev", "label": "개발자" },
+        { "value": "lead", "label": "리드 / 매니저" },
+        { "value": "founder", "label": "창업자 / 1인 사업" },
+        { "value": "other", "label": "기타 (학생, 디자이너 등)" }
+      ]
+    },
+    {
+      "id": "q_goal",
+      "order": 2,
+      "text": "지금 가장 급한 목표는?",
+      "subtext": "하나만 골라주세요",
+      "options": [
+        { "value": "idea_to_demo", "label": "아이디어를 데모/MVP로 만들기" },
+        { "value": "dev_speed", "label": "기존 코드에서 개발 속도 올리기" },
+        { "value": "research_docs", "label": "리서치/기획/문서 생산성 높이기" },
+        { "value": "parallel_ops", "label": "여러 작업을 동시에 자동화하기" }
+      ]
+    },
+    {
+      "id": "q_code_comfort",
+      "order": 3,
+      "text": "코드 작성이나 수정, 얼마나 편하세요?",
+      "subtext": "정확하지 않아도 괜찮아요, 느낌대로 골라주세요",
+      "options": [
+        { "value": "none", "label": "전혀 못 함", "skill": "low" },
+        { "value": "basic", "label": "복사-붙여넣기 정도", "skill": "low" },
+        { "value": "simple", "label": "간단한 수정은 가능", "skill": "med" },
+        { "value": "comfortable", "label": "익숙한 편", "skill": "high" },
+        { "value": "expert", "label": "전문 개발자", "skill": "high" }
+      ]
+    },
+    {
+      "id": "q_team",
+      "order": 4,
+      "text": "함께 일하는 팀 규모는?",
+      "subtext": "",
+      "options": [
+        { "value": "solo", "label": "혼자" },
+        { "value": "small", "label": "2~3명" },
+        { "value": "team", "label": "4명 이상" }
+      ]
+    },
+    {
+      "id": "q_output",
+      "order": 5,
+      "text": "원하는 결과물은?",
+      "subtext": "가장 중요한 것 하나를 골라주세요",
+      "options": [
+        { "value": "demo", "label": "동작하는 데모 / 프로토타입" },
+        { "value": "repo", "label": "깃허브 레포 / 코드" },
+        { "value": "doc", "label": "기획서 / 보고서 / 리서치" },
+        { "value": "automation", "label": "코드 작업 자동화" }
+      ]
+    },
+    {
+      "id": "q_security",
+      "order": 6,
+      "text": "보안/규정 준수가 얼마나 중요한가요?",
+      "subtext": "회사 정책이나 민감한 데이터를 다루는 경우",
+      "options": [
+        { "value": "low", "label": "크게 신경 안 씀" },
+        { "value": "medium", "label": "보통" },
+        { "value": "high", "label": "매우 중요 (사내 정책 엄격)" }
+      ]
+    },
+    {
+      "id": "q_ecosystem",
+      "order": 7,
+      "text": "선호하는 AI 생태계가 있나요?",
+      "subtext": "없으면 '상관없음' 선택",
+      "options": [
+        { "value": "google", "label": "Google (Gemini, Workspace 등)" },
+        { "value": "openai", "label": "OpenAI (ChatGPT 등)" },
+        { "value": "any", "label": "상관없음" }
+      ]
+    },
+    {
+      "id": "q_urgency",
+      "order": 8,
+      "text": "결과가 언제까지 필요한가요?",
+      "subtext": "",
+      "options": [
+        { "value": "today", "label": "지금 당장 / 오늘" },
+        { "value": "this_week", "label": "이번 주" },
+        { "value": "this_month", "label": "이번 달" }
+      ]
+    }
+  ]
+}

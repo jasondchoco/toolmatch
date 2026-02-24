@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Tools — Community Keyword Clusters (Beginner Pitch)</title>
+<style>
+  :root {
+    --bg: #0b0d12;
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.12);
+    --text: #e8eaf0;
+    --muted: #a8b0c2;
+    --chip: rgba(255,255,255,0.08);
+  }
+  body {
+    margin: 0;
+    padding: 22px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  h1 { margin: 0 0 6px 0; font-size: 20px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 14px; line-height: 1.35; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .section { margin-top: 10px; }
+  .label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: var(--chip);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .persona-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+  }
+  @media (max-width: 900px) {
+    .persona-wrap { grid-template-columns: 1fr; }
+  }
+  .persona {
+    background: rgba(255,255,255,0.03);
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+    padding: 14px;
+  }
+  .pname { font-weight: 700; margin-bottom: 10px; }
+  .pill {
+    display: inline-flex;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    font-size: 11px;
+    margin-right: 8px;
+  }
+  .prow { margin: 8px 0; color: var(--muted); font-size: 13px; }
+  .footer {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 14px 0;
+  }
+</style>
+</head>
+<body>
+  <h1>AI Tools — Community Keyword Clusters (Beginner Pitch)</h1>
+  <div class="sub">
+    This is a <b>qualitative</b> synthesis of commonly repeated themes in public reviews/discussions + official docs.
+    It’s not a ranking and not a guarantee. Use it as a simple talk-track.
+  </div>
+
+  <div class="card">
+    <div class="title">Choose by persona</div>
+    <div class="sub" style="margin:0;">
+      If your audience is beginner-heavy, start here. Then show the tool cards below.
+    </div>
+    <div class="persona-wrap">
+      
+    <div class="persona">
+      <div class="pname">Idea → Demo (no-code)</div>
+      <div class="prow"><span class="pill">Primary</span> <span class="chip">Lovable</span></div>
+      <div class="prow"><span class="pill">Also</span> <span class="chip">ChatGPT or Claude (specs, UX copy)</span><span class="chip">Cursor / Claude Code (after export)</span></div>
+    </div>
+    
+    <div class="persona">
+      <div class="pname">PM / Strategist (research → PRD)</div>
+      <div class="prow"><span class="pill">Primary</span> <span class="chip">ChatGPT</span><span class="chip">Claude</span><span class="chip">Gemini (Deep Research)</span></div>
+      <div class="prow"><span class="pill">Also</span> <span class="chip">Lovable (interactive prototype)</span><span class="chip">Cursor (handoff QA)</span></div>
+    </div>
+    
+    <div class="persona">
+      <div class="pname">Solo Developer</div>
+      <div class="prow"><span class="pill">Primary</span> <span class="chip">Cursor</span><span class="chip">Claude Code</span></div>
+      <div class="prow"><span class="pill">Also</span> <span class="chip">ChatGPT or Claude (design/review)</span><span class="chip">Codex app (parallel tasks)</span></div>
+    </div>
+    
+    <div class="persona">
+      <div class="pname">Tech Lead / Team (parallelize work)</div>
+      <div class="prow"><span class="pill">Primary</span> <span class="chip">Codex app</span><span class="chip">Antigravity</span></div>
+      <div class="prow"><span class="pill">Also</span> <span class="chip">Cursor (daily dev)</span><span class="chip">Claude Code (ops/terminal tasks)</span></div>
+    </div>
+    
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="grid">
+    
+    <div class="card">
+      <div class="title">Lovable</div>
+      <div class="meta"><b>Best for:</b> Non-dev founders / fast MVP demos</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Very fast MVP prototyping</span><span class="chip">No-/low-code “vibe coding” workflow</span><span class="chip">GitHub two-way sync &amp; code ownership</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">Credit-based pricing can feel limiting</span><span class="chip">Complex features can hit platform limits</span></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title">Cursor</div>
+      <div class="meta"><b>Best for:</b> Developers who live in an IDE</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Strong autocomplete (Tab) &amp; in-editor AI edits</span><span class="chip">Agents that can search your repo and run commands</span><span class="chip">Great for iterating inside real codebases</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">Agent loops / flaky edits reported by users</span><span class="chip">Context management can be frustrating in some cases</span></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title">Codex (OpenAI app)</div>
+      <div class="meta"><b>Best for:</b> Tech leads who want parallel agents + review queue</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Built-in worktrees (isolated agent branches)</span><span class="chip">Parallel agent workflows feel polished to many</span><span class="chip">Good for long-running engineering tasks</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">Requires human review/merge discipline</span><span class="chip">Availability/platform constraints depend on rollout</span></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title">ChatGPT</div>
+      <div class="meta"><b>Best for:</b> Specs, brainstorming, and general problem-solving</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Great for PRDs, architecture sketches, and drafts</span><span class="chip">Fast iteration on ideas and explanations</span><span class="chip">Works well as a general co-pilot</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">Can hallucinate—verify critical facts</span><span class="chip">Search/summaries can be manipulated; keep a skeptic mindset</span></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title">Claude</div>
+      <div class="meta"><b>Best for:</b> Deep writing + long-context reasoning workflows</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Strong long-context reasoning (recent model upgrades)</span><span class="chip">High-quality writing/analysis</span><span class="chip">Good for structured thinking</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">As a chat tool, doesn’t directly run your repo like an IDE</span><span class="chip">Agent features vary by product tier/availability</span></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title">Claude Code</div>
+      <div class="meta"><b>Best for:</b> Terminal-first developers (edit + run commands)</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Edit files + run commands from terminal</span><span class="chip">Often reported to handle longer tasks with less babysitting</span><span class="chip">Good at reading and working within big repos</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">Needs permission discipline; risky operations require guardrails</span><span class="chip">Reliability issues reported—backups recommended</span></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title">Gemini</div>
+      <div class="meta"><b>Best for:</b> Research + Workspace-integrated reports</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Deep Research breaks down tasks and synthesizes sources</span><span class="chip">Workspace connections (Gmail/Drive/Chat) for personalized research</span><span class="chip">Can export and create Audio Overviews in some flows</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">Programming help can be inconsistent per reviews</span><span class="chip">Some users report context/handling issues</span></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title">Google Antigravity</div>
+      <div class="meta"><b>Best for:</b> Agent orchestration inside an IDE-style environment</div>
+
+      <div class="section">
+        <div class="label">Often praised</div>
+        <div class="chips"><span class="chip">Mission Control for agents that plan/code/browse</span><span class="chip">Strong when you invest in “agent rules” and guidance</span><span class="chip">Parallel project/agent execution</span></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Often criticized</div>
+        <div class="chips"><span class="chip">Autonomy raises safety concerns—permission settings matter</span><span class="chip">Preview-stage rough edges and incidents reported</span></div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="footer">
+    Tip: For a pitch, keep the story simple — <b>Builder (Lovable)</b> for demo speed, <b>IDE tools (Cursor / Claude Code)</b> for real code,
+    and <b>Agent orchestration (Codex / Antigravity)</b> when you need parallel execution + review discipline.
+  </div>
+</body>
+</html>
