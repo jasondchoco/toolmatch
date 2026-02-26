@@ -1,10 +1,13 @@
-export default function SummaryCard({ result }) {
+export default function SummaryCard({ result, shareButton }) {
   const { persona, primary, also, reason, notes } = result
 
   return (
     <section className="result-section">
       <div className="card summary-card">
-        <div className="persona-badge">{persona.label} 유형</div>
+        <div className="summary-card__top">
+          <div className="persona-badge">{persona.label} 유형</div>
+          {shareButton}
+        </div>
         <h2 style={{ marginBottom: 16 }}>당신에게 맞는 조합이에요</h2>
 
         <div className="combo-row">

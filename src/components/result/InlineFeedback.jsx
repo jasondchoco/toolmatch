@@ -12,6 +12,8 @@ const ratings = [
 ]
 
 export default function InlineFeedback({ answers }) {
+  const [selectedRating, setSelectedRating] = useState(null)
+  const [comment, setComment] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
   const context = useMemo(() => {
@@ -36,15 +38,15 @@ export default function InlineFeedback({ answers }) {
     }
   }, [answers])
 
-  const handleRate = useCallback((value) => {
+  const handleSubmit = useCallback(() => {
     setSubmitted(true)
     try {
       sendTrackingEvent({
         timestamp: nowKST(),
         type: 'feedback',
         sessionId: getSessionId(),
-        rating: value,
-        comment: '',
+        rating: selectedRating,
+        comment,
         ...context,
         source: answers ? 'survey' : 'shared_link',
         shared: '',
@@ -52,7 +54,7 @@ export default function InlineFeedback({ answers }) {
         userAgent: navigator.userAgent,
       })
     } catch { /* ignore */ }
-  }, [context, answers])
+  }, [selectedRating, comment, context, answers])
 
   if (submitted) {
     return (
@@ -64,18 +66,38 @@ export default function InlineFeedback({ answers }) {
 
   return (
     <div className="inline-feedback">
-      <span className="inline-feedback__question">이 추천이 도움이 되었나요?</span>
-      <div className="inline-feedback__emojis">
-        {ratings.map((r) => (
-          <button
-            key={r.value}
-            className="inline-feedback__emoji-btn"
-            onClick={() => handleRate(r.value)}
-            type="button"
-          >
-            {r.emoji}
-          </button>
-        ))}
+      <div className="inline-feedback__row">
+        <span className="inline-feedback__question">이 추천이 도움이 되었나요?</span>
+        <div className="inline-feedback__emojis">
+          {ratings.map((r) => (
+            <button
+              key={r.value}
+              className={`inline-feedback__emoji-btn${selectedRating === r.value ? ' inline-feedback__emoji-btn--selected' : ''}`}
+              onClick={() => setSelectedRating(r.value)}
+              type="button"
+            >
+              {r.emoji}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="inline-feedback__row">
+        <input
+          className="inline-feedback__input"
+          type="text"
+          placeholder="한 줄 의견이 있다면 남겨주세요 (선택)"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && selectedRating && handleSubmit()}
+        />
+        <button
+          className="inline-feedback__submit"
+          onClick={handleSubmit}
+          type="button"
+          disabled={!selectedRating}
+        >
+          보내기
+        </button>
       </div>
     </div>
   )

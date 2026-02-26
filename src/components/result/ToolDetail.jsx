@@ -10,9 +10,8 @@ function ToolItem({ tool, fitLabel, fitType, defaultOpen }) {
     <div className="card tool-detail">
       <button className="tool-detail__toggle" onClick={toggle} type="button">
         <div className="tool-detail__header">
-          <span className="tool-detail__name">{tool.name}</span>
-          <span className="pill pill--category">{tool.categoryLabel}</span>
           {fitLabel && <span className={pillClass}>{fitLabel}</span>}
+          <span className="tool-detail__name">{tool.name}</span>
         </div>
         <div className="tool-detail__summary">{tool.bestFor}</div>
         <span className={`tool-detail__arrow${open ? ' tool-detail__arrow--open' : ''}`}>▾</span>

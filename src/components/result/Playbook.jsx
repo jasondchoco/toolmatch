@@ -125,7 +125,7 @@ export default function Playbook({ result }) {
           ))}
         </ol>
         <button className="btn btn--small" onClick={handleCopy} style={{ marginTop: 12 }}>
-          플레이북 복사 (MD)
+          플레이북 복사
         </button>
       </div>
     </section>

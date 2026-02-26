@@ -74,17 +74,15 @@ export default function ResultPage({ answers, onRestart, onShare }) {
       )}
 
       <div id="result-export-area">
-        <SummaryCard result={result} />
+        <SummaryCard
+          result={result}
+          shareButton={<ShareExport profile={result.profile} result={result} onShare={onShare} />}
+        />
 
         <Playbook result={result} />
       </div>
 
-      <div className="result-actions">
-        <ShareExport profile={result.profile} result={result} onShare={onShare} />
-        <InlineFeedback answers={answers} />
-      </div>
-
-      <hr className="section-divider" />
+      <InlineFeedback answers={answers} />
 
       <ToolDetail primaryTools={result.primary} alsoTools={result.also} />
 
