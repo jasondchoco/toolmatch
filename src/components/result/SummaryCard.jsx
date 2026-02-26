@@ -5,7 +5,7 @@ export default function SummaryCard({ result }) {
     <section className="result-section">
       <div className="card summary-card">
         <div className="persona-badge">{persona.label} 유형</div>
-        <h2 style={{ marginBottom: 16 }}>가장 잘 맞는 조합</h2>
+        <h2 style={{ marginBottom: 16 }}>당신에게 맞는 조합이에요</h2>
 
         <div className="combo-row">
           <span className="pill pill--primary">추천</span>

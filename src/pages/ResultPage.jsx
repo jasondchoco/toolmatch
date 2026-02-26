@@ -4,13 +4,12 @@ import { recommend } from '../engine/recommender.js'
 import { loadProfileFromUrl, generateShareUrl } from '../utils/shareUrl.js'
 import { sendTrackingEvent, getSessionId, nowKST } from '../utils/tracker.js'
 import SummaryCard from '../components/result/SummaryCard.jsx'
-import ToolCard from '../components/result/ToolCard.jsx'
-import UsageGuide from '../components/result/UsageGuide.jsx'
-import PitchScript from '../components/result/PitchScript.jsx'
+import Playbook from '../components/result/Playbook.jsx'
+import ToolDetail from '../components/result/ToolDetail.jsx'
 import ShareExport from '../components/result/ShareExport.jsx'
-import FeedbackBar from '../components/result/FeedbackBar.jsx'
+import InlineFeedback from '../components/result/InlineFeedback.jsx'
 
-export default function ResultPage({ answers, onRestart, onOpenFeedback, onShare }) {
+export default function ResultPage({ answers, onRestart, onShare }) {
   const isSharedLink = !answers && !!loadProfileFromUrl()
 
   const result = useMemo(() => {
@@ -65,7 +64,7 @@ export default function ResultPage({ answers, onRestart, onOpenFeedback, onShare
     <div>
       {isSharedLink && (
         <div className="shared-banner">
-          <p>누군가가 공유한 AI 도구 추천 결과입니다.</p>
+          <p>누군가가 공유한 AI 도구 추천 결과예요.</p>
           <button className="btn btn--primary btn--small" onClick={onRestart}>
             나도 해보기
           </button>
@@ -75,26 +74,23 @@ export default function ResultPage({ answers, onRestart, onOpenFeedback, onShare
       <div id="result-export-area">
         <SummaryCard result={result} />
 
-        <section className="result-section">
-          <h3 style={{ marginBottom: 16 }}>추천 도구</h3>
-          <div className="grid-2">
-            {result.primary.map((tool) => (
-              <ToolCard key={tool.id} tool={tool} fitLabel="추천" />
-            ))}
-            {result.also.map((tool) => (
-              <ToolCard key={tool.id} tool={tool} fitLabel="함께 쓰면 좋은" fitType="also" />
-            ))}
-          </div>
-        </section>
-
-        <UsageGuide tools={result.primary} />
-
-        <PitchScript pitch={result.pitch} toolNames={result.primary.map(t => t.name)} />
+        <Playbook result={result} />
       </div>
 
-      <ShareExport profile={result.profile} onShare={onShare} />
+      <div className="result-actions">
+        <ShareExport profile={result.profile} result={result} onShare={onShare} />
+        <InlineFeedback answers={answers} />
+      </div>
 
-      <FeedbackBar onOpenFeedback={onOpenFeedback} onRestart={onRestart} />
+      <hr className="section-divider" />
+
+      <ToolDetail primaryTools={result.primary} alsoTools={result.also} />
+
+      <div className="result-restart">
+        <button className="btn btn--text" onClick={onRestart}>
+          처음부터 다시 하기
+        </button>
+      </div>
     </div>
   )
 }

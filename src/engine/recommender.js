@@ -51,6 +51,16 @@ export function recommend(profile) {
   for (const mod of constraintModifiers) {
     const [condKey, condVal] = Object.entries(mod.condition)[0];
     if (profile[condKey] === condVal) {
+      if (mod.demote) {
+        for (const toolId of mod.demote) {
+          if (primaryIds.includes(toolId)) {
+            primaryIds = primaryIds.filter((t) => t !== toolId);
+            alsoIds.push(toolId);
+          } else if (alsoIds.includes(toolId)) {
+            alsoIds = [...alsoIds.filter((t) => t !== toolId), toolId];
+          }
+        }
+      }
       if (mod.boost) {
         for (const toolId of mod.boost) {
           if (!primaryIds.includes(toolId) && !alsoIds.includes(toolId)) {
@@ -83,6 +93,7 @@ export function recommend(profile) {
     also: alsoTools,
     reason: matched.reason,
     pitch: matched.pitch,
+    playbook: matched.playbook || [],
     notes,
     persona: personaInfo,
     personaKey: profile.persona,

@@ -1,36 +1,38 @@
 {
-  "version": "1.0",
+  "version": "2.1",
   "questions": [
     {
       "id": "q_role",
       "order": 1,
-      "text": "당신의 주 역할은 무엇인가요?",
-      "subtext": "가장 가까운 것 하나를 골라주세요",
+      "text": "지금 상황에 가장 가까운 걸 골라주세요",
+      "subtext": "딱 맞지 않아도 괜찮아요",
       "options": [
-        { "value": "pm", "label": "PM / 기획 / 전략" },
-        { "value": "dev", "label": "개발자" },
-        { "value": "lead", "label": "리드 / 매니저" },
-        { "value": "founder", "label": "창업자 / 1인 사업" },
-        { "value": "other", "label": "기타 (학생, 디자이너 등)" }
+        { "value": "side_builder", "label": "사이드 프로젝트를 해보고 싶어요" },
+        { "value": "idea_demo", "label": "아이디어는 있는데 만들 줄 몰라요" },
+        { "value": "founder", "label": "창업 중이에요" },
+        { "value": "pm", "label": "PM / 전략기획 직군이에요" },
+        { "value": "marketer", "label": "마케터 / 콘텐츠 담당이에요" },
+        { "value": "dev", "label": "개발자예요 (혼자 작업)" },
+        { "value": "lead", "label": "개발팀 리드 / 매니저예요" },
+        { "value": "career_ai", "label": "AI 스킬로 커리어를 올리고 싶어요" }
       ]
     },
     {
-      "id": "q_goal",
+      "id": "q_ai_experience",
       "order": 2,
-      "text": "지금 가장 급한 목표는?",
-      "subtext": "하나만 골라주세요",
+      "text": "AI 도구를 얼마나 써보셨나요?",
+      "subtext": "ChatGPT, Claude, Gemini 등 아무거나 포함",
       "options": [
-        { "value": "idea_to_demo", "label": "아이디어를 데모/MVP로 만들기" },
-        { "value": "dev_speed", "label": "기존 코드에서 개발 속도 올리기" },
-        { "value": "research_docs", "label": "리서치/기획/문서 생산성 높이기" },
-        { "value": "parallel_ops", "label": "여러 작업을 동시에 자동화하기" }
+        { "value": "none", "label": "아직 안 써봤어요", "aiLevel": "beginner" },
+        { "value": "tried", "label": "ChatGPT 같은 건 좀 써봤어요", "aiLevel": "intermediate" },
+        { "value": "active", "label": "여러 AI 도구를 쓰고 있어요", "aiLevel": "advanced" }
       ]
     },
     {
       "id": "q_code_comfort",
       "order": 3,
       "text": "코드 작성이나 수정, 얼마나 편하세요?",
-      "subtext": "정확하지 않아도 괜찮아요, 느낌대로 골라주세요",
+      "subtext": "AI 도구마다 필요한 기술 수준이 달라서 여쭤봐요",
       "options": [
         { "value": "none", "label": "전혀 못 함", "skill": "low" },
         { "value": "basic", "label": "복사-붙여넣기 정도", "skill": "low" },
@@ -43,7 +45,7 @@
       "id": "q_team",
       "order": 4,
       "text": "함께 일하는 팀 규모는?",
-      "subtext": "",
+      "subtext": "개인 프로젝트면 '혼자' 선택",
       "options": [
         { "value": "solo", "label": "혼자" },
         { "value": "small", "label": "2~3명" },
@@ -53,35 +55,36 @@
     {
       "id": "q_output",
       "order": 5,
-      "text": "원하는 결과물은?",
-      "subtext": "가장 중요한 것 하나를 골라주세요",
+      "text": "AI로 가장 먼저 해보고 싶은 건?",
+      "subtext": "하나만 골라주세요",
       "options": [
-        { "value": "demo", "label": "동작하는 데모 / 프로토타입" },
-        { "value": "repo", "label": "깃허브 레포 / 코드" },
-        { "value": "doc", "label": "기획서 / 보고서 / 리서치" },
-        { "value": "automation", "label": "코드 작업 자동화" }
+        { "value": "demo", "label": "뭔가 만들어보기" },
+        { "value": "doc", "label": "글·자료 정리하기" },
+        { "value": "automation", "label": "반복 작업 줄이기" },
+        { "value": "video", "label": "콘텐츠 만들기 (영상·이미지·음성)" },
+        { "value": "explore", "label": "아직 잘 모르겠어요" }
       ]
     },
     {
       "id": "q_security",
       "order": 6,
-      "text": "보안/규정 준수가 얼마나 중요한가요?",
-      "subtext": "회사 정책이나 민감한 데이터를 다루는 경우",
+      "text": "AI에 넣는 정보가 민감한가요?",
+      "subtext": "회사 자료나 개인정보를 다루는 경우",
       "options": [
         { "value": "low", "label": "크게 신경 안 씀" },
         { "value": "medium", "label": "보통" },
-        { "value": "high", "label": "매우 중요 (사내 정책 엄격)" }
+        { "value": "high", "label": "매우 민감 (사내 정책 엄격)" }
       ]
     },
     {
       "id": "q_ecosystem",
       "order": 7,
-      "text": "선호하는 AI 생태계가 있나요?",
-      "subtext": "없으면 '상관없음' 선택",
+      "text": "평소 작업 환경이 어떤가요?",
+      "subtext": "회사나 학교에서 주로 쓰는 도구 기준",
       "options": [
-        { "value": "google", "label": "Google (Gemini, Workspace 등)" },
-        { "value": "openai", "label": "OpenAI (ChatGPT 등)" },
-        { "value": "any", "label": "상관없음" }
+        { "value": "google", "label": "Google Workspace (Gmail, Drive, Docs)" },
+        { "value": "microsoft", "label": "Microsoft 365 (Outlook, Teams)" },
+        { "value": "any", "label": "딱히 정해진 건 없어요" }
       ]
     },
     {

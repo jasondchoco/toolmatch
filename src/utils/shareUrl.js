@@ -9,6 +9,8 @@ export function generateShareUrl(profile) {
     sec: profile.security || 'low',
     eco: profile.ecosystem || 'any',
     u: profile.urgency || 'this_week',
+    o: profile.outputType || 'demo',
+    ai: profile.aiLevel || 'beginner',
   })
   return `${window.location.origin}${window.location.pathname}?${params.toString()}`
 }
@@ -22,6 +24,8 @@ export function loadProfileFromUrl() {
       security: params.get('sec') || 'low',
       ecosystem: params.get('eco') || 'any',
       urgency: params.get('u') || 'this_week',
+      outputType: params.get('o') || 'demo',
+      aiLevel: params.get('ai') || 'beginner',
     }
   }
   return null

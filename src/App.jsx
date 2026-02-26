@@ -4,7 +4,6 @@ import Footer from './components/common/Footer.jsx'
 import Toast from './components/common/Toast.jsx'
 import SurveyPage from './pages/SurveyPage.jsx'
 import ResultPage from './pages/ResultPage.jsx'
-import FeedbackPage from './pages/FeedbackPage.jsx'
 
 function getInitialPage() {
   const params = new URLSearchParams(window.location.search)
@@ -15,11 +14,8 @@ function getInitialPage() {
 export default function App() {
   const [page, setPage] = useState(getInitialPage)
   const [answers, setAnswers] = useState(null)
-  const [shareActions, setShareActions] = useState([])
 
-  const handleShare = useCallback((action) => {
-    setShareActions((prev) => prev.includes(action) ? prev : [...prev, action])
-  }, [])
+  const handleShare = useCallback(() => {}, [])
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -36,14 +32,6 @@ export default function App() {
     setAnswers(null)
     window.history.replaceState({}, '', window.location.pathname)
     setPage('landing')
-  }, [])
-
-  const openFeedback = useCallback(() => {
-    window.history.pushState({ page: 'feedback' }, '', '')
-    setPage('feedback')
-  }, [])
-  const backToResult = useCallback(() => {
-    window.history.back()
   }, [])
 
   useEffect(() => {
@@ -75,7 +63,7 @@ export default function App() {
                 무료로 추천받기
               </button>
               <p className="text-muted text-sm" style={{ marginTop: 4 }}>
-                8개 질문 · 2분이면 끝 · Cursor, ChatGPT, Claude 등 8개 도구
+                8개 질문 · 2분이면 끝 · Perplexity, Midjourney, Gamma 등 25개 도구
               </p>
             </div>
           )}
@@ -83,10 +71,7 @@ export default function App() {
             <SurveyPage onComplete={completeSurvey} />
           )}
           {page === 'result' && (
-            <ResultPage answers={answers} onRestart={restart} onOpenFeedback={openFeedback} onShare={handleShare} />
-          )}
-          {page === 'feedback' && (
-            <FeedbackPage onBack={backToResult} answers={answers} shareActions={shareActions} />
+            <ResultPage answers={answers} onRestart={restart} onShare={handleShare} />
           )}
         </div>
       </main>
