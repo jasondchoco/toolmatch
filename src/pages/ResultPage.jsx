@@ -51,6 +51,8 @@ export default function ResultPage({ answers, onRestart, onShare }) {
       q_urgency: answers?.q_urgency || '',
       persona: result.profile.persona || '',
       skill: result.profile.skill || '',
+      aiLevel: result.profile.aiLevel || '',
+      outputType: result.profile.outputType || '',
       primary: result.primary.map(t => t.name).join(', '),
       also: result.also.map(t => t.name).join(', '),
       source: answers ? 'survey' : 'shared_link',

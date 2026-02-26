@@ -19,8 +19,18 @@ export default function InlineFeedback({ answers }) {
     const profile = urlProfile || (answers ? classify(answers) : null)
     const result = profile ? recommend(profile) : null
     return {
+      q_role: answers?.q_role || '',
+      q_goal: answers?.q_goal || '',
+      q_code_comfort: answers?.q_code_comfort || '',
+      q_team: answers?.q_team || '',
+      q_output: answers?.q_output || '',
+      q_security: answers?.q_security || '',
+      q_ecosystem: answers?.q_ecosystem || '',
+      q_urgency: answers?.q_urgency || '',
       persona: profile?.persona || '',
       skill: profile?.skill || '',
+      aiLevel: profile?.aiLevel || '',
+      outputType: profile?.outputType || '',
       primary: result?.primary.map((t) => t.name).join(', ') || '',
       also: result?.also.map((t) => t.name).join(', ') || '',
     }
