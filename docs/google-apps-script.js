@@ -7,18 +7,28 @@
  * 1:timestamp 2:type 3:sessionId 4:rating 5:comment
  * 6:q_role 7:q_goal 8:q_code_comfort 9:q_team 10:q_output
  * 11:q_security 12:q_ecosystem 13:q_urgency
- * 14:persona 15:skill 16:primary 17:also
- * 18:source 19:shared 20:resultUrl 21:userAgent
+ * 14:persona 15:skill 16:aiLevel 17:outputType
+ * 18:primary 19:also
+ * 20:source 21:shared 22:resultUrl 23:userAgent
  */
 
 var COL_TYPE = 2;
 var COL_SESSION = 3;
 var COL_RATING = 4;
 var COL_COMMENT = 5;
-var COL_SHARED = 19;
+var COL_SHARED = 21;
+
+function getOrCreateSheet() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName('Ver2');
+  if (!sheet) {
+    sheet = ss.insertSheet('Ver2');
+  }
+  return sheet;
+}
 
 function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var sheet = getOrCreateSheet();
 
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
@@ -37,6 +47,8 @@ function doPost(e) {
       'q_urgency',
       'persona',
       'skill',
+      'aiLevel',
+      'outputType',
       'primary',
       'also',
       'source',
@@ -82,6 +94,8 @@ function doPost(e) {
     data.q_urgency || '',
     data.persona || '',
     data.skill || '',
+    data.aiLevel || '',
+    data.outputType || '',
     data.primary || '',
     data.also || '',
     data.source || '',
