@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material/web": "^2.4.1",
+    "@vercel/analytics": "^1.6.1",
     "canvas": "^3.2.1",
     "html2canvas": "^1.4.1",
     "react": "^19.0.0",
