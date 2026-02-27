@@ -1,109 +1,144 @@
 /**
- * recommender.js
- * 분류 프로필 → 규칙 매칭 + 추천 결과 생성
+ * recommender.js (v3)
+ * 카테고리별 categoryRules 기반 추천 엔진
  */
 
-import rulesData from '../data/rules.json';
-import toolsData from '../data/tools.json';
+import rulesData from '../data/rules.json'
+import toolsData from '../data/tools.json'
+import questionsData from '../data/questions.json'
 
-const toolsMap = {};
-toolsData.tools.forEach((t) => { toolsMap[t.id] = t; });
+const toolsMap = {}
+toolsData.tools.forEach((t) => { toolsMap[t.id] = t })
 
-/**
- * 규칙 조건이 분류 프로필에 매칭되는지 확인
- */
-function matchesConditions(conditions, profile) {
-  for (const [key, value] of Object.entries(conditions)) {
-    if (profile[key] !== value) return false;
-  }
-  return true;
+const categoryLabels = {}
+const catQuestion = questionsData.questions.find((q) => q.id === 'q_category')
+if (catQuestion) {
+  catQuestion.options.forEach((opt) => { categoryLabels[opt.value] = opt.label })
 }
 
 /**
- * 분류 프로필을 기반으로 추천 결과 생성
+ * v3 프로필 기반 추천 결과 생성
  * @param {Object} profile - classify()의 반환값
- * @returns {Object} { primary: Tool[], also: Tool[], reason, pitch, notes, persona }
+ * @returns {Object} { categories: [...], experienceNote, profile }
  */
 export function recommend(profile) {
-  const { rules, constraintModifiers, personas } = rulesData;
+  const { categoryRules, budgetModifiers, teamModifiers, urgencyModifiers, budgetNotes, experienceNotes } = rulesData
+  const { categories, experience, context, urgency, budget, soloTeam } = profile
 
-  // 1. 위→아래로 첫 매칭 규칙 선택
-  let matched = null;
-  for (const rule of rules) {
-    if (Object.keys(rule.conditions).length === 0) continue; // fallback 스킵
-    if (matchesConditions(rule.conditions, profile)) {
-      matched = rule;
-      break;
-    }
-  }
+  const cats = categories.length > 0 ? categories : ['writing']
 
-  // 2. 매칭 없으면 fallback (마지막 규칙)
-  if (!matched) {
-    matched = rules[rules.length - 1];
-  }
+  const resultCategories = cats.map((cat) => {
+    const rule = categoryRules[cat]
+    if (!rule) return null
 
-  // 3. 결과 복사
-  let primaryIds = [...matched.primary];
-  let alsoIds = [...matched.also];
-  const notes = [];
+    // 1. byExperience에서 primary/also 결정
+    const expRule = rule.byExperience?.[experience] || rule.default
+    let primaryIds = [...expRule.primary]
+    let alsoIds = [...expRule.also]
 
-  // 4. constraint modifiers 적용
-  for (const mod of constraintModifiers) {
-    const [condKey, condVal] = Object.entries(mod.condition)[0];
-    if (profile[condKey] === condVal) {
-      if (mod.demote) {
-        for (const toolId of mod.demote) {
-          if (primaryIds.includes(toolId)) {
-            primaryIds = primaryIds.filter((t) => t !== toolId);
-            alsoIds.push(toolId);
-          } else if (alsoIds.includes(toolId)) {
-            alsoIds = [...alsoIds.filter((t) => t !== toolId), toolId];
-          }
-        }
-      }
+    // 2. budgetModifiers 적용
+    if (budget && budgetModifiers[budget]) {
+      const mod = budgetModifiers[budget]
       if (mod.boost) {
-        for (const toolId of mod.boost) {
-          if (!primaryIds.includes(toolId) && !alsoIds.includes(toolId)) {
-            alsoIds.unshift(toolId);
-          } else if (alsoIds.includes(toolId)) {
-            alsoIds = [toolId, ...alsoIds.filter((t) => t !== toolId)];
+        for (const id of mod.boost) {
+          if (alsoIds.includes(id) && !primaryIds.includes(id)) {
+            // also에 있으면 앞으로
+            alsoIds = [id, ...alsoIds.filter((x) => x !== id)]
           }
         }
+        // boost 대상이 primary에 없고 also에도 없으면 무시 (카테고리 밖 도구)
       }
-      if (mod.note) {
-        notes.push(mod.note);
+      if (mod.demote) {
+        for (const id of mod.demote) {
+          if (primaryIds.includes(id)) {
+            primaryIds = primaryIds.filter((x) => x !== id)
+            if (!alsoIds.includes(id)) alsoIds.push(id)
+          }
+        }
+        // primary가 비어지면 also에서 승격
+        if (primaryIds.length === 0 && alsoIds.length > 0) {
+          primaryIds = [alsoIds.shift()]
+        }
       }
     }
-  }
 
-  // 5. 중복 제거, 제한
-  alsoIds = alsoIds.filter((t) => !primaryIds.includes(t));
-  primaryIds = primaryIds.slice(0, 2);
-  alsoIds = alsoIds.slice(0, 2);
+    // 3. teamModifiers 적용
+    if (soloTeam === 'team' && teamModifiers?.team) {
+      const validTypes = teamModifiers.team.boost_solo_or_team
+      // team 호환 도구를 우선
+      const teamFriendly = (id) => {
+        const tool = toolsMap[id]
+        return tool && validTypes.includes(tool.solo_or_team)
+      }
+      primaryIds.sort((a, b) => (teamFriendly(b) ? 1 : 0) - (teamFriendly(a) ? 1 : 0))
+      alsoIds.sort((a, b) => (teamFriendly(b) ? 1 : 0) - (teamFriendly(a) ? 1 : 0))
+    }
 
-  // 6. ID → Tool 객체 변환
-  const primaryTools = primaryIds.map((id) => toolsMap[id]).filter(Boolean);
-  const alsoTools = alsoIds.map((id) => toolsMap[id]).filter(Boolean);
+    // 중복 제거 + 제한
+    alsoIds = alsoIds.filter((id) => !primaryIds.includes(id))
+    primaryIds = primaryIds.slice(0, 2)
+    alsoIds = alsoIds.slice(0, 2)
 
-  // 7. persona 정보
-  const personaInfo = personas[profile.persona] || personas.idea_demo;
+    // ID → Tool 객체
+    const primaryTools = primaryIds.map((id) => toolsMap[id]).filter(Boolean)
+    const alsoTools = alsoIds.map((id) => toolsMap[id]).filter(Boolean)
+
+    // 4. situation 텍스트 생성
+    const situationTemplate = rule.situationTemplates?.[context] || rule.situationTemplates?.work || ''
+    const budgetNote = budgetNotes?.[budget] || ''
+    const urgencyNote = urgencyModifiers?.[urgency]?.note || ''
+    const situation = [situationTemplate, budgetNote, urgencyNote].filter(Boolean).join(' ')
+
+    // 5. primary tool의 fit_reasons에서 이유 3개 선택
+    const topReasons = []
+    const mainTool = primaryTools[0]
+    if (mainTool?.fit_reasons) {
+      const fr = mainTool.fit_reasons
+      // context, budget, experience 순으로 이유 수집
+      if (fr[context]) topReasons.push(fr[context])
+      if (fr[budget] && topReasons.length < 3) topReasons.push(fr[budget])
+      if (fr[experience] && topReasons.length < 3) topReasons.push(fr[experience])
+      if (fr[urgency] && topReasons.length < 3) topReasons.push(fr[urgency])
+      if (soloTeam === 'team' && fr.team && topReasons.length < 3) topReasons.push(fr.team)
+      // 부족하면 beginner/work 등 기본값
+      if (topReasons.length < 3 && fr.beginner && !topReasons.includes(fr.beginner)) topReasons.push(fr.beginner)
+      if (topReasons.length < 3 && fr.work && !topReasons.includes(fr.work)) topReasons.push(fr.work)
+    }
+
+    // 6. firstStep
+    const firstStep = mainTool?.first_step || { action: '', prompt_example: '' }
+
+    return {
+      key: cat,
+      label: categoryLabels[cat] || cat,
+      situation,
+      primary: primaryTools,
+      also: alsoTools,
+      topReasons: topReasons.slice(0, 3),
+      firstStep,
+    }
+  }).filter(Boolean)
 
   return {
-    primary: primaryTools,
-    also: alsoTools,
-    reason: matched.reason,
-    pitch: matched.pitch,
-    playbook: matched.playbook || [],
-    notes,
-    persona: personaInfo,
-    personaKey: profile.persona,
+    categories: resultCategories,
+    experienceNote: experienceNotes?.[experience] || '',
     profile,
-  };
+  }
 }
 
 /**
  * 추천된 모든 툴(primary + also) 반환
  */
 export function getAllRecommendedTools(result) {
-  return [...result.primary, ...result.also];
+  const tools = []
+  for (const cat of result.categories) {
+    tools.push(...cat.primary, ...cat.also)
+  }
+  // 중복 제거
+  const seen = new Set()
+  return tools.filter((t) => {
+    if (seen.has(t.id)) return false
+    seen.add(t.id)
+    return true
+  })
 }

@@ -20,21 +20,19 @@ export default function InlineFeedback({ answers }) {
     const urlProfile = loadProfileFromUrl()
     const profile = urlProfile || (answers ? classify(answers) : null)
     const result = profile ? recommend(profile) : null
+    const allPrimary = result?.categories?.flatMap((c) => c.primary.map((t) => t.name)) || []
+    const allAlso = result?.categories?.flatMap((c) => c.also.map((t) => t.name)) || []
     return {
-      q_role: answers?.q_role || '',
-      q_goal: answers?.q_goal || '',
-      q_code_comfort: answers?.q_code_comfort || '',
-      q_team: answers?.q_team || '',
-      q_output: answers?.q_output || '',
-      q_security: answers?.q_security || '',
-      q_ecosystem: answers?.q_ecosystem || '',
+      q_category: answers?.q_category?.join(',') || '',
+      q_experience: answers?.q_experience || '',
+      q_context: answers?.q_context || '',
       q_urgency: answers?.q_urgency || '',
-      persona: profile?.persona || '',
-      skill: profile?.skill || '',
-      aiLevel: profile?.aiLevel || '',
-      outputType: profile?.outputType || '',
-      primary: result?.primary.map((t) => t.name).join(', ') || '',
-      also: result?.also.map((t) => t.name).join(', ') || '',
+      q_budget: answers?.q_budget || '',
+      q_solo_team: answers?.q_solo_team || '',
+      categories: profile?.categories?.join(',') || '',
+      experience: profile?.experience || '',
+      primary: allPrimary.join(', '),
+      also: allAlso.join(', '),
     }
   }, [answers])
 
@@ -93,8 +91,8 @@ export default function InlineFeedback({ answers }) {
         <button
           className="inline-feedback__submit"
           onClick={handleSubmit}
-          type="button"
           disabled={!selectedRating}
+          type="button"
         >
           보내기
         </button>

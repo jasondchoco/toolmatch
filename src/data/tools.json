@@ -1,886 +1,2032 @@
 {
-  "last_updated": "2026-02-26",
+  "last_updated": "2026-02-27",
   "tools": [
     {
-      "id": "lovable",
-      "name": "Lovable",
-      "category": "builder",
-      "categoryLabel": "앱 빌더",
-      "bestFor": "비개발자가 대화만으로 MVP 데모를 빠르게 만들 때",
-      "url": "https://lovable.dev",
-      "pricing": "무료 + 유료 ~$20/월",
-      "praisedKeywords": [
-        "매우 빠른 MVP 프로토타이핑",
-        "노코드 바이브 코딩",
-        "GitHub에 코드 저장 & 내 코드를 직접 관리 가능",
-        "데이터 저장·관리 기능 자동 연결 (Supabase)"
-      ],
-      "criticizedKeywords": [
-        "크레딧 기반 과금이 부담",
-        "복잡한 기능에서 플랫폼 한계",
-        "사용 기술이 고정되어 자유도 낮음"
-      ],
-      "howToStart": [
-        "lovable.dev 접속 → 무료 계정 생성",
-        "채팅창에 만들고 싶은 것을 말로 설명 (예: '할 일 관리 앱 만들어줘')",
-        "생성된 앱을 바로 미리보기, 수정은 대화로 계속 요청"
-      ],
-      "usageTips": [
-        "투자자 미팅 전 → 작동하는 MVP 데모를 하루 만에 만들어 시연",
-        "신규 서비스 기획 중 → 대화로 화면 구성 바꿔가며 팀 피드백 즉시 반영",
-        "Supabase 연동 → 회원가입·로그인 포함된 프로토타입을 코드 없이 완성"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://lovable.dev" },
-        { "label": "G2 리뷰", "url": "https://www.g2.com/products/lovable/reviews" }
-      ]
-    },
-    {
-      "id": "bolt",
-      "name": "Bolt.new",
-      "category": "builder",
-      "categoryLabel": "앱 빌더",
-      "bestFor": "브라우저만으로 완전한 앱을 빠르게 시험 제작할 때",
-      "url": "https://bolt.new",
-      "pricing": "무료 (1M 토큰/월) / Pro $25/월",
-      "praisedKeywords": [
-        "브라우저에서 바로 실행",
-        "빠른 프로토타이핑 속도",
-        "전체 코드 내보내기 가능",
-        "Figma 디자인 가져오기 지원"
-      ],
-      "criticizedKeywords": [
-        "토큰 소진이 빠를 수 있음",
-        "복잡한 비즈니스 로직 한계"
-      ],
-      "howToStart": [
-        "bolt.new 접속 → 무료 계정 생성",
-        "프롬프트에 만들 앱을 설명하면 코드가 자동 생성",
-        "실시간 미리보기에서 확인 후 GitHub로 내보내기"
-      ],
-      "usageTips": [
-        "아이디어 검증할 때 → 브라우저에서 바로 앱 만들어 동료에게 링크 공유",
-        "Figma 시안 있을 때 → 디자인 파일 가져와서 실제 작동하는 앱으로 변환",
-        "해커톤 참가 시 → 몇 시간 만에 풀스택 프로토타입 완성 후 발표"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://bolt.new" },
-        { "label": "요금제", "url": "https://bolt.new/pricing" }
-      ]
-    },
-    {
-      "id": "cursor",
-      "name": "Cursor",
-      "category": "ide",
-      "categoryLabel": "코딩 도구 (IDE)",
-      "bestFor": "코드 편집기에서 AI와 함께 기존 프로젝트를 빠르게 개발할 때",
-      "url": "https://cursor.com",
-      "pricing": "무료 제한 / Pro ~$20/월",
-      "praisedKeywords": [
-        "강력한 자동완성 (Tab)",
-        "프로젝트 전체를 이해하는 AI 에이전트",
-        "실제 코드베이스 반복 작업에 강함"
-      ],
-      "criticizedKeywords": [
-        "AI가 같은 수정을 반복하는 경우 있음",
-        "AI에게 전달할 정보 범위 설정이 번거로울 때 있음"
-      ],
-      "howToStart": [
-        "cursor.com에서 데스크탑 앱 다운로드 (VS Code와 비슷)",
-        "기존 프로젝트 폴더를 열거나 새 프로젝트 시작",
-        "Cmd+K로 AI에게 코드 수정 요청, 채팅창에서 질문"
-      ],
-      "usageTips": [
-        "레거시 코드 리팩토링 → 파일 선택 후 Cmd+K로 '타입스크립트로 변환해줘' 요청",
-        "버그 수정할 때 → 에러 로그 붙여넣고 'fix this' 입력하면 수정 코드 제안",
-        "반복 작업 자동화 → Tab 자동완성으로 비슷한 패턴 코드 빠르게 생성"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://cursor.com" },
-        { "label": "G2 리뷰", "url": "https://www.g2.com/products/cursor/reviews" }
-      ]
-    },
-    {
-      "id": "copilot",
-      "name": "GitHub Copilot",
-      "category": "ide",
-      "categoryLabel": "코딩 도구 (IDE)",
-      "bestFor": "이미 쓰는 에디터에서 AI 코드 제안을 받고 싶을 때",
-      "url": "https://github.com/copilot",
-      "pricing": "무료 (2,000 completions/월) / $10/월",
-      "praisedKeywords": [
-        "업계 표준, 가장 널리 쓰이는 도구",
-        "가성비 좋고 다양한 모델 선택",
-        "초보자도 쉽게 접근 가능",
-        "다양한 IDE 지원"
-      ],
-      "criticizedKeywords": [
-        "코드베이스 깊은 이해 부족",
-        "복잡한 멀티파일 작업에서 한계"
-      ],
-      "howToStart": [
-        "GitHub 계정으로 Copilot 무료 플랜 활성화",
-        "VS Code에서 GitHub Copilot 확장 설치",
-        "코드를 작성하면 자동 제안 → Tab으로 수락"
-      ],
-      "usageTips": [
-        "테스트 코드 작성 시 → 함수명 위에 주석 쓰면 테스트 코드 자동 제안",
-        "새 언어 배울 때 → 의사코드를 주석으로 쓰면 실제 코드로 변환해줌",
-        "보일러플레이트 줄일 때 → API 라우트·모델 정의 등 반복 코드 자동 생성"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://github.com/copilot" }
-      ]
-    },
-    {
-      "id": "claude_code",
-      "name": "Claude Code",
-      "category": "ide",
-      "categoryLabel": "코딩 도구 (IDE)",
-      "bestFor": "명령줄(터미널)에서 파일 편집 + 명령 실행까지 한번에 하고 싶을 때",
+      "id": "claude",
+      "name": "Claude",
+      "category": "writing",
+      "categoryLabel": "글쓰기·편집",
+      "bestFor": "한국어 글쓰기, 보고서·이메일·기획서 등 업무 문서 작성",
       "url": "https://claude.ai",
-      "pricing": "Claude Pro $20/월",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "하루 일정량 무료",
+        "paid_from": "월 약 22,000원"
+      },
+      "fit_reasons": {
+        "beginner": "복잡한 설치 없이 웹에서 바로 사용 가능해요",
+        "work": "보고서·이메일·기획서 등 업무 문서에 특히 강해요",
+        "free_only": "무료 플랜으로도 충분히 쓸 수 있어요",
+        "today": "지금 claude.ai 접속하면 5분 안에 시작 가능해요",
+        "study": "논문 요약, 레포트 초안 등 학술 글쓰기에 강해요",
+        "hobby": "소설, 블로그, 일기 등 개인 글쓰기 도우미로 최적이에요",
+        "business": "사업 계획서, 제안서, 고객 이메일 초안을 빠르게 만들 수 있어요",
+        "team": "팀원들이 각자 계정으로 문서 초안·검토에 활용 가능해요"
+      },
+      "first_step": {
+        "action": "claude.ai 접속",
+        "prompt_example": "\"내일 제출할 보고서 초안 써줘\" 라고 입력해보세요"
+      },
       "praisedKeywords": [
-        "터미널에서 파일 편집 + 명령 실행",
-        "긴 작업도 맡겨놓고 다른 일 할 수 있음",
-        "큰 프로젝트도 잘 파악해서 작업"
+        "한국어 자연스러움",
+        "긴 글 요약",
+        "문체 조절",
+        "구조화된 글쓰기",
+        "파일 업로드 분석"
       ],
       "criticizedKeywords": [
-        "명령줄 사용법 학습 필요",
-        "위험 작업 시 권한 설정 필수"
+        "인터넷 검색 불가",
+        "최신 정보 약함",
+        "이미지 생성 불가"
       ],
       "howToStart": [
-        "Claude Pro 구독 후 터미널에서 claude 명령 설치",
-        "프로젝트 폴더에서 claude 실행",
-        "자연어로 코드 수정, 테스트 실행 등 요청"
-      ],
-      "usageTips": [
-        "대규모 리팩토링 → '이 폴더의 클래스를 함수형으로 바꿔줘' 맡기고 다른 일",
-        "CI 깨졌을 때 → 에러 로그 보여주고 '고쳐줘' 한마디면 수정+커밋까지",
-        "코드 리뷰 전 → 'PR 만들어줘' 요청하면 변경사항 분석 후 자동 생성"
+        "claude.ai 에 접속해서 구글 계정으로 로그인",
+        "하고 싶은 작업을 말하듯 입력 (예: '주간 업무 보고서 써줘')",
+        "결과를 복사해서 수정 — 처음엔 50% 초안만 받아도 충분해요"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://claude.ai" }
-      ]
-    },
-    {
-      "id": "antigravity",
-      "name": "Google Antigravity",
-      "category": "ide",
-      "categoryLabel": "코딩 도구 (IDE)",
-      "bestFor": "AI 에이전트 여러 개를 동시에 돌리며 대규모 코딩 작업을 맡기고 싶을 때",
-      "url": "https://antigravity.google",
-      "pricing": "무료 퍼블릭 프리뷰 (Gemini 모델 넉넉한 무료 한도)",
-      "praisedKeywords": [
-        "에이전트 퍼스트 IDE: 여러 AI가 병렬로 작업",
-        "Manager View로 에이전트 오케스트레이션",
-        "Gemini 3.1 Pro + Claude Sonnet 4.6 등 다양한 모델 지원",
-        "VS Code 포크 기반으로 익숙한 인터페이스"
-      ],
-      "criticizedKeywords": [
-        "아직 프리뷰 단계라 안정성 불확실",
-        "Google 생태계 종속 가능성",
-        "높은 사양 PC에서 성능이 더 좋음"
-      ],
-      "howToStart": [
-        "antigravity.google 접속 → 데스크탑 앱 다운로드 (Windows/macOS/Linux)",
-        "Editor View에서 기존 VS Code처럼 코드 작성 + AI 사이드바 활용",
-        "Manager View에서 '인증 시스템 추가' 같은 큰 작업을 에이전트에 위임 → 병렬 자동 처리"
+        {
+          "label": "공식 사이트",
+          "url": "https://claude.ai"
+        }
       ],
       "usageTips": [
-        "대규모 기능 추가 → Manager View에서 에이전트 여러 개에 작업 분배 후 병렬 처리",
-        "프론트+백엔드 동시 작업 → 에이전트 하나는 UI, 다른 하나는 API 개발 병렬 진행",
-        "코드 마이그레이션 → 여러 파일을 동시에 수정하는 대규모 변환 작업에 활용"
+        "공무원 보고서 → '기안문 형식으로 현황 보고서 써줘' 입력하면 구조화된 초안 생성",
+        "학생 과제 → 논문 PDF 업로드 후 '핵심 논점 정리해줘' 요청으로 리서치 시간 단축",
+        "부업 블로그 → '이 주제로 SEO 최적화된 블로그 글 써줘' 요청 후 수정해서 발행"
       ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://antigravity.google" },
-        { "label": "Google Developers Blog", "url": "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/" }
-      ]
-    },
-    {
-      "id": "opencode",
-      "name": "OpenCode",
-      "category": "ide",
-      "categoryLabel": "코딩 도구 (IDE)",
-      "bestFor": "터미널에서 어떤 AI 모델이든 연결해 코딩 에이전트로 쓰고 싶을 때",
-      "url": "https://opencode.ai",
-      "pricing": "완전 무료 (오픈소스, 자체 API 키 사용)",
-      "praisedKeywords": [
-        "GitHub 9만+ 스타, 빠르게 성장 중인 오픈소스 코딩 에이전트",
-        "75개 이상 AI 모델 지원 (Claude, GPT, Gemini, 로컬 모델 등)",
-        "Go 기반으로 가볍고 빠른 터미널 UI",
-        "LSP 통합으로 실시간 코드 분석"
-      ],
-      "criticizedKeywords": [
-        "터미널 사용에 익숙해야 함",
-        "GUI가 없어 비개발자에겐 진입장벽 높음",
-        "API 키 비용은 별도 부담"
-      ],
-      "howToStart": [
-        "터미널에서 curl 또는 brew로 OpenCode 설치 (공식 문서 참고)",
-        "사용할 AI 모델의 API 키를 환경 변수에 설정 (예: ANTHROPIC_API_KEY)",
-        "Oh My OpenCode 플러그인 설치로 멀티 에이전트·고급 기능 활성화 (npm i -g oh-my-opencode)"
-      ],
-      "usageTips": [
-        "API 키 비용 절약 → 간단한 작업은 로컬 모델, 복잡한 작업만 Claude로 전환",
-        "팀 표준화할 때 → 오픈소스라 사내 서버에 설치해 팀 전체가 동일 환경 사용",
-        "여러 모델 비교 → 같은 작업을 GPT·Claude·Gemini로 돌려보고 결과 비교"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://opencode.ai" },
-        { "label": "GitHub", "url": "https://github.com/opencode-ai/opencode" },
-        { "label": "Oh My OpenCode", "url": "https://ohmyopencode.com" }
-      ]
+      "trending": true
     },
     {
       "id": "chatgpt",
       "name": "ChatGPT",
-      "category": "chat",
-      "categoryLabel": "AI 챗",
-      "bestFor": "기획서 초안, 아이디어 브레인스토밍, 범용 문제 해결",
+      "category": "writing",
+      "categoryLabel": "글쓰기·편집",
+      "bestFor": "아이디어 브레인스토밍, 기획서 초안, 범용 글쓰기",
       "url": "https://chat.openai.com",
-      "pricing": "무료 / Plus $20/월",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (기본 기능)",
+        "paid_from": "월 약 27,000원"
+      },
+      "fit_reasons": {
+        "beginner": "가장 많이 알려진 AI라 도움말·튜토리얼이 풍부해요",
+        "work": "다양한 업무 문서 작성에 폭넓게 활용할 수 있어요",
+        "free_only": "무료로도 기본 글쓰기 기능 충분히 사용 가능해요",
+        "today": "가입 후 바로 대화 시작 가능해요",
+        "study": "모르는 개념을 대화하듯 질문하며 학습할 수 있어요",
+        "hobby": "여행 계획, 레시피, 취미 아이디어 등 일상 활용이 다양해요",
+        "business": "사업 아이디어 검증, 마케팅 문구, 고객 응대 스크립트에 활용 가능",
+        "team": "팀 브레인스토밍 시 아이디어 발산·정리 도구로 활용 가능해요"
+      },
+      "first_step": {
+        "action": "chat.openai.com 접속",
+        "prompt_example": "\"이메일 초안 써줘: [상황 설명]\" 이라고 입력해보세요"
+      },
       "praisedKeywords": [
-        "기획서 · 아키텍처 스케치에 강함",
-        "빠른 아이디어 반복",
-        "다방면으로 활용 가능",
-        "웹 검색 · 이미지 생성 통합"
+        "아이디어 반복",
+        "다방면 활용",
+        "웹 검색 통합",
+        "이미지 생성",
+        "GPT Store 확장 앱"
       ],
       "criticizedKeywords": [
-        "환각 가능 — 중요 사실은 반드시 검증",
-        "검색/요약에 편향 가능성"
+        "환각 가능",
+        "사실 검증 필요",
+        "긴 문서 맥락 놓침"
       ],
       "howToStart": [
         "chat.openai.com 접속 → 무료 계정 생성",
         "채팅창에 질문이나 요청을 입력 (한국어 가능)",
         "답변을 토대로 대화를 이어가며 결과물 다듬기"
       ],
-      "usageTips": [
-        "기획서 초안 쓸 때 → 'B2B SaaS 기획서 목차 잡아줘' 요청 후 대화로 살 붙이기",
-        "브레인스토밍 할 때 → 아이디어 10개 뽑고 장단점 비교표 만들어달라고 요청",
-        "이메일 답장 고민될 때 → 상황 설명하고 톤별 답장 초안 3개 받아서 선택"
-      ],
       "references": [
-        { "label": "공식 사이트", "url": "https://chat.openai.com" }
-      ]
-    },
-    {
-      "id": "claude",
-      "name": "Claude",
-      "category": "chat",
-      "categoryLabel": "AI 챗",
-      "bestFor": "긴 문서 분석, 구조화된 글쓰기, 꼼꼼한 사고가 필요할 때",
-      "url": "https://claude.ai",
-      "pricing": "무료 / Pro $20/월",
-      "praisedKeywords": [
-        "긴 문서도 맥락을 놓치지 않고 분석",
-        "높은 글쓰기 · 분석 품질",
-        "구조화된 사고에 강함",
-        "환각이 상대적으로 적음"
-      ],
-      "criticizedKeywords": [
-        "코드 편집기처럼 코드를 직접 실행하지 않음",
-        "자동 작업 기능은 요금제에 따라 다름"
-      ],
-      "howToStart": [
-        "claude.ai 접속 → 무료 계정 생성",
-        "긴 문서를 붙여넣거나 파일 업로드해서 분석 요청",
-        "대화를 이어가며 기획서, 보고서 등 결과물 완성"
+        {
+          "label": "공식 사이트",
+          "url": "https://chat.openai.com"
+        }
       ],
       "usageTips": [
-        "계약서 검토할 때 → PDF 업로드 후 '불리한 조항 찾아줘' 요청하면 항목별 분석",
-        "논문 정리할 때 → 긴 PDF 올리고 '핵심 주장과 근거를 표로 정리해줘' 요청",
-        "보고서 작성할 때 → 데이터 붙여넣고 '경영진용 요약 + 상세 분석' 구조화 요청"
+        "회의 준비 → '이 안건에 대한 찬반 논점 정리해줘' 요청으로 토론 포인트 준비",
+        "외국어 학습 → '영어 회화 연습 상대가 돼줘' 입력 후 롤플레이로 스피킹 연습",
+        "자영업 메뉴 기획 → '카페 신메뉴 아이디어 10개 + 가격대 제안해줘' 요청"
       ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://claude.ai" }
-      ]
-    },
-    {
-      "id": "gemini",
-      "name": "Gemini",
-      "category": "chat",
-      "categoryLabel": "AI 챗",
-      "bestFor": "딥 리서치, Google Workspace 연동, 최신 정보 활용",
-      "url": "https://gemini.google.com",
-      "pricing": "무료 / AI Pro $19.99/월",
-      "praisedKeywords": [
-        "Deep Research로 자료 종합 리포트",
-        "Gmail · Drive · Chat 연동",
-        "무료 티어가 넉넉함",
-        "최신 정보 실시간 활용"
-      ],
-      "criticizedKeywords": [
-        "코딩 도움은 들쭉날쭉",
-        "대화 맥락을 놓치는 경우가 보고됨"
-      ],
-      "howToStart": [
-        "gemini.google.com 접속 → Google 계정 로그인",
-        "'Deep Research' 기능으로 주제 입력 → 종합 리서치 리포트 생성",
-        "Google Docs로 바로 내보내기하여 팀과 공유"
-      ],
-      "usageTips": [
-        "시장 조사할 때 → Deep Research로 '한국 AI 시장 현황' 입력하면 종합 리포트 생성",
-        "Gmail 정리할 때 → '지난주 미팅 관련 이메일 요약해줘' Google 연동으로 즉시 답변",
-        "경쟁사 분석할 때 → 최신 웹 검색 기반으로 실시간 트렌드와 뉴스까지 반영"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://gemini.google.com" }
-      ]
-    },
-    {
-      "id": "perplexity",
-      "name": "Perplexity Pro",
-      "category": "research",
-      "categoryLabel": "리서치/지식",
-      "bestFor": "출처가 명확한 실시간 AI 검색으로 빠르게 정보를 확인하고 싶을 때",
-      "url": "https://www.perplexity.ai",
-      "pricing": "무료 / Pro $20/월 (연간 $200)",
-      "praisedKeywords": [
-        "모든 답변에 출처 링크 제공",
-        "실시간 웹 검색 기반으로 최신 정보 반영",
-        "GPT-4o · Claude · Gemini 등 고급 모델 선택 가능",
-        "PDF · CSV · 이미지 파일 분석 지원"
-      ],
-      "criticizedKeywords": [
-        "일상 대화보다 검색 중심이라 범용성이 낮음",
-        "Pro 사용량 제한이 예고 없이 강화되는 사례 보고",
-        "한국어 답변 품질이 영어에 비해 부족할 때 있음"
-      ],
-      "howToStart": [
-        "perplexity.ai 접속 → 무료 계정 생성 (Google 로그인 가능)",
-        "검색창에 궁금한 것을 자연어로 질문 (예: '2026년 AI 트렌드 알려줘')",
-        "답변의 출처 번호를 클릭해 원본 확인, 후속 질문으로 깊이 파고들기"
-      ],
-      "usageTips": [
-        "경쟁사 분석할 때 → '한국 SaaS 시장 규모' 검색하면 출처 포함 리포트 즉시 생성",
-        "기술 선택할 때 → 'Next.js vs Remix 2026 비교' 검색으로 최신 벤치마크 확인",
-        "팩트체크할 때 → 뉴스나 주장의 출처를 번호별로 원문 확인해서 검증"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://www.perplexity.ai" },
-        { "label": "요금제", "url": "https://www.perplexity.ai/pro" }
-      ]
-    },
-    {
-      "id": "notebooklm",
-      "name": "NotebookLM",
-      "category": "research",
-      "categoryLabel": "리서치/지식",
-      "bestFor": "내 문서를 업로드하면 AI가 요약·분석하고 팟캐스트까지 만들어줄 때",
-      "url": "https://notebooklm.google",
-      "pricing": "무료 (핵심 기능 포함) / Plus $19.99/월 (Google AI Pro 포함)",
-      "praisedKeywords": [
-        "PDF · 웹사이트 · YouTube 영상 등 다양한 소스 분석",
-        "Audio Overview로 AI 팟캐스트 자동 생성",
-        "업로드한 자료 기반이라 환각이 적음",
-        "무료 플랜으로도 충분히 활용 가능"
-      ],
-      "criticizedKeywords": [
-        "오프라인 사용 불가, 인터넷 필수",
-        "Google Gemini 모델만 사용 (모델 선택 불가)",
-        "자료가 Google 서버에 저장되어 민감 자료 주의"
-      ],
-      "howToStart": [
-        "notebooklm.google 접속 → Google 계정으로 로그인",
-        "새 노트북 생성 후 PDF · 웹 링크 · Google Docs 등 자료 업로드",
-        "'Audio Overview' 버튼으로 AI 팟캐스트 생성, 채팅으로 자료에 대해 질문"
-      ],
-      "usageTips": [
-        "회의록 정리할 때 → 녹음 파일 업로드하면 자동 요약 + 핵심 액션 아이템 추출",
-        "스터디 자료 만들 때 → 교재 PDF 올리고 Audio Overview로 팟캐스트 만들어 이동 중 청취",
-        "제안서 준비할 때 → 관련 자료 여러 개 올리고 '핵심 포인트 비교표' 요청"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://notebooklm.google" },
-        { "label": "요금제", "url": "https://notebooklm.google/plans" }
-      ]
-    },
-    {
-      "id": "consensus",
-      "name": "Consensus",
-      "category": "research",
-      "categoryLabel": "리서치/지식",
-      "bestFor": "학술 논문 기반으로 신뢰할 수 있는 과학적 답변을 찾고 싶을 때",
-      "url": "https://consensus.app",
-      "pricing": "무료 제한 / Premium $11.99/월 (학생 40% 할인)",
-      "praisedKeywords": [
-        "2억 건 이상의 학술 논문 데이터베이스 검색",
-        "모든 답변에 실제 논문 출처 링크 제공",
-        "Consensus Meter로 연구 결과 찬반 한눈에 파악",
-        "연구 설계(메타분석 · RCT 등) 필터링 가능"
-      ],
-      "criticizedKeywords": [
-        "논문 데이터베이스가 완전하지 않아 일부 연구 누락 가능",
-        "개방형 질문이나 숫자 답변이 필요한 질문에 약함",
-        "무료 플랜 사용량 제한이 빠르게 소진"
-      ],
-      "howToStart": [
-        "consensus.app 접속 → 무료 계정 생성",
-        "검색창에 예/아니오로 답할 수 있는 질문 입력 (예: '명상이 불안 감소에 효과가 있나요?')",
-        "Consensus Meter로 연구 경향 확인, 개별 논문 클릭해서 원문 확인"
-      ],
-      "usageTips": [
-        "블로그 글 쓸 때 → 주장에 학술 논문 근거를 붙여서 신뢰도 높은 콘텐츠 작성",
-        "제품 기획할 때 → 'UX에서 다크 모드가 효과적인가?' 같은 질문으로 연구 근거 확보",
-        "건강 정보 확인 → Consensus Meter로 찬반 비율 확인해 과학적 합의 수준 파악"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://consensus.app" },
-        { "label": "요금제", "url": "https://consensus.app/pricing/" }
-      ]
-    },
-    {
-      "id": "gamma",
-      "name": "Gamma",
-      "category": "docs",
-      "categoryLabel": "문서/슬라이드",
-      "bestFor": "텍스트만 입력하면 1분 안에 깔끔한 프레젠테이션을 만들어줄 때",
-      "url": "https://gamma.app",
-      "pricing": "무료 (400 AI 크레딧) / Plus $8/월 / Pro $15/월",
-      "praisedKeywords": [
-        "프롬프트 한 줄로 PPT · 문서 · 웹페이지 자동 생성",
-        "클릭 한 번으로 전체 디자인 스타일 변경",
-        "PDF · PPTX · Google Slides로 내보내기 가능",
-        "실시간 협업 및 공유 링크 분석 지원"
-      ],
-      "criticizedKeywords": [
-        "PowerPoint만큼 세밀한 커스터마이징은 어려움",
-        "인터넷 연결 필수 (오프라인 편집 불가)",
-        "무료 크레딧 소진 후 유료 전환 필요"
-      ],
-      "howToStart": [
-        "gamma.app 접속 → 무료 계정 생성 (Google 로그인 가능)",
-        "'+새로 만들기' 클릭 → 주제와 슬라이드 수 입력하면 AI가 자동 생성",
-        "생성된 슬라이드에서 텍스트 · 이미지 수정 후 PDF/PPTX로 내보내기"
-      ],
-      "usageTips": [
-        "팀 발표 준비할 때 → 기획 내용 붙여넣으면 10분 안에 발표 자료 완성",
-        "클라이언트 제안서 → 주제만 입력하고 디자인 테마 선택하면 전문적 PPT 생성",
-        "주간 보고할 때 → 텍스트 메모를 넣으면 시각적 슬라이드로 자동 변환"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://gamma.app" },
-        { "label": "요금제", "url": "https://gamma.app/pricing" }
-      ]
+      "trending": true
     },
     {
       "id": "notion_ai",
       "name": "Notion AI",
-      "category": "docs",
-      "categoryLabel": "문서/슬라이드",
-      "bestFor": "Notion 워크스페이스에서 문서 작성 · 요약 · 검색을 AI가 도와줄 때",
+      "category": "writing",
+      "categoryLabel": "글쓰기·편집",
+      "bestFor": "Notion에서 문서 작성·요약·번역을 AI가 도와줄 때",
       "url": "https://www.notion.com/product/ai",
-      "pricing": "무료 체험 (제한) / Business $20/유저/월 (AI 포함)",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": false,
+        "free_tier": "무료 체험 (제한)",
+        "paid_from": "월 약 27,000원 (Business 포함)"
+      },
+      "fit_reasons": {
+        "beginner": "Notion 문서 안에서 바로 쓸 수 있어서 별도 앱 불필요",
+        "work": "회의록, 위키, 기획서 등 팀 문서 관리에 특화",
+        "free_only": "무료 체험으로 기본 기능 확인 가능",
+        "today": "Notion 계정이 있다면 지금 바로 AI 기능 활성화 가능",
+        "study": "수업 노트, 학습 자료를 체계적으로 정리·요약할 수 있어요",
+        "hobby": "독서 기록, 여행 계획, 습관 트래커 등 개인 생산성에 활용 가능",
+        "business": "제안서, 고객 DB, 프로젝트 관리를 한 곳에서 AI로 처리 가능",
+        "team": "팀 위키·문서를 AI가 검색·요약해주는 통합 협업 환경"
+      },
+      "first_step": {
+        "action": "Notion 문서에서 Space 키 누르기",
+        "prompt_example": "\"이 내용을 3줄로 요약해줘\" 선택"
+      },
       "praisedKeywords": [
-        "Notion 문서 · 위키 · DB를 AI가 통합 검색 및 답변",
-        "문서 요약 · 글쓰기 · 번역 · 톤 조절 기능 내장",
-        "자율 AI 에이전트로 반복 작업 자동화",
-        "GPT-5 · Claude Opus 등 프리미엄 AI 모델 활용"
+        "문서 내 AI 통합",
+        "회의록 요약",
+        "번역·톤 조절",
+        "팀 협업",
+        "워크스페이스 통합 검색"
       ],
       "criticizedKeywords": [
-        "AI 전용 사용이 아닌 Notion 구독이 전제",
-        "오프라인 모드 미지원",
-        "데이터가 많으면 AI 응답 속도 저하"
+        "Notion 구독 전제",
+        "오프라인 미지원",
+        "속도 저하 (데이터 많을 때)"
       ],
       "howToStart": [
         "notion.com 접속 → 무료 계정 생성 후 워크스페이스 만들기",
-        "문서 작성 중 스페이스바 또는 '/' 입력 → AI 기능 메뉴에서 요약 · 글쓰기 선택",
-        "'Ask Notion'으로 워크스페이스 전체에서 원하는 정보 검색 및 질문"
-      ],
-      "usageTips": [
-        "회의록 작성 후 → 'AI 요약' 클릭하면 핵심 결정사항 + 할 일 자동 추출",
-        "위키 검색할 때 → Ask Notion에 '온보딩 절차 알려줘' 입력하면 전체 문서 검색 후 답변",
-        "영문 문서 작성 → 한국어로 쓰고 AI에게 '영어로 번역 + 비즈니스 톤' 요청"
+        "문서 작성 중 Space 또는 '/' 입력 → AI 기능 메뉴에서 요약·글쓰기 선택",
+        "'Ask Notion'으로 워크스페이스 전체에서 원하는 정보 검색"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://www.notion.com/product/ai" },
-        { "label": "요금제", "url": "https://www.notion.com/pricing" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://www.notion.com/product/ai"
+        }
+      ],
+      "usageTips": [
+        "팀 회의록 → 회의 내용 입력 후 'AI 요약' 클릭하면 액션 아이템 자동 추출",
+        "학습 정리 → 강의 노트 페이지에서 '핵심 개념 표로 정리해줘' AI 요청",
+        "사업 제안서 → 기획 데이터베이스에서 관련 정보 모아서 AI로 제안서 초안 생성"
+      ],
+      "trending": false
     },
     {
-      "id": "zapier_ai",
-      "name": "Zapier AI",
-      "category": "automation",
-      "categoryLabel": "자동화",
-      "bestFor": "코딩 없이 앱과 앱 사이를 AI로 자동 연결하고 싶을 때",
-      "url": "https://zapier.com",
-      "pricing": "무료 (100 작업/월) / Professional $29.99/월~",
+      "id": "jasper",
+      "name": "Jasper",
+      "category": "writing",
+      "categoryLabel": "글쓰기·편집",
+      "bestFor": "마케팅 카피, 블로그, SNS 콘텐츠를 대량으로 빠르게 만들 때",
+      "url": "https://www.jasper.ai",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": false,
+        "free_tier": "7일 무료 체험",
+        "paid_from": "월 약 $49"
+      },
+      "fit_reasons": {
+        "beginner": "마케팅 글쓰기 템플릿이 많아서 처음도 쉽게 시작 가능",
+        "work": "브랜드 톤 설정 후 일관된 콘텐츠 대량 생산에 강해요",
+        "free_only": "7일 체험으로 충분히 맞는지 확인 가능",
+        "today": "템플릿 선택 후 바로 첫 콘텐츠 생성 가능",
+        "study": "마케팅 수업 과제나 광고 카피 실습에 활용할 수 있어요",
+        "hobby": "개인 브랜드 SNS 콘텐츠를 빠르게 만들 수 있어요",
+        "business": "브랜드 톤을 설정하면 일관된 마케팅 콘텐츠를 대량 생산 가능",
+        "team": "팀 전체가 동일한 브랜드 보이스로 콘텐츠 생산 가능"
+      },
+      "first_step": {
+        "action": "jasper.ai 접속 후 템플릿 선택",
+        "prompt_example": "\"블로그 포스트 아웃라인\" 템플릿 선택 후 주제 입력"
+      },
       "praisedKeywords": [
-        "8,000개 이상 앱 연동",
-        "AI 에이전트가 자연어로 자동화 구성",
-        "MCP로 Claude·ChatGPT에서 바로 실행",
-        "AI 챗봇 만들기 기능 내장"
+        "마케팅 콘텐츠 특화",
+        "템플릿 다양",
+        "브랜드 톤 설정",
+        "다국어 콘텐츠 생성",
+        "SEO 최적화 지원"
       ],
       "criticizedKeywords": [
-        "복잡한 워크플로에는 비용 증가",
-        "무료 플랜 제한이 큼 (100 작업, 2단계만)",
-        "세부 로직 커스터마이징 한계"
+        "가격이 높은 편",
+        "범용 글쓰기보다 마케팅에 특화",
+        "범용 글쓰기에는 ChatGPT가 더 나음"
       ],
       "howToStart": [
-        "zapier.com 접속 → 무료 계정 생성",
-        "Copilot에 자연어로 원하는 자동화 설명 (예: '새 이메일이 오면 슬랙에 알림 보내줘')",
-        "AI가 만든 Zap(자동화)을 확인하고 켜기 → 바로 작동 시작"
-      ],
-      "usageTips": [
-        "리드 관리할 때 → 폼 제출되면 자동으로 CRM 등록 + 슬랙 알림 + 환영 이메일 발송",
-        "콘텐츠 배포할 때 → 블로그 발행되면 자동으로 SNS 4개 채널에 동시 포스팅",
-        "고객 피드백 수집 → 설문 응답이 오면 스프레드시트 기록 + 팀 채널 알림"
+        "jasper.ai 접속 → 7일 무료 체험 시작",
+        "원하는 콘텐츠 유형 템플릿 선택 (블로그, SNS, 광고 등)",
+        "키워드와 톤 입력 → AI 초안 생성 후 편집"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://zapier.com" },
-        { "label": "AI 도구 페이지", "url": "https://zapier.com/apps/ai-tools" },
-        { "label": "요금제", "url": "https://zapier.com/pricing" }
-      ]
-    },
-    {
-      "id": "make",
-      "name": "Make",
-      "category": "automation",
-      "categoryLabel": "자동화",
-      "bestFor": "시각적 플로차트로 복잡한 자동화를 직접 설계하고 싶을 때",
-      "url": "https://www.make.com",
-      "pricing": "무료 플랜 / Starter $10.59/월~ / Pro $18.82/월~",
-      "praisedKeywords": [
-        "드래그 앤 드롭 비주얼 워크플로 빌더",
-        "AI 에이전트를 시나리오 안에 직접 배치 가능",
-        "Maia AI 빌더로 대화형 자동화 생성",
-        "3,000개 이상 앱 연동"
-      ],
-      "criticizedKeywords": [
-        "초보자에겐 인터페이스가 복잡하게 느껴질 수 있음",
-        "AI 모듈은 크레딧을 더 많이 소모",
-        "고급 기능은 유료 플랜 필요"
-      ],
-      "howToStart": [
-        "make.com 접속 → 무료 계정 생성",
-        "Maia AI 빌더에서 자연어로 원하는 자동화 설명 → 시나리오 자동 생성",
-        "비주얼 편집기에서 플로우를 확인·수정 후 실행"
+        {
+          "label": "공식 사이트",
+          "url": "https://www.jasper.ai"
+        }
       ],
       "usageTips": [
-        "복잡한 워크플로 → 조건 분기·반복·에러 처리를 플로차트로 시각적으로 설계",
-        "데이터 가공할 때 → API 응답을 필터·변환·집계해서 다른 앱으로 전달",
-        "AI 에이전트 배치 → 시나리오 안에 GPT 모듈 넣어 자동 분류·응답 생성"
+        "SNS 마케팅 → '인스타그램용 신제품 홍보 캡션 5개' 요청으로 콘텐츠 대량 생산",
+        "이메일 캠페인 → 브랜드 톤 설정 후 '뉴스레터 시리즈 3편' 한번에 생성",
+        "랜딩페이지 → '전환율 높은 랜딩페이지 헤드라인 10개' 요청 후 A/B 테스트"
       ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://www.make.com" },
-        { "label": "AI 에이전트", "url": "https://www.make.com/en/ai-agents" }
-      ]
-    },
-    {
-      "id": "n8n",
-      "name": "n8n",
-      "category": "automation",
-      "categoryLabel": "자동화",
-      "bestFor": "내 서버에서 무제한 자동화를 돌리고, AI 에이전트도 직접 만들고 싶을 때",
-      "url": "https://n8n.io",
-      "pricing": "셀프호스팅 무료 (무제한) / 클라우드 Starter €24/월~",
-      "praisedKeywords": [
-        "오픈소스, 셀프호스팅 시 무제한 무료",
-        "내장 AI 에이전트 빌더 (메모리·도구·가드레일)",
-        "400개 이상 연동 + 자연어로 워크플로 생성",
-        "데이터가 내 서버에만 저장 (프라이버시)"
-      ],
-      "criticizedKeywords": [
-        "셀프호스팅은 서버 관리 지식 필요",
-        "클라우드 요금이 상대적으로 높음",
-        "초기 설정이 Zapier보다 복잡"
-      ],
-      "howToStart": [
-        "n8n.io 접속 → 클라우드 무료 체험 시작 (또는 Docker로 셀프호스팅 설치)",
-        "AI 워크플로 빌더에서 자연어로 원하는 작업 설명 → 자동 시나리오 생성",
-        "비주얼 편집기에서 AI 에이전트 노드를 추가하고, LLM 모델 연결 후 실행"
-      ],
-      "usageTips": [
-        "사내 챗봇 만들 때 → AI 에이전트 노드에 회사 문서 연결해서 맞춤 답변 봇 구축",
-        "민감 데이터 처리 → 셀프호스팅으로 데이터가 외부로 나가지 않는 자동화 구축",
-        "비용 절약할 때 → 무제한 실행 가능한 셀프호스팅으로 대량 작업 자동화"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://n8n.io" },
-        { "label": "GitHub", "url": "https://github.com/n8n-io/n8n" },
-        { "label": "요금제", "url": "https://n8n.io/pricing/" }
-      ]
-    },
-    {
-      "id": "openclaw",
-      "name": "OpenClaw",
-      "category": "agent",
-      "categoryLabel": "AI 에이전트",
-      "bestFor": "텔레그램·WhatsApp 등 메신저에서 나만의 AI 비서를 만들고 싶을 때",
-      "url": "https://openclaw.ai",
-      "pricing": "완전 무료 (오픈소스, 자체 API 키 사용)",
-      "praisedKeywords": [
-        "GitHub 22만+ 스타, 가장 인기 있는 오픈소스 AI 에이전트",
-        "WhatsApp·텔레그램·Discord 등 20개 이상 플랫폼 연동",
-        "로컬 실행으로 데이터 프라이버시 보장",
-        "MIT 라이선스, 커뮤니티 스킬 확장 가능"
-      ],
-      "criticizedKeywords": [
-        "보안 위험: AI가 명령을 무시하고 이메일 삭제 등 폭주 사례 발생",
-        "초기 설치·설정이 복잡 (Docker, API 키 직접 구성)",
-        "컨텍스트 윈도우 한계로 안전 지시 유실 가능"
-      ],
-      "howToStart": [
-        "github.com/openclaw/openclaw에서 저장소 클론 → Docker로 설치",
-        "사용할 AI 모델의 API 키를 발급받아 설정 파일에 입력",
-        "텔레그램 또는 Discord 봇 토큰을 연결하여 메신저에서 대화 시작"
-      ],
-      "usageTips": [
-        "팀 비서 만들 때 → 텔레그램 그룹에 봇 추가해서 일정·할 일 관리 자동화",
-        "고객 응대할 때 → WhatsApp에 AI 비서 연결해서 FAQ 자동 답변 처리",
-        "개인 비서로 활용 → Discord에 봇 만들어 뉴스 요약·리마인더 등 맞춤 기능 구성"
-      ],
-      "references": [
-        { "label": "공식 사이트", "url": "https://openclaw.ai" },
-        { "label": "GitHub", "url": "https://github.com/openclaw/openclaw" },
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/OpenClaw" }
-      ]
+      "trending": false
     },
     {
       "id": "midjourney",
       "name": "Midjourney",
       "category": "image",
-      "categoryLabel": "이미지/디자인",
+      "categoryLabel": "이미지 생성",
       "bestFor": "텍스트 설명만으로 고품질 예술적 이미지를 만들고 싶을 때",
       "url": "https://www.midjourney.com",
-      "pricing": "Basic $10/월 / Standard $30/월 / Pro $60/월 (연간 20% 할인)",
+      "difficulty": "보통",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": false,
+        "free_tier": "무료 없음",
+        "paid_from": "월 $10"
+      },
+      "fit_reasons": {
+        "beginner": "웹 앱에서 간단히 텍스트 입력만으로 시작 가능",
+        "work": "브랜딩·마케팅 시안을 빠르게 만들 수 있어요",
+        "free_only": "무료 플랜이 없어서 유료 결제 필요",
+        "today": "구독 후 바로 이미지 생성 시작 가능",
+        "study": "미술·디자인 수업에서 컨셉 시안을 빠르게 만들어볼 수 있어요",
+        "hobby": "개인 작품, 배경화면, 굿즈 디자인 등 창작 활동에 최적",
+        "business": "브랜딩·광고 시안을 빠르게 만들어 의사결정에 활용 가능",
+        "team": "디자인팀과 시안 공유 후 방향성 논의에 활용 가능"
+      },
+      "first_step": {
+        "action": "midjourney.com 구독 후 웹앱 접속",
+        "prompt_example": "\"a cozy cafe in autumn, watercolor style\" 입력"
+      },
       "praisedKeywords": [
-        "업계 최고 수준의 이미지 품질",
-        "V7 모델 — 텍스트, 손, 질감 표현이 크게 향상",
-        "드래프트 모드로 10배 빠른 초안 생성",
-        "웹 앱 + Discord 모두 지원",
-        "개인화(Personalization) 기능으로 내 취향 반영"
+        "최고 품질 이미지",
+        "예술적 스타일",
+        "빠른 초안 생성",
+        "스타일 다양성",
+        "개인화 취향 반영"
       ],
       "criticizedKeywords": [
-        "무료 플랜 없음 — 반드시 구독 필요",
-        "비공개 모드는 Pro 이상만 가능",
-        "프롬프트 작성 학습 필요"
+        "무료 플랜 없음",
+        "프롬프트 학습 필요",
+        "생성 이미지 저작권 확인 필요"
       ],
       "howToStart": [
-        "midjourney.com 접속 → 계정 생성 후 구독 플랜 선택 (Basic $10/월부터)",
+        "midjourney.com 접속 → 구독 플랜 선택 (Basic $10/월부터)",
         "웹 앱에서 프롬프트 입력 (예: 'a cozy cafe in autumn, watercolor style')",
-        "생성된 이미지 중 마음에 드는 것을 선택하고 업스케일·변형 적용"
-      ],
-      "usageTips": [
-        "브랜딩 작업할 때 → 로고·키비주얼 시안을 다양한 스타일로 빠르게 생성해 비교",
-        "블로그 썸네일 만들 때 → 글 주제에 맞는 아트워크를 프롬프트 한 줄로 생성",
-        "제품 목업 필요할 때 → 'product photography style'로 실제 촬영 없이 이미지 제작"
+        "생성된 이미지 중 마음에 드는 것을 선택하고 변형 적용"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://www.midjourney.com" },
-        { "label": "요금제 비교", "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://www.midjourney.com"
+        }
+      ],
+      "usageTips": [
+        "브랜딩 → '미니멀한 로고 컨셉 5가지 스타일' 생성 후 팀 투표로 방향 결정",
+        "유튜브 썸네일 → 영상 주제 키워드로 눈길 끄는 커버 이미지 빠르게 제작",
+        "굿즈 디자인 → 'sticker sheet style' 프롬프트로 스티커·엽서 원본 이미지 생성"
+      ],
+      "trending": false
     },
     {
-      "id": "nano_banana",
-      "name": "Nano Banana",
+      "id": "dalle",
+      "name": "DALL-E 3",
       "category": "image",
-      "categoryLabel": "이미지/디자인",
-      "bestFor": "대화하듯 이미지를 생성·편집하고 싶을 때 (Google Gemini 기반)",
-      "url": "https://gemini.google/overview/image-generation/",
-      "pricing": "무료 (일 2장, 워터마크) / Google AI Pro $19.99/월 (~일 100장) / Ultra $99.99/월",
+      "categoryLabel": "이미지 생성",
+      "bestFor": "ChatGPT 안에서 대화하듯 이미지를 바로 만들고 싶을 때",
+      "url": "https://openai.com/dall-e-3",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "ChatGPT 무료 플랜 포함 (제한적)",
+        "paid_from": "ChatGPT Plus 월 $20"
+      },
+      "fit_reasons": {
+        "beginner": "ChatGPT에서 '그림 그려줘'라고만 해도 바로 생성돼요",
+        "work": "문서 작업 중 삽화·아이콘이 필요할 때 바로 만들 수 있어요",
+        "free_only": "ChatGPT 무료 플랜에서도 제한적으로 사용 가능",
+        "today": "ChatGPT 계정만 있으면 지금 바로 생성 가능",
+        "study": "발표 자료에 넣을 삽화를 대화하듯 바로 만들 수 있어요",
+        "hobby": "프로필 이미지, 카카오톡 이모티콘 스타일 그림 만들기에 재미있어요",
+        "business": "마케팅 소재, 블로그 삽화를 빠르게 만들어 비용 절감 가능",
+        "team": "ChatGPT 팀 플랜에서 팀원 모두 이미지 생성 활용 가능"
+      },
+      "first_step": {
+        "action": "ChatGPT 열기",
+        "prompt_example": "\"귀여운 고양이가 커피 마시는 그림 그려줘\" 입력"
+      },
       "praisedKeywords": [
-        "LMArena에서 500만 투표로 1위 — 바이럴 화제",
-        "사진처럼 사실적인 이미지 생성",
-        "대화형 편집 — 낙서·클릭으로 수정 가능",
-        "다국어 텍스트 렌더링 지원",
-        "Gemini 앱에서 바로 사용 가능"
+        "ChatGPT 통합",
+        "한국어 프롬프트 지원",
+        "텍스트 삽입 가능",
+        "대화형 수정 가능",
+        "빠른 생성 속도"
       ],
       "criticizedKeywords": [
-        "무료 티어는 저해상도 + 워터마크",
-        "고해상도(4K)는 유료 플랜 필요",
-        "Google 계정 필수"
+        "Midjourney보다 예술성 낮음",
+        "스타일 다양성 제한",
+        "세밀한 스타일 조절 어려움"
       ],
       "howToStart": [
-        "gemini.google.com 접속 → Google 계정으로 로그인",
-        "채팅창에 원하는 이미지를 설명 (예: '가을 공원에서 책 읽는 고양이 그려줘')",
-        "생성된 이미지에 대화로 수정 요청 (예: '배경을 밤으로 바꿔줘') 또는 낙서로 편집"
-      ],
-      "usageTips": [
-        "SNS 콘텐츠 만들 때 → 사진풍 이미지 생성 후 '텍스트 추가해줘' 대화로 편집",
-        "기존 사진 편집할 때 → 이미지 업로드 후 '배경을 해변으로 바꿔줘' 한마디로 수정",
-        "한국어 텍스트 이미지 → '한글 간판' 등 다국어 텍스트가 들어간 이미지 생성"
+        "chat.openai.com 접속 → 무료 계정 로그인",
+        "채팅창에 '그림 그려줘 + 원하는 내용' 입력",
+        "생성된 이미지 다운로드 또는 수정 요청"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://gemini.google/overview/image-generation/" },
-        { "label": "Google DeepMind", "url": "https://deepmind.google/models/gemini-image/" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://openai.com/dall-e-3"
+        }
+      ],
+      "usageTips": [
+        "발표 자료 → 슬라이드에 넣을 개념 일러스트를 '설명 그림 그려줘'로 바로 생성",
+        "SNS 콘텐츠 → '귀여운 캐릭터가 커피 마시는 그림' 같은 감성 이미지 빠르게 제작",
+        "블로그 헤더 → 글 주제에 맞는 이미지를 매번 검색 대신 AI로 바로 생성"
+      ],
+      "trending": false
     },
     {
-      "id": "v0",
-      "name": "v0.dev",
+      "id": "ideogram",
+      "name": "Ideogram",
       "category": "image",
-      "categoryLabel": "이미지/UI",
-      "bestFor": "텍스트 설명만으로 웹 UI 컴포넌트를 즉시 코드로 만들고 싶을 때",
-      "url": "https://v0.app",
-      "pricing": "무료 ($5 크레딧/월) / Premium $20/월 / Team $30/사용자/월",
+      "categoryLabel": "이미지 생성",
+      "bestFor": "이미지 안에 텍스트(글자)가 정확하게 들어가야 할 때",
+      "url": "https://ideogram.ai",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (10장/일)",
+        "paid_from": "월 $8"
+      },
+      "fit_reasons": {
+        "beginner": "무료로 바로 시작할 수 있고 인터페이스가 간단해요",
+        "work": "로고, 배너, 카드 뉴스 등 텍스트가 있는 이미지 제작에 최적",
+        "free_only": "무료 플랜으로 하루 10장 생성 가능해요",
+        "today": "가입 후 바로 이미지 생성 시작 가능",
+        "study": "과제 포스터, 발표 자료에 텍스트 포함된 이미지 만들기에 최적",
+        "hobby": "생일 카드, 초대장 등 텍스트가 들어간 디자인 만들기 재미있어요",
+        "business": "로고·배너·카드뉴스 등 텍스트 포함 마케팅 소재 제작에 강해요",
+        "team": "디자이너 없이도 팀 내 간단한 디자인 소재 자체 제작 가능"
+      },
+      "first_step": {
+        "action": "ideogram.ai 접속 후 로그인",
+        "prompt_example": "\"AI 강의 포스터, 제목: AI 입문\" 입력"
+      },
       "praisedKeywords": [
-        "텍스트로 설명하면 React 코드 자동 생성",
-        "Figma 디자인 파일 가져오기 지원",
-        "디자인 모드로 코드 없이 시각적 편집",
-        "Vercel 원클릭 배포 + GitHub 연동",
-        "shadcn/ui + Tailwind CSS 기반 깔끔한 코드"
+        "텍스트 렌더링 정확",
+        "포스터·배너 최적",
+        "무료 플랜 여유롭",
+        "다양한 스타일 프리셋",
+        "빠른 생성 속도"
       ],
       "criticizedKeywords": [
-        "토큰 기반 과금 — 사용량 예측이 어려움",
-        "React/Next.js 외 프레임워크 제한",
-        "복잡한 비즈니스 로직 구현에는 한계"
+        "예술적 스타일은 Midjourney에 미치지 못함",
+        "복잡한 장면 구성 한계",
+        "한국어 텍스트 정확도 가끔 아쉬움"
       ],
       "howToStart": [
-        "v0.app 접속 → 무료 계정 생성 ($5 크레딧 제공)",
-        "프롬프트에 원하는 UI 설명 (예: '다크 모드 대시보드 사이드바 만들어줘')",
-        "생성된 컴포넌트를 디자인 모드에서 수정 → Vercel로 바로 배포"
-      ],
-      "usageTips": [
-        "랜딩페이지 빠르게 → '가격표 섹션 만들어줘' 요청으로 즉시 React 코드 생성",
-        "Figma 시안 구현할 때 → 디자인 파일 가져와서 실제 코드로 자동 변환",
-        "디자인 시스템 구축 → 반복 사용할 컴포넌트를 생성해서 프로젝트에 바로 복사"
+        "ideogram.ai 접속 → 구글 계정으로 무료 가입",
+        "원하는 이미지와 포함될 텍스트를 프롬프트에 입력",
+        "스타일(사진/일러스트/포스터 등) 선택 후 생성"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://v0.app" },
-        { "label": "요금제", "url": "https://v0.app/pricing" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://ideogram.ai"
+        }
+      ],
+      "usageTips": [
+        "카드뉴스 → '인포그래픽 스타일, 제목: AI 활용 팁 5가지' 입력으로 즉시 생성",
+        "초대장 → '생일 파티 초대장, 날짜: 3월 15일' 입력하면 텍스트 정확히 포함된 이미지 생성",
+        "유튜브 썸네일 → 제목 텍스트가 정확히 들어간 썸네일 이미지 만들기"
+      ],
+      "trending": true
     },
     {
       "id": "firefly",
       "name": "Adobe Firefly",
       "category": "image",
-      "categoryLabel": "이미지/디자인",
-      "bestFor": "상업적으로 안전한 AI 이미지를 생성하고 Adobe 도구와 함께 쓰고 싶을 때",
+      "categoryLabel": "이미지 생성",
+      "bestFor": "상업적으로 안전한 AI 이미지 생성 + Adobe 도구 연동",
       "url": "https://www.adobe.com/products/firefly.html",
-      "pricing": "무료 체험 / Standard $9.99/월 (2,000 크레딧) / Pro $19.99/월 (4,000 크레딧)",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 체험 (크레딧 제한)",
+        "paid_from": "월 약 $10"
+      },
+      "fit_reasons": {
+        "beginner": "Photoshop과 연동되어 편집까지 이어서 가능",
+        "work": "상업용 콘텐츠 제작에 저작권 걱정 없이 사용 가능",
+        "free_only": "무료 체험으로 기본 기능 확인 가능",
+        "today": "Adobe 계정으로 바로 시작 가능",
+        "study": "디자인 수업에서 Photoshop과 연계한 AI 이미지 편집 실습 가능",
+        "hobby": "사진 편집, 합성, 배경 변경 등 창작 작업에 활용 가능",
+        "business": "상업용 이미지를 저작권 걱정 없이 마케팅에 바로 사용 가능",
+        "team": "Creative Cloud 팀 플랜으로 디자인팀 전체가 활용 가능"
+      },
+      "first_step": {
+        "action": "firefly.adobe.com 접속",
+        "prompt_example": "\"봄 분위기 마케팅 배너 이미지\" 입력"
+      },
       "praisedKeywords": [
-        "상업적 사용이 안전한 학습 데이터",
-        "Photoshop·Illustrator 등 Creative Cloud 통합",
-        "텍스트→이미지, 텍스트→비디오, 음향 효과 생성",
-        "Google·OpenAI·ElevenLabs 파트너 모델 연동",
-        "무제한 기본 이미지 생성 (유료 플랜)"
+        "상업 사용 안전",
+        "Photoshop 통합",
+        "다양한 생성 유형",
+        "생성형 채우기(배경 확장)",
+        "텍스트 효과 생성"
       ],
       "criticizedKeywords": [
-        "프리미엄 기능(비디오 등)은 크레딧 소진이 빠름",
-        "독립 사용보다 Adobe 생태계 안에서 가치가 큼",
-        "무료 티어 기능이 매우 제한적"
+        "크레딧 소진 빠름",
+        "Adobe 생태계 외에서 활용 제한",
+        "Adobe 구독 없이는 활용 범위 제한"
       ],
       "howToStart": [
         "adobe.com/products/firefly 접속 → Adobe 계정으로 무료 체험 시작",
         "'텍스트로 이미지 생성'에서 원하는 이미지 설명 입력",
         "생성된 이미지를 Photoshop으로 보내 세부 편집하거나 바로 다운로드"
       ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.adobe.com/products/firefly.html"
+        }
+      ],
       "usageTips": [
-        "상업용 이미지 필요할 때 → 저작권 걱정 없이 마케팅·광고 소재 바로 생성",
-        "Photoshop 작업 중 → 생성형 채우기로 배경 확장·객체 제거를 AI가 자동 처리",
-        "배너 디자인할 때 → 텍스트 효과 + AI 이미지 결합해서 광고 소재 빠르게 제작"
+        "제품 사진 → 촬영 없이 AI로 제품 배경 변경·합성해서 광고 소재 제작",
+        "배너 디자인 → '봄 시즌 세일 배너' 생성 후 Photoshop에서 로고·텍스트 추가",
+        "사진 복원 → 오래된 사진 업로드 후 생성형 채우기로 손상 부분 자동 복원"
+      ],
+      "trending": false
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "category": "video",
+      "categoryLabel": "영상 만들기",
+      "bestFor": "텍스트나 이미지로 AI 영상을 만들고 편집하고 싶을 때",
+      "url": "https://runwayml.com",
+      "difficulty": "보통",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (125 크레딧)",
+        "paid_from": "월 $12"
+      },
+      "fit_reasons": {
+        "beginner": "무료 크레딧으로 영상 생성 체험 가능",
+        "work": "제품 홍보·SNS 영상을 빠르게 만들 수 있어요",
+        "free_only": "무료 크레딧 125개로 짧은 영상 여러 개 만들어볼 수 있어요",
+        "today": "가입 후 바로 첫 영상 생성 시작 가능",
+        "study": "영상 제작 수업에서 AI 영상 생성 실습 도구로 활용 가능",
+        "hobby": "개인 창작 영상, 뮤직비디오, 아트 프로젝트에 활용 가능",
+        "business": "제품 홍보·광고 영상을 촬영 없이 빠르게 제작 가능",
+        "team": "팀에서 스토리보드를 AI 영상으로 미리 검증 가능"
+      },
+      "first_step": {
+        "action": "runwayml.com 접속 후 Text to Video 선택",
+        "prompt_example": "\"a cat walking in a sunlit garden\" 입력"
+      },
+      "praisedKeywords": [
+        "최고 수준 AI 영상",
+        "텍스트→영상",
+        "이미지→영상",
+        "카메라 움직임 제어",
+        "캐릭터 일관성 유지"
+      ],
+      "criticizedKeywords": [
+        "크레딧 소진 빠름",
+        "고품질일수록 비용 높음",
+        "긴 영상(30초+) 제작 한계"
+      ],
+      "howToStart": [
+        "runwayml.com 접속 → 무료 계정 생성 (125 크레딧 제공)",
+        "Text to Video에서 원하는 장면 설명",
+        "Gen-4 Turbo(저비용)로 먼저 시험 → 마음에 들면 고품질 생성"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://www.adobe.com/products/firefly.html" },
-        { "label": "요금제 비교", "url": "https://www.adobe.com/products/firefly/plans.html" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://runwayml.com"
+        }
+      ],
+      "usageTips": [
+        "광고 소재 → 제품 이미지 업로드 후 '360도 회전 영상' 요청으로 홍보 클립 생성",
+        "SNS 릴스 → '해변 노을 장면' 텍스트로 5초 영상 만들어 배경 클립으로 활용",
+        "스토리보드 검증 → 각 장면을 AI 영상으로 만들어 전체 흐름 미리 확인"
+      ],
+      "trending": true
+    },
+    {
+      "id": "pika",
+      "name": "Pika",
+      "category": "video",
+      "categoryLabel": "영상 만들기",
+      "bestFor": "이미지 또는 텍스트로 짧은 AI 영상 클립을 빠르게 만들 때",
+      "url": "https://pika.art",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (월 150 크레딧)",
+        "paid_from": "월 $8"
+      },
+      "fit_reasons": {
+        "beginner": "무료로 시작할 수 있고 인터페이스가 직관적이에요",
+        "work": "SNS 숏폼 콘텐츠용 짧은 영상 제작에 적합",
+        "free_only": "무료 150 크레딧으로 여러 영상 체험 가능",
+        "today": "가입 후 바로 영상 생성 시작 가능",
+        "study": "미디어 수업에서 AI 영상 생성 입문 도구로 적합해요",
+        "hobby": "사진에 움직임을 넣어 재미있는 숏폼 만들기에 좋아요",
+        "business": "SNS 숏폼 광고·콘텐츠를 저비용으로 빠르게 제작 가능",
+        "team": "팀원들이 쉽게 사용할 수 있어 영상 제작 진입장벽 낮춤"
+      },
+      "first_step": {
+        "action": "pika.art 접속 후 이미지 업로드 또는 텍스트 입력",
+        "prompt_example": "사진 업로드 후 \"살짝 움직이게 해줘\" 입력"
+      },
+      "praisedKeywords": [
+        "사진→영상 변환",
+        "무료 플랜 여유롭",
+        "빠른 생성 속도",
+        "직관적 인터페이스",
+        "Lip Sync 기능"
+      ],
+      "criticizedKeywords": [
+        "긴 영상 제작 한계",
+        "Runway보다 품질 낮음",
+        "고해상도 영상은 유료"
+      ],
+      "howToStart": [
+        "pika.art 접속 → 무료 계정 생성",
+        "이미지를 업로드하거나 텍스트로 장면 설명",
+        "생성된 영상 다운로드 또는 SNS 공유"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://pika.art"
+        }
+      ],
+      "usageTips": [
+        "인스타 릴스 → 제품 사진 업로드 후 '살짝 움직이게' 해서 눈길 끄는 숏폼 제작",
+        "밈 만들기 → 사진에 Lip Sync 적용해서 재미있는 말하는 영상 생성",
+        "썸네일 → 정적 이미지를 살짝 애니메이션화해서 GIF 형태로 활용"
+      ],
+      "trending": false
+    },
+    {
+      "id": "capcut_ai",
+      "name": "CapCut AI",
+      "category": "video",
+      "categoryLabel": "영상 만들기",
+      "bestFor": "스마트폰에서 AI 자동 편집으로 SNS 영상을 빠르게 만들 때",
+      "url": "https://www.capcut.com",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (기본 기능 충분)",
+        "paid_from": "월 $9.99"
+      },
+      "fit_reasons": {
+        "beginner": "모바일 앱으로 누구나 쉽게 시작 가능하고 자동 편집 기능이 많아요",
+        "work": "마케팅용 숏폼 영상을 빠르게 제작할 수 있어요",
+        "free_only": "무료로도 핵심 편집 기능 모두 사용 가능해요",
+        "today": "앱 설치 후 바로 첫 영상 편집 시작 가능",
+        "study": "학교 발표 영상, 프로젝트 영상 편집을 스마트폰으로 가능해요",
+        "hobby": "일상 브이로그, 여행 영상을 AI가 자동 편집해줘서 편해요",
+        "business": "마케팅용 숏폼 콘텐츠를 앱 하나로 빠르게 제작·배포 가능",
+        "team": "팀원 누구나 스마트폰으로 영상 편집 가능해서 교육 비용 절감"
+      },
+      "first_step": {
+        "action": "CapCut 앱 설치 후 '자동 편집' 선택",
+        "prompt_example": "영상 클립 선택 후 '스타일' 적용 탭 누르기"
+      },
+      "praisedKeywords": [
+        "모바일 편집 최적",
+        "AI 자동 편집",
+        "자막 자동 생성",
+        "무료 기능 풍부",
+        "틱톡 최적화 템플릿"
+      ],
+      "criticizedKeywords": [
+        "중국 기업 운영 (데이터 우려)",
+        "PC 버전 기능 제한",
+        "고급 색보정 기능 부족"
+      ],
+      "howToStart": [
+        "스마트폰에서 CapCut 앱 설치 → 무료 계정 생성",
+        "영상 소재 업로드 → AI 자동 편집 또는 템플릿 선택",
+        "자막 자동 생성 + 음악 추가 후 내보내기"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.capcut.com"
+        }
+      ],
+      "usageTips": [
+        "틱톡/릴스 → 촬영 클립 선택 후 AI 자동 편집으로 30초 숏폼 원클릭 완성",
+        "강의 영상 → 화면 녹화 후 자동 자막 + 배경음 추가로 교육 콘텐츠 제작",
+        "제품 리뷰 → 제품 촬영 영상에 텍스트·전환 효과 자동 적용해서 빠르게 편집"
+      ],
+      "trending": false
+    },
+    {
+      "id": "suno",
+      "name": "Suno",
+      "category": "music",
+      "categoryLabel": "음악 만들기",
+      "bestFor": "텍스트 가사나 장르만 입력하면 완성된 노래를 만들어줄 때",
+      "url": "https://suno.com",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (하루 50 크레딧, 약 10곡)",
+        "paid_from": "월 $8"
+      },
+      "fit_reasons": {
+        "beginner": "음악 지식 없이도 장르와 가사만 입력하면 완성곡이 나와요",
+        "work": "영상 배경음악, 광고 음악을 빠르게 제작할 수 있어요",
+        "free_only": "무료로 하루 10곡까지 만들 수 있어요",
+        "today": "가입 후 30초 안에 첫 번째 곡 생성 가능",
+        "study": "음악 수업에서 작곡·편곡 실험 도구로 활용 가능해요",
+        "hobby": "취미로 나만의 노래를 만들어보는 재미가 있어요",
+        "business": "광고·유튜브 배경음악을 직접 만들어 비용 절감 가능",
+        "team": "팀 프로젝트 영상에 맞춤 배경음악을 빠르게 제작 가능"
+      },
+      "first_step": {
+        "action": "suno.com 접속 후 로그인",
+        "prompt_example": "\"봄날 산책하는 기분의 밝은 팝 노래\" 입력"
+      },
+      "praisedKeywords": [
+        "완성곡 바로 생성",
+        "다양한 장르",
+        "가사 자동 작성",
+        "무료 크레딧 넉넉",
+        "한국어 가사 지원"
+      ],
+      "criticizedKeywords": [
+        "저작권 불명확",
+        "상업 사용 유의 필요",
+        "음질 가끔 아쉬움",
+        "같은 프롬프트도 결과물 편차 큼"
+      ],
+      "howToStart": [
+        "suno.com 접속 → Google/Discord 계정으로 로그인",
+        "원하는 분위기와 장르를 텍스트로 입력 (예: '밝은 팝, 봄날 소풍')",
+        "생성된 곡 중 마음에 드는 것 선택 후 다운로드"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://suno.com"
+        }
+      ],
+      "usageTips": [
+        "유튜브 브이로그 → '잔잔한 어쿠스틱 기타 배경음악 2분' 요청으로 무료 배경음 확보",
+        "이벤트 축하곡 → '생일 축하 노래, 밝은 팝, 받는 사람 이름 포함' 입력으로 맞춤 곡 제작",
+        "광고 징글 → '15초 밝은 전자음악' 요청으로 광고용 짧은 음악 생성"
+      ],
+      "trending": true
+    },
+    {
+      "id": "udio",
+      "name": "Udio",
+      "category": "music",
+      "categoryLabel": "음악 만들기",
+      "bestFor": "고품질 AI 음악을 만들고 세밀하게 편집하고 싶을 때",
+      "url": "https://www.udio.com",
+      "difficulty": "보통",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (월 200 크레딧)",
+        "paid_from": "월 $10"
+      },
+      "fit_reasons": {
+        "beginner": "무료로 시작할 수 있고 Suno와 유사한 방식",
+        "work": "배경 음악 제작 시 세밀한 조정이 가능해요",
+        "free_only": "무료 200 크레딧으로 여러 곡 체험 가능",
+        "today": "가입 후 바로 음악 생성 시작 가능",
+        "study": "음악 이론 학습 시 다양한 장르의 곡을 직접 만들어보며 실습 가능",
+        "hobby": "더 세밀한 편집으로 완성도 높은 음악 창작이 가능해요",
+        "business": "특정 구간 확장·편집이 가능해서 정확한 길이의 상업 음악 제작 가능",
+        "team": "팀 프로젝트 영상에 맞는 길이·분위기의 음악을 정밀 조정 가능"
+      },
+      "first_step": {
+        "action": "udio.com 접속 후 로그인",
+        "prompt_example": "\"calm lo-fi study music\" 입력"
+      },
+      "praisedKeywords": [
+        "높은 음질",
+        "세밀한 편집 옵션",
+        "구간 추가·확장 가능",
+        "장르 혼합 가능",
+        "음악 확장(extend) 기능"
+      ],
+      "criticizedKeywords": [
+        "Suno보다 직관성 낮음",
+        "저작권 여전히 불명확",
+        "인터페이스가 영어 위주"
+      ],
+      "howToStart": [
+        "udio.com 접속 → 무료 계정 생성 (월 200 크레딧)",
+        "원하는 음악 스타일을 태그로 입력 후 생성",
+        "마음에 드는 구간을 선택해 확장하거나 다운로드"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.udio.com"
+        }
+      ],
+      "usageTips": [
+        "팟캐스트 인트로 → '10초 짧은 재즈 인트로' 생성 후 길이 정밀 조정",
+        "장르 실험 → '한국 트로트 + 일렉트로닉 믹스' 같은 독특한 장르 조합 시도",
+        "앱 알림음 → 짧은 사운드 생성 후 특정 구간만 잘라서 알림음으로 활용"
+      ],
+      "trending": false
+    },
+    {
+      "id": "soundraw",
+      "name": "Soundraw",
+      "category": "music",
+      "categoryLabel": "음악 만들기",
+      "bestFor": "영상·유튜브용 저작권 걱정 없는 배경음악을 만들 때",
+      "url": "https://soundraw.io",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": false,
+        "free_tier": "무료 체험 (다운로드 제한)",
+        "paid_from": "월 $16.99"
+      },
+      "fit_reasons": {
+        "beginner": "장르·분위기·길이만 선택하면 음악 자동 생성",
+        "work": "유튜브·광고용 음악 저작권 걱정 없이 사용 가능",
+        "free_only": "무료 체험으로 생성 기능 확인 가능 (다운로드는 유료)",
+        "today": "가입 후 5분 안에 첫 배경음악 생성 가능",
+        "study": "수업 발표 영상에 저작권 걱정 없는 배경음악을 바로 사용 가능",
+        "hobby": "유튜브 영상에 저작권 클레임 걱정 없는 배경음악을 쓸 수 있어요",
+        "business": "상업용 콘텐츠에 로열티 프리 음악을 합법적으로 사용 가능",
+        "team": "팀 구독으로 모든 팀원이 동일한 음악 라이브러리 활용 가능"
+      },
+      "first_step": {
+        "action": "soundraw.io 접속",
+        "prompt_example": "장르 'Pop', 분위기 'Happy', 길이 '2분' 선택"
+      },
+      "praisedKeywords": [
+        "저작권 안전",
+        "유튜브 사용 가능",
+        "길이·분위기 커스텀",
+        "BPM·구간별 편집 가능",
+        "무제한 다운로드 (유료)"
+      ],
+      "criticizedKeywords": [
+        "다운로드는 유료",
+        "Suno보다 창의성 낮음",
+        "보컬 음악 생성 불가"
+      ],
+      "howToStart": [
+        "soundraw.io 접속 → 무료 계정 생성",
+        "장르, 분위기, 길이, BPM 등 원하는 조건 선택",
+        "자동 생성된 음악 중 선택 후 구독하여 다운로드"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://soundraw.io"
+        }
+      ],
+      "usageTips": [
+        "유튜브 → 영상 분위기에 맞는 장르·BPM 설정해서 저작권 프리 배경음 확보",
+        "매장 BGM → 'Lounge, Calm, 60분' 설정으로 매장용 배경음악 플레이리스트 생성",
+        "광고 영상 → 정확히 30초 길이의 밝은 음악을 BPM 맞춰 생성"
+      ],
+      "trending": false
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "category": "voice",
+      "categoryLabel": "음성·보이스",
+      "bestFor": "사람처럼 자연스러운 AI 음성을 만들거나 내 목소리를 복제하고 싶을 때",
+      "url": "https://elevenlabs.io",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (월 10,000자)",
+        "paid_from": "월 $5"
+      },
+      "fit_reasons": {
+        "beginner": "텍스트 입력하면 바로 음성 파일 생성, 어려운 설정 없어요",
+        "work": "교육 콘텐츠, 안내 음성, 광고 나레이션 제작에 최적",
+        "free_only": "무료로 월 10,000자 음성 생성 가능해요",
+        "today": "가입 후 바로 첫 음성 생성 가능",
+        "study": "외국어 학습 콘텐츠, 강의 오디오를 AI 음성으로 제작 가능",
+        "hobby": "오디오북, 팟캐스트, 더빙 등 음성 창작에 활용 가능",
+        "business": "광고 나레이션, 안내 음성, 다국어 더빙으로 비용 절감",
+        "team": "팀 공유 음성 라이브러리로 일관된 브랜드 보이스 유지"
+      },
+      "first_step": {
+        "action": "elevenlabs.io 접속 후 로그인",
+        "prompt_example": "텍스트 입력창에 읽을 내용 붙여넣고 음성 선택"
+      },
+      "praisedKeywords": [
+        "업계 최고 자연스러움",
+        "70개 이상 언어",
+        "목소리 복제 가능",
+        "실시간 음성 변환",
+        "감정 표현 조절"
+      ],
+      "criticizedKeywords": [
+        "목소리 복제는 유료",
+        "상업 라이선스 Starter 이상",
+        "한국어 음성은 영어보다 자연스러움이 떨어짐"
+      ],
+      "howToStart": [
+        "elevenlabs.io 접속 → 무료 계정 생성 (10,000자 무료)",
+        "텍스트 입력 → 다양한 AI 음성 중 선택하여 미리 듣기",
+        "마음에 드는 음성으로 생성 후 다운로드"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://elevenlabs.io"
+        }
+      ],
+      "usageTips": [
+        "온라인 강의 → 강의 스크립트를 AI 음성으로 녹음해서 영상에 삽입",
+        "다국어 서비스 → 한국어 영상을 AI 더빙으로 영어·일본어 버전 자동 생성",
+        "오디오북 → 소설 텍스트를 업로드하면 자연스러운 낭독 음성으로 변환"
+      ],
+      "trending": false
     },
     {
       "id": "descript",
       "name": "Descript",
-      "category": "video",
-      "categoryLabel": "영상/보이스",
-      "bestFor": "텍스트 편집하듯 영상·팟캐스트를 쉽게 편집하고 싶을 때",
+      "category": "voice",
+      "categoryLabel": "음성·보이스",
+      "bestFor": "영상·팟캐스트를 텍스트 편집하듯 쉽게 편집하고 싶을 때",
       "url": "https://www.descript.com",
-      "pricing": "무료 (제한적) / Hobbyist $24/월 / Creator $35/월 / Business $65/월",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (제한적)",
+        "paid_from": "월 $24"
+      },
+      "fit_reasons": {
+        "beginner": "텍스트 삭제하면 영상도 자동 편집되어 영상 편집 경험 없어도 돼요",
+        "work": "팟캐스트, 강의 영상 편집에 시간을 크게 줄일 수 있어요",
+        "free_only": "무료 플랜으로 기본 편집 기능 사용 가능",
+        "today": "파일 업로드 후 5분 안에 첫 편집 시작 가능",
+        "study": "강의 녹음 편집, 팟캐스트 제작 등 학업 콘텐츠 편집에 최적",
+        "hobby": "개인 팟캐스트, 유튜브 영상 편집을 전문 도구 없이 가능",
+        "business": "마케팅 영상·팟캐스트를 빠르게 편집해서 콘텐츠 생산 속도 향상",
+        "team": "팀 프로젝트로 여러 사람이 동시에 영상 편집 가능"
+      },
+      "first_step": {
+        "action": "descript.com 접속 후 영상 또는 오디오 업로드",
+        "prompt_example": "파일 업로드 후 자동 변환된 텍스트에서 불필요한 부분 삭제"
+      },
       "praisedKeywords": [
-        "텍스트 기반 편집 — 문장 삭제하면 영상도 삭제",
-        "자동 자막 생성 (23개 언어, 95% 정확도)",
-        "AI 배경 소음 제거 + 스튜디오 음질 향상",
-        "필러 단어(음, 어) 자동 제거",
-        "로열티 프리 미디어 라이브러리 내장"
+        "텍스트 기반 편집",
+        "자동 자막 생성",
+        "배경 소음 제거",
+        "필러 단어 자동 제거",
+        "화면 녹화 내장"
       ],
       "criticizedKeywords": [
-        "전문 영상 편집에는 기능이 부족",
-        "긴 영상(30분+) 내보내기 속도가 느림",
-        "모바일 앱 없음 — PC/Mac에서만 사용"
+        "전문 편집에는 기능 부족",
+        "모바일 앱 없음",
+        "긴 영상 내보내기 속도 느림"
       ],
       "howToStart": [
         "descript.com 접속 → 무료 계정 생성",
         "영상 또는 오디오 파일 업로드 → 자동 텍스트 변환 완료",
         "텍스트를 편집하면 영상이 자동으로 따라 편집됨 → 내보내기"
       ],
-      "usageTips": [
-        "유튜브 영상 편집 → 텍스트에서 '음', '어' 삭제하면 영상도 자동 컷 편집",
-        "팟캐스트 제작할 때 → 녹음 후 배경 소음 제거 + 스튜디오 음질로 자동 향상",
-        "자막 필요할 때 → 영상 올리면 23개 언어 자동 자막 생성 후 바로 내보내기"
-      ],
       "references": [
-        { "label": "공식 사이트", "url": "https://www.descript.com" },
-        { "label": "요금제", "url": "https://www.descript.com/pricing" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://www.descript.com"
+        }
+      ],
+      "usageTips": [
+        "팟캐스트 → 녹음 후 '음, 어' 필러 단어 원클릭 제거로 깔끔한 오디오 완성",
+        "유튜브 → 영상 업로드 후 텍스트에서 불필요한 부분 삭제하면 영상 자동 편집",
+        "회의 요약 → 회의 녹음을 업로드하면 자동 전사 → 핵심 부분만 남기고 편집"
+      ],
+      "trending": false
     },
     {
-      "id": "elevenlabs",
-      "name": "ElevenLabs",
-      "category": "video",
-      "categoryLabel": "영상/보이스",
-      "bestFor": "사람처럼 자연스러운 AI 음성을 만들거나 내 목소리를 복제하고 싶을 때",
-      "url": "https://elevenlabs.io",
-      "pricing": "무료 (10,000자/월) / Starter $5/월 / Creator $22/월 / Pro $99/월",
+      "id": "adobe_podcast",
+      "name": "Adobe Podcast (Enhance)",
+      "category": "voice",
+      "categoryLabel": "음성·보이스",
+      "bestFor": "녹음 품질을 스튜디오 수준으로 무료로 개선하고 싶을 때",
+      "url": "https://podcast.adobe.com",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (Enhance 기능)",
+        "paid_from": "Adobe Creative Cloud 포함"
+      },
+      "fit_reasons": {
+        "beginner": "파일 업로드만 하면 자동으로 음질 향상, 별도 설정 불필요",
+        "work": "발표 녹음, 팟캐스트, 온라인 강의 음질 개선에 무료로 사용 가능",
+        "free_only": "Enhance Speech 기능은 완전 무료로 사용 가능해요",
+        "today": "파일 업로드만 하면 바로 음질 향상된 파일 다운로드 가능",
+        "study": "수업 녹음, 발표 연습 녹음의 음질을 스튜디오급으로 향상 가능",
+        "hobby": "집에서 녹음한 팟캐스트·노래 연습 음질을 전문적으로 개선",
+        "business": "회의 녹음, 프레젠테이션 음성의 품질을 무료로 향상 가능",
+        "team": "팀원들이 각자 녹음한 파일의 음질을 일괄 향상 가능"
+      },
+      "first_step": {
+        "action": "podcast.adobe.com/enhance 접속",
+        "prompt_example": "녹음 파일 업로드 → '향상' 버튼 클릭"
+      },
       "praisedKeywords": [
-        "업계 최고 수준의 자연스러운 음성 합성",
-        "70개 이상 언어 지원 (한국어 포함)",
-        "음성 복제 — 내 목소리로 AI 음성 생성",
-        "AI 더빙 — 원본 목소리를 살려 다국어 변환",
-        "무료 티어로 바로 체험 가능"
+        "무료 음질 향상",
+        "배경 소음 완전 제거",
+        "사용 간단",
+        "드래그 앤 드롭 간편 사용"
       ],
       "criticizedKeywords": [
-        "고급 음성 복제는 유료 플랜 필요",
-        "크레딧 소진이 빠를 수 있음",
-        "상업 라이선스는 Starter 이상 필요"
+        "Adobe 계정 필요",
+        "고급 편집 기능은 유료",
+        "음성 외 소리(음악 등) 제거 시 왜곡 가능"
       ],
       "howToStart": [
-        "elevenlabs.io 접속 → 무료 계정 생성 (10,000자 무료 제공)",
-        "텍스트 입력 → 다양한 AI 음성 중 선택하여 미리 듣기",
-        "마음에 드는 음성으로 생성 후 다운로드, 또는 내 목소리 복제 시도"
-      ],
-      "usageTips": [
-        "교육 콘텐츠 만들 때 → 강의 스크립트를 자연스러운 AI 음성으로 변환해 영상에 삽입",
-        "글로벌 서비스 → AI 더빙으로 한국어 영상을 영어·일본어로 목소리 유지하며 변환",
-        "프로토타입 음성 UI → 앱 안내 멘트를 AI 음성으로 빠르게 만들어 테스트"
+        "podcast.adobe.com/enhance 접속 → Adobe 계정으로 로그인",
+        "음성 파일(MP3, WAV 등) 업로드",
+        "AI가 자동으로 배경 소음 제거 + 음질 향상 후 다운로드"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://elevenlabs.io" },
-        { "label": "요금제", "url": "https://elevenlabs.io/pricing" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://podcast.adobe.com"
+        }
+      ],
+      "usageTips": [
+        "카페에서 녹음 → 배경 소음 가득한 녹음 파일을 업로드하면 목소리만 깨끗하게 추출",
+        "온라인 강의 → 노트북 마이크로 녹음한 강의를 스튜디오 마이크 품질로 향상",
+        "인터뷰 → 전화 통화로 녹음한 인터뷰 음성을 깨끗하게 정리해서 콘텐츠로 활용"
+      ],
+      "trending": false
     },
     {
-      "id": "runway",
-      "name": "Runway",
-      "category": "video",
-      "categoryLabel": "영상/보이스",
-      "bestFor": "텍스트나 이미지로 AI 영상을 만들고 편집하고 싶을 때",
-      "url": "https://runwayml.com",
-      "pricing": "무료 (125 크레딧) / Standard $12/월 / Pro $28/월 / Unlimited $76/월",
+      "id": "lovable",
+      "name": "Lovable",
+      "category": "coding",
+      "categoryLabel": "코딩·개발",
+      "bestFor": "비개발자가 대화만으로 MVP 데모를 빠르게 만들 때",
+      "url": "https://lovable.dev",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 체험",
+        "paid_from": "월 약 $20"
+      },
+      "fit_reasons": {
+        "beginner": "코딩 몰라도 말로 설명하면 앱이 만들어져요",
+        "work": "아이디어 데모를 하루 만에 만들어 보여줄 수 있어요",
+        "free_only": "무료 크레딧으로 기본 앱 제작 가능",
+        "today": "접속 후 10분 안에 첫 앱 생성 가능",
+        "study": "코딩 수업에서 아이디어를 바로 앱으로 만들어보며 학습 가능",
+        "hobby": "사이드 프로젝트 아이디어를 코딩 없이 바로 실현 가능",
+        "business": "투자자 미팅 전 작동하는 MVP 데모를 하루 만에 제작 가능",
+        "team": "기획자가 직접 프로토타입을 만들어 개발팀과 소통 가능"
+      },
+      "first_step": {
+        "action": "lovable.dev 접속",
+        "prompt_example": "\"할 일 관리 앱 만들어줘\" 입력"
+      },
       "praisedKeywords": [
-        "Gen-4.5 — 현존 최고 수준의 AI 영상 생성",
-        "텍스트→영상, 이미지→영상 모두 지원",
-        "Aleph — 생성된 영상을 텍스트로 후편집",
-        "캐릭터·배경 일관성 유지 기능",
-        "Gen-4 Turbo로 저비용 빠른 생성 가능"
+        "노코드 앱 생성",
+        "빠른 MVP",
+        "GitHub 연동",
+        "Supabase 자동 연결",
+        "원클릭 배포"
       ],
       "criticizedKeywords": [
-        "크레딧 소진이 빠름 (Gen-4.5: 초당 25크레딧)",
-        "무료 플랜은 체험 수준 (125 크레딧 1회성)",
-        "고품질 영상은 비용이 높음"
+        "크레딧 기반 과금",
+        "복잡한 기능 한계",
+        "복잡한 백엔드 로직 구현 한계"
       ],
       "howToStart": [
-        "runwayml.com 접속 → 무료 계정 생성 (125 크레딧 제공)",
-        "Text to Video에서 원하는 장면 설명 (예: 'a dog running on the beach at sunset')",
-        "Gen-4 Turbo(저비용)로 먼저 시험 → 마음에 들면 Gen-4.5로 고품질 생성"
-      ],
-      "usageTips": [
-        "제품 홍보 영상 → 제품 이미지 업로드 후 '카메라가 회전하는 영상' 요청으로 광고 소재 생성",
-        "SNS 숏폼 만들 때 → 텍스트로 장면 설명하면 5~10초 영상 클립 바로 생성",
-        "스토리보드 검증 → 각 장면을 AI 영상으로 만들어 전체 흐름 미리 확인"
+        "lovable.dev 접속 → 무료 계정 생성",
+        "채팅창에 만들고 싶은 것을 말로 설명",
+        "생성된 앱을 바로 미리보기, 수정은 대화로 계속 요청"
       ],
       "references": [
-        { "label": "공식 사이트", "url": "https://runwayml.com" },
-        { "label": "요금제", "url": "https://runwayml.com/pricing" }
-      ]
+        {
+          "label": "공식 사이트",
+          "url": "https://lovable.dev"
+        }
+      ],
+      "usageTips": [
+        "창업 → '회원가입 있는 투두 앱 만들어줘' 입력 후 1시간 안에 작동하는 MVP 완성",
+        "기획 검증 → 와이어프레임 대신 실제 작동하는 프로토타입으로 사용자 테스트",
+        "포트폴리오 → 개인 프로젝트를 대화로 만들고 GitHub에 코드까지 자동 저장"
+      ],
+      "trending": true
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "coding",
+      "categoryLabel": "코딩·개발",
+      "bestFor": "코드 편집기에서 AI와 함께 기존 프로젝트를 빠르게 개발할 때",
+      "url": "https://cursor.com",
+      "difficulty": "보통",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 제한",
+        "paid_from": "월 약 $20"
+      },
+      "fit_reasons": {
+        "beginner": "VS Code와 비슷한 인터페이스라 개발자 전환이 쉬워요",
+        "work": "코드 작업 생산성을 크게 높일 수 있어요",
+        "free_only": "무료 플랜으로 기본 AI 기능 사용 가능",
+        "today": "설치 후 기존 프로젝트 폴더 열면 바로 사용 가능",
+        "study": "코딩 학습 중 모르는 부분을 AI에게 바로 질문하며 배울 수 있어요",
+        "hobby": "사이드 프로젝트 개발 속도를 크게 높일 수 있어요",
+        "business": "제품 개발 속도를 높여 시장 출시 시간 단축 가능",
+        "team": "팀원 모두 동일한 AI 코딩 환경에서 생산성 향상 가능"
+      },
+      "first_step": {
+        "action": "cursor.com 다운로드 후 설치",
+        "prompt_example": "Cmd+K 눌러 \"이 함수에 에러 처리 추가해줘\" 입력"
+      },
+      "praisedKeywords": [
+        "강력한 자동완성",
+        "프로젝트 전체 이해",
+        "반복 작업 자동화",
+        "멀티파일 동시 편집",
+        "Composer 모드"
+      ],
+      "criticizedKeywords": [
+        "AI 반복 수정 사례",
+        "복잡한 정보 범위 설정",
+        "구독 비용이 매월 발생"
+      ],
+      "howToStart": [
+        "cursor.com에서 데스크탑 앱 다운로드",
+        "기존 프로젝트 폴더를 열거나 새 프로젝트 시작",
+        "Cmd+K로 AI에게 코드 수정 요청"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://cursor.com"
+        }
+      ],
+      "usageTips": [
+        "버그 수정 → 에러 로그 붙여넣고 'fix this' 입력하면 수정 코드 제안",
+        "리팩토링 → 파일 선택 후 Cmd+K로 '타입스크립트로 변환해줘' 요청",
+        "신기능 추가 → Composer 모드에서 '로그인 기능 추가해줘' 요청하면 관련 파일 일괄 수정"
+      ],
+      "trending": true
+    },
+    {
+      "id": "copilot",
+      "name": "GitHub Copilot",
+      "category": "coding",
+      "categoryLabel": "코딩·개발",
+      "bestFor": "이미 쓰는 에디터에서 AI 코드 제안을 받고 싶을 때",
+      "url": "https://github.com/copilot",
+      "difficulty": "보통",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (2,000 completions/월)",
+        "paid_from": "월 $10"
+      },
+      "fit_reasons": {
+        "beginner": "업계 표준 도구라 도움말이 풍부해요",
+        "work": "팀 개발 환경에서 가장 널리 쓰이는 도구예요",
+        "free_only": "무료 플랜 2,000건 자동완성으로 충분히 체험 가능",
+        "today": "GitHub 계정으로 활성화 후 VS Code에서 바로 사용",
+        "study": "코딩 학습 시 자동완성으로 문법·패턴을 자연스럽게 익힐 수 있어요",
+        "hobby": "기존 에디터에서 바로 쓸 수 있어 환경 변경 없이 AI 활용 가능",
+        "business": "업계 표준 도구라 회사 정책에 맞는 라이선스 관리가 쉬워요",
+        "team": "GitHub 조직 플랜으로 팀 전체에 일괄 적용 가능"
+      },
+      "first_step": {
+        "action": "GitHub 계정으로 Copilot 무료 활성화",
+        "prompt_example": "VS Code에서 코드 작성 시 Tab으로 제안 수락"
+      },
+      "praisedKeywords": [
+        "업계 표준",
+        "다양한 IDE 지원",
+        "가성비 좋음",
+        "Copilot Chat 내장",
+        "다양한 모델 선택"
+      ],
+      "criticizedKeywords": [
+        "깊은 코드베이스 이해 부족",
+        "멀티파일 작업 한계",
+        "자동완성 품질 편차"
+      ],
+      "howToStart": [
+        "GitHub 계정으로 Copilot 무료 플랜 활성화",
+        "VS Code에서 GitHub Copilot 확장 설치",
+        "코드를 작성하면 자동 제안 → Tab으로 수락"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://github.com/copilot"
+        }
+      ],
+      "usageTips": [
+        "테스트 코드 → 함수 위에 주석으로 테스트 설명 쓰면 테스트 코드 자동 제안",
+        "새 언어 배울 때 → 의사코드를 주석으로 쓰면 실제 코드로 변환해줌",
+        "API 연동 → REST API 엔드포인트 패턴을 입력하면 나머지 CRUD 코드 자동 생성"
+      ],
+      "trending": false
+    },
+    {
+      "id": "bolt",
+      "name": "Bolt.new",
+      "category": "coding",
+      "categoryLabel": "코딩·개발",
+      "bestFor": "브라우저만으로 완전한 앱을 빠르게 시험 제작할 때",
+      "url": "https://bolt.new",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (월 1M 토큰)",
+        "paid_from": "월 $25"
+      },
+      "fit_reasons": {
+        "beginner": "설치 없이 브라우저에서 바로 앱 제작 가능",
+        "work": "아이디어를 빠르게 프로토타입으로 만들어 검증 가능",
+        "free_only": "무료 토큰으로 여러 앱 시험 제작 가능",
+        "today": "접속 후 바로 첫 앱 생성 가능",
+        "study": "웹 개발 입문 시 코드 구조를 보며 학습할 수 있어요",
+        "hobby": "설치 없이 브라우저에서 바로 사이드 프로젝트 시작 가능",
+        "business": "빠르게 프로토타입을 만들어 비즈니스 아이디어 검증 가능",
+        "team": "생성된 코드를 GitHub로 내보내서 팀과 공유·협업 가능"
+      },
+      "first_step": {
+        "action": "bolt.new 접속",
+        "prompt_example": "\"간단한 투두리스트 앱 만들어줘\" 입력"
+      },
+      "praisedKeywords": [
+        "브라우저에서 바로 실행",
+        "전체 코드 내보내기",
+        "Figma 가져오기",
+        "Figma 디자인 가져오기",
+        "풀스택 앱 생성"
+      ],
+      "criticizedKeywords": [
+        "토큰 소진 빠름",
+        "복잡한 로직 한계",
+        "복잡한 상태 관리 한계"
+      ],
+      "howToStart": [
+        "bolt.new 접속 → 무료 계정 생성",
+        "프롬프트에 만들 앱을 설명하면 코드가 자동 생성",
+        "실시간 미리보기에서 확인 후 GitHub로 내보내기"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://bolt.new"
+        }
+      ],
+      "usageTips": [
+        "해커톤 → 아이디어를 프롬프트로 설명하면 몇 시간 만에 풀스택 프로토타입 완성",
+        "Figma 시안 → 디자인 파일 가져와서 실제 작동하는 앱으로 자동 변환",
+        "랜딩페이지 → '가격표 포함 SaaS 랜딩페이지' 요청으로 즉시 생성 후 배포"
+      ],
+      "trending": false
+    },
+    {
+      "id": "zapier_ai",
+      "name": "Zapier AI",
+      "category": "automation",
+      "categoryLabel": "업무 자동화",
+      "bestFor": "코딩 없이 앱과 앱 사이를 AI로 자동 연결하고 싶을 때",
+      "url": "https://zapier.com",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (100 작업/월)",
+        "paid_from": "월 $29.99"
+      },
+      "fit_reasons": {
+        "beginner": "자연어로 원하는 자동화를 설명하면 AI가 설정해줘요",
+        "work": "이메일·슬랙·캘린더 등 업무 앱 자동 연결에 최적",
+        "free_only": "무료 100 작업으로 기본 자동화 체험 가능",
+        "today": "가입 후 5분 안에 첫 자동화 설정 가능",
+        "study": "수업 알림, 과제 마감 리마인더 등 학업 자동화에 활용 가능",
+        "hobby": "RSS → 슬랙 알림 등 관심사 모니터링 자동화에 활용",
+        "business": "리드 관리, 주문 처리, 고객 알림 등 비즈니스 자동화에 최적",
+        "team": "팀 전체의 반복 업무를 중앙에서 자동화 관리 가능"
+      },
+      "first_step": {
+        "action": "zapier.com 접속 후 Copilot 선택",
+        "prompt_example": "\"새 이메일이 오면 슬랙에 알림 보내줘\" 입력"
+      },
+      "praisedKeywords": [
+        "8,000개 앱 연동",
+        "자연어 자동화 설정",
+        "AI 챗봇 생성",
+        "MCP로 AI 챗에서 직접 실행"
+      ],
+      "criticizedKeywords": [
+        "복잡한 워크플로 비용 증가",
+        "무료 플랜 제한",
+        "세부 로직 커스터마이징 한계"
+      ],
+      "howToStart": [
+        "zapier.com 접속 → 무료 계정 생성",
+        "Copilot에 자연어로 원하는 자동화 설명",
+        "AI가 만든 Zap을 확인하고 켜기 → 바로 작동 시작"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://zapier.com"
+        }
+      ],
+      "usageTips": [
+        "리드 관리 → 폼 제출 시 자동으로 CRM 등록 + 슬랙 알림 + 환영 이메일 발송",
+        "콘텐츠 배포 → 블로그 발행 시 자동으로 SNS 4개 채널에 동시 포스팅",
+        "고객 피드백 → 설문 응답이 오면 스프레드시트 기록 + 팀 채널 알림 자동 전송"
+      ],
+      "trending": false
+    },
+    {
+      "id": "make",
+      "name": "Make",
+      "category": "automation",
+      "categoryLabel": "업무 자동화",
+      "bestFor": "시각적 플로차트로 복잡한 자동화를 직접 설계하고 싶을 때",
+      "url": "https://www.make.com",
+      "difficulty": "보통",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (1,000 작업/월)",
+        "paid_from": "월 $10.59"
+      },
+      "fit_reasons": {
+        "beginner": "Maia AI 빌더로 대화형으로 자동화 설정 가능",
+        "work": "복잡한 업무 프로세스 자동화에 강해요",
+        "free_only": "무료 1,000 작업으로 다양한 자동화 시험 가능",
+        "today": "가입 후 Maia AI로 바로 첫 자동화 생성 가능",
+        "study": "자동화·워크플로 설계를 시각적으로 배울 수 있어요",
+        "hobby": "개인 프로젝트의 데이터 파이프라인을 시각적으로 구성 가능",
+        "business": "복잡한 비즈니스 프로세스를 조건 분기·반복 포함하여 자동화 가능",
+        "team": "팀 시나리오를 시각적으로 공유하고 함께 편집 가능"
+      },
+      "first_step": {
+        "action": "make.com 접속 후 Maia AI 빌더 선택",
+        "prompt_example": "\"구글 폼 응답을 노션에 자동 저장해줘\" 입력"
+      },
+      "praisedKeywords": [
+        "시각적 워크플로",
+        "AI 에이전트 배치 가능",
+        "3,000개 앱 연동",
+        "조건 분기·반복 지원"
+      ],
+      "criticizedKeywords": [
+        "초보자 인터페이스 복잡",
+        "AI 모듈 크레딧 추가 소모",
+        "에러 디버깅이 복잡할 수 있음"
+      ],
+      "howToStart": [
+        "make.com 접속 → 무료 계정 생성",
+        "Maia AI 빌더에서 자연어로 원하는 자동화 설명",
+        "비주얼 편집기에서 플로우를 확인·수정 후 실행"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.make.com"
+        }
+      ],
+      "usageTips": [
+        "데이터 가공 → API 응답을 필터·변환·집계해서 다른 앱으로 전달",
+        "이커머스 → 주문 접수 시 재고 확인 → 배송 안내 이메일 → 슬랙 알림 자동 처리",
+        "AI 자동 분류 → 고객 문의를 GPT 모듈로 자동 분류 후 담당자에게 할당"
+      ],
+      "trending": false
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "category": "automation",
+      "categoryLabel": "업무 자동화",
+      "bestFor": "내 서버에서 무제한 자동화를 돌리고 AI 에이전트도 직접 만들고 싶을 때",
+      "url": "https://n8n.io",
+      "difficulty": "어려움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "셀프호스팅 무제한 무료",
+        "paid_from": "클라우드 €24/월"
+      },
+      "fit_reasons": {
+        "beginner": "셀프호스팅은 어렵지만 클라우드 체험판으로 시작 가능",
+        "work": "보안이 중요한 사내 자동화에 데이터 외부 유출 없이 사용 가능",
+        "free_only": "셀프호스팅 시 완전 무료로 무제한 사용 가능",
+        "today": "클라우드 무료 체험으로 바로 시작 가능",
+        "study": "오픈소스라 내부 동작 원리를 학습하며 자동화 기술을 깊이 배울 수 있어요",
+        "hobby": "셀프호스팅으로 무제한 무료 사용, 개인 서버 활용 극대화",
+        "business": "민감 데이터가 외부로 나가지 않는 사내 자동화 구축 가능",
+        "team": "사내 서버에 설치해서 팀 전체가 동일 환경에서 자동화 운영 가능"
+      },
+      "first_step": {
+        "action": "n8n.io 클라우드 무료 체험 시작",
+        "prompt_example": "AI 워크플로 빌더에서 원하는 자동화 설명 입력"
+      },
+      "praisedKeywords": [
+        "오픈소스 무제한",
+        "AI 에이전트 내장",
+        "데이터 프라이버시",
+        "커뮤니티 워크플로 공유"
+      ],
+      "criticizedKeywords": [
+        "서버 관리 지식 필요",
+        "초기 설정 복잡",
+        "클라우드 버전은 비용이 높은 편"
+      ],
+      "howToStart": [
+        "n8n.io 접속 → 클라우드 무료 체험 시작",
+        "AI 워크플로 빌더에서 자연어로 원하는 작업 설명",
+        "비주얼 편집기에서 AI 에이전트 노드 추가 후 실행"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://n8n.io"
+        }
+      ],
+      "usageTips": [
+        "사내 챗봇 → AI 에이전트 노드에 회사 문서 연결해서 맞춤 답변 봇 구축",
+        "보안 자동화 → 셀프호스팅으로 민감 고객 데이터 처리 자동화 (외부 유출 없음)",
+        "비용 절약 → 대량 이메일·알림 발송을 무제한 무료 실행으로 처리"
+      ],
+      "trending": false
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "category": "research",
+      "categoryLabel": "리서치·분석",
+      "bestFor": "출처가 명확한 실시간 AI 검색으로 빠르게 정보를 확인하고 싶을 때",
+      "url": "https://www.perplexity.ai",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (기본 검색)",
+        "paid_from": "월 $20"
+      },
+      "fit_reasons": {
+        "beginner": "구글 검색처럼 입력하면 출처 포함 답변이 나와요",
+        "work": "보고서·기획서 작성 시 자료 수집 시간을 크게 줄일 수 있어요",
+        "free_only": "무료로도 기본 AI 검색 충분히 사용 가능",
+        "today": "가입 없이도 바로 검색 시작 가능",
+        "study": "과제·논문 자료 수집 시 출처가 자동으로 달려서 편리해요",
+        "hobby": "궁금한 것을 검색할 때 출처 포함 답변을 바로 받을 수 있어요",
+        "business": "경쟁사 분석, 시장 조사 시 출처 기반 리포트를 빠르게 생성 가능",
+        "team": "검색 결과를 링크로 공유해서 팀원과 정보 공유 간편"
+      },
+      "first_step": {
+        "action": "perplexity.ai 접속",
+        "prompt_example": "\"2026년 AI 트렌드 알려줘\" 입력"
+      },
+      "praisedKeywords": [
+        "모든 답변에 출처",
+        "실시간 웹 검색",
+        "다양한 AI 모델 선택",
+        "PDF·파일 분석 지원",
+        "Focus 모드 (학술/SNS 등)"
+      ],
+      "criticizedKeywords": [
+        "Pro 사용량 제한 불규칙",
+        "한국어 품질 가끔 아쉬움",
+        "긴 문서 작성에는 부적합"
+      ],
+      "howToStart": [
+        "perplexity.ai 접속 → 무료 계정 생성",
+        "검색창에 궁금한 것을 자연어로 질문",
+        "답변의 출처 번호를 클릭해 원본 확인"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.perplexity.ai"
+        }
+      ],
+      "usageTips": [
+        "시장 조사 → '한국 AI SaaS 시장 규모 2026' 검색하면 출처 포함 리포트 즉시 생성",
+        "팩트체크 → 뉴스·주장의 진위를 출처 번호 클릭으로 원문 확인하며 검증",
+        "기술 비교 → 'React vs Vue 2026 비교' 검색으로 최신 벤치마크·커뮤니티 의견 한눈에"
+      ],
+      "trending": true
+    },
+    {
+      "id": "notebooklm",
+      "name": "NotebookLM",
+      "category": "research",
+      "categoryLabel": "리서치·분석",
+      "bestFor": "내 문서를 업로드하면 AI가 요약·분석하고 팟캐스트까지 만들어줄 때",
+      "url": "https://notebooklm.google",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (핵심 기능 포함)",
+        "paid_from": "월 약 $20"
+      },
+      "fit_reasons": {
+        "beginner": "문서를 업로드하면 바로 질문·요약 가능해요",
+        "work": "회의록, 보고서, 논문 분석에 시간을 크게 줄일 수 있어요",
+        "free_only": "핵심 기능이 무료 플랜에 모두 포함되어 있어요",
+        "today": "Google 계정으로 바로 시작 가능",
+        "study": "교재·논문 PDF를 올리면 AI가 요약·퀴즈·팟캐스트까지 만들어줘요",
+        "hobby": "관심 분야 자료를 모아놓고 AI와 대화하며 깊이 탐구 가능",
+        "business": "제안서·보고서 준비 시 관련 자료를 모아 핵심 포인트 자동 추출",
+        "team": "팀 자료를 모아놓으면 신규 팀원 온보딩 자료로도 활용 가능"
+      },
+      "first_step": {
+        "action": "notebooklm.google 접속",
+        "prompt_example": "PDF 업로드 후 \"이 문서의 핵심을 3줄로 요약해줘\" 입력"
+      },
+      "praisedKeywords": [
+        "내 문서 기반 분석",
+        "AI 팟캐스트 생성",
+        "환각 적음",
+        "YouTube 영상 분석 지원"
+      ],
+      "criticizedKeywords": [
+        "구글 서버 저장",
+        "오프라인 불가",
+        "소스 50개까지 제한"
+      ],
+      "howToStart": [
+        "notebooklm.google 접속 → Google 계정으로 로그인",
+        "새 노트북 생성 후 PDF·웹 링크 등 자료 업로드",
+        "'Audio Overview' 버튼으로 AI 팟캐스트 생성, 채팅으로 질문"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://notebooklm.google"
+        }
+      ],
+      "usageTips": [
+        "시험 준비 → 교재 PDF 올리고 Audio Overview로 팟캐스트 만들어 이동 중 청취",
+        "회의 준비 → 관련 자료 여러 개 올리고 '핵심 포인트 비교표' 요청",
+        "논문 리뷰 → 논문 5개 업로드 후 '공통 주장과 상반된 결론 정리해줘' 요청"
+      ],
+      "trending": false
+    },
+    {
+      "id": "gemini_research",
+      "name": "Gemini Deep Research",
+      "category": "research",
+      "categoryLabel": "리서치·분석",
+      "bestFor": "딥 리서치로 특정 주제의 종합 리포트를 자동으로 만들고 싶을 때",
+      "url": "https://gemini.google.com",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (기본 Gemini)",
+        "paid_from": "월 약 $20"
+      },
+      "fit_reasons": {
+        "beginner": "Google 계정만 있으면 바로 사용 가능해요",
+        "work": "Google Drive·Gmail 연동으로 업무 자료와 통합 가능",
+        "free_only": "무료로도 기본 리서치 기능 사용 가능",
+        "today": "Google 계정으로 바로 시작 가능",
+        "study": "Deep Research로 특정 주제의 종합 리포트를 자동 생성해 과제에 활용",
+        "hobby": "관심 주제를 깊이 조사해서 블로그·유튜브 콘텐츠 소재로 활용",
+        "business": "시장 분석, 경쟁사 조사를 종합 리포트로 빠르게 생성 가능",
+        "team": "Google Docs로 바로 내보내서 팀과 실시간 공유·협업 가능"
+      },
+      "first_step": {
+        "action": "gemini.google.com 접속",
+        "prompt_example": "Deep Research 선택 후 \"한국 공공기관 AI 도입 현황\" 입력"
+      },
+      "praisedKeywords": [
+        "Deep Research 종합 리포트",
+        "Google Docs 연동",
+        "최신 정보 반영",
+        "Gmail·Drive 데이터 연동",
+        "실시간 웹 검색 기반"
+      ],
+      "criticizedKeywords": [
+        "코딩 도움 들쭉날쭉",
+        "대화 맥락 가끔 놓침",
+        "Deep Research 응답 시간이 긴 편"
+      ],
+      "howToStart": [
+        "gemini.google.com 접속 → Google 계정 로그인",
+        "'Deep Research' 기능으로 주제 입력 → 종합 리서치 리포트 생성",
+        "Google Docs로 바로 내보내기하여 팀과 공유"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://gemini.google.com"
+        }
+      ],
+      "usageTips": [
+        "경쟁사 분석 → 'A사 vs B사 비교 분석' Deep Research로 10페이지 리포트 자동 생성",
+        "트렌드 조사 → '2026년 AI 교육 시장 동향' 입력하면 최신 데이터 기반 종합 보고서",
+        "이메일 정리 → '지난주 미팅 관련 이메일 요약해줘' Gmail 연동으로 즉시 답변"
+      ],
+      "trending": false
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "category": "presentation",
+      "categoryLabel": "발표·슬라이드",
+      "bestFor": "텍스트만 입력하면 1분 안에 깔끔한 프레젠테이션을 만들어줄 때",
+      "url": "https://gamma.app",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (400 AI 크레딧)",
+        "paid_from": "월 $8"
+      },
+      "fit_reasons": {
+        "beginner": "텍스트 입력하면 AI가 디자인까지 자동으로 만들어줘요",
+        "work": "보고서, 제안서, 주간 보고를 빠르게 슬라이드로 변환 가능",
+        "free_only": "무료 크레딧으로 첫 프레젠테이션 만들어볼 수 있어요",
+        "today": "가입 후 5분 안에 첫 슬라이드 완성 가능",
+        "study": "수업 발표 자료를 텍스트만 입력하면 AI가 디자인까지 완성해줘요",
+        "hobby": "여행 기록, 포트폴리오 등 개인 프레젠테이션을 예쁘게 만들 수 있어요",
+        "business": "제안서, 보고서를 10분 안에 전문적인 슬라이드로 변환 가능",
+        "team": "실시간 협업 편집 + 공유 링크 분석으로 팀 발표 준비에 최적"
+      },
+      "first_step": {
+        "action": "gamma.app 접속 후 '+새로 만들기' 클릭",
+        "prompt_example": "주제 입력 후 슬라이드 수 선택"
+      },
+      "praisedKeywords": [
+        "1분 PPT 생성",
+        "디자인 자동화",
+        "PDF·PPTX 내보내기",
+        "웹페이지 형태로도 공유 가능",
+        "실시간 협업"
+      ],
+      "criticizedKeywords": [
+        "세밀한 커스터마이징 어려움",
+        "무료 크레딧 소진 후 유료",
+        "애니메이션 효과 제한적"
+      ],
+      "howToStart": [
+        "gamma.app 접속 → 무료 계정 생성",
+        "'+새로 만들기' → 주제와 슬라이드 수 입력",
+        "생성된 슬라이드 수정 후 PDF/PPTX로 내보내기"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://gamma.app"
+        }
+      ],
+      "usageTips": [
+        "팀 발표 → 기획 내용 붙여넣으면 10분 안에 디자인된 발표 자료 완성",
+        "클라이언트 제안서 → 주제만 입력하고 테마 선택하면 전문적 PPT 생성",
+        "주간 보고 → 텍스트 메모를 넣으면 시각적 슬라이드로 자동 변환"
+      ],
+      "trending": false
+    },
+    {
+      "id": "beautiful_ai",
+      "name": "Beautiful.ai",
+      "category": "presentation",
+      "categoryLabel": "발표·슬라이드",
+      "bestFor": "자동 정렬·디자인으로 일관된 고품질 슬라이드를 만들고 싶을 때",
+      "url": "https://www.beautiful.ai",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": false,
+        "free_tier": "14일 무료 체험",
+        "paid_from": "월 $12"
+      },
+      "fit_reasons": {
+        "beginner": "콘텐츠 입력하면 레이아웃이 자동으로 조정돼요",
+        "work": "팀이 함께 만드는 통일된 브랜드 슬라이드에 적합해요",
+        "free_only": "14일 체험으로 기능 충분히 확인 가능",
+        "today": "14일 무료 체험으로 바로 슬라이드 제작 시작",
+        "study": "발표 자료 디자인을 AI가 자동 정렬해줘서 깔끔한 결과물 보장",
+        "hobby": "개인 포트폴리오를 전문 디자이너 수준으로 만들 수 있어요",
+        "business": "브랜드 템플릿을 설정하면 모든 제안서가 일관된 디자인으로 생성",
+        "team": "팀 브랜드 가이드를 설정해서 모든 발표 자료의 일관성 유지"
+      },
+      "first_step": {
+        "action": "beautiful.ai 접속 후 무료 체험 시작",
+        "prompt_example": "템플릿 선택 후 내용 입력"
+      },
+      "praisedKeywords": [
+        "자동 레이아웃 조정",
+        "일관된 디자인",
+        "팀 협업",
+        "스마트 슬라이드 레이아웃",
+        "브랜드 템플릿 설정"
+      ],
+      "criticizedKeywords": [
+        "무료 플랜 없음",
+        "PowerPoint 호환성 제한",
+        "PPTX 내보내기 시 레이아웃 깨질 수 있음"
+      ],
+      "howToStart": [
+        "beautiful.ai 접속 → 14일 무료 체험 시작",
+        "템플릿 선택 → 내용 입력하면 레이아웃 자동 조정",
+        "팀원과 공유하여 협업 편집"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.beautiful.ai"
+        }
+      ],
+      "usageTips": [
+        "투자 발표 → 피치덱 템플릿 선택 후 내용 입력하면 자동 정렬된 프로 발표 자료",
+        "세일즈 제안서 → 브랜드 색상·로고 설정 후 일관된 디자인의 제안서 대량 생산",
+        "교육 자료 → 콘텐츠 입력하면 적절한 레이아웃(표, 그래프, 타임라인)을 AI가 자동 선택"
+      ],
+      "trending": false
+    },
+    {
+      "id": "canva_ai",
+      "name": "Canva AI",
+      "category": "presentation",
+      "categoryLabel": "발표·슬라이드",
+      "bestFor": "디자인 경험 없이 SNS·발표·포스터 등 다양한 콘텐츠를 만들 때",
+      "url": "https://www.canva.com",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (기본 기능 풍부)",
+        "paid_from": "월 약 $15"
+      },
+      "fit_reasons": {
+        "beginner": "드래그 앤 드롭으로 누구나 쉽게 디자인 가능해요",
+        "work": "PPT, 포스터, SNS 게시물 등 다양한 콘텐츠를 한 곳에서 제작",
+        "free_only": "무료 플랜으로도 핵심 기능 충분히 사용 가능",
+        "today": "가입 후 바로 템플릿 선택해 첫 디자인 시작 가능",
+        "study": "과제 포스터, 발표 자료, 인포그래픽을 쉽게 만들 수 있어요",
+        "hobby": "SNS 게시물, 초대장, 포스터 등 다양한 디자인을 취미로 만들 수 있어요",
+        "business": "로고, 명함, 배너, 광고까지 디자이너 없이 직접 제작 가능",
+        "team": "팀 브랜드 킷으로 모든 팀원이 일관된 디자인 결과물 생산 가능"
+      },
+      "first_step": {
+        "action": "canva.com 접속 후 '프레젠테이션' 선택",
+        "prompt_example": "\"AI 소개 발표\" 주제로 AI 자동 생성 선택"
+      },
+      "praisedKeywords": [
+        "다양한 템플릿",
+        "무료 기능 풍부",
+        "팀 협업",
+        "AI 이미지 생성",
+        "Magic Switch (크기 자동 변환)"
+      ],
+      "criticizedKeywords": [
+        "전문 디자인 도구보다 유연성 낮음",
+        "무료 플랜에서 프리미엄 요소 제한",
+        "전문 인쇄물에는 한계"
+      ],
+      "howToStart": [
+        "canva.com 접속 → 무료 계정 생성",
+        "원하는 콘텐츠 유형 선택 (발표, SNS, 포스터 등)",
+        "템플릿 선택 후 AI 기능으로 내용 자동 생성"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.canva.com"
+        }
+      ],
+      "usageTips": [
+        "SNS 마케팅 → 인스타 템플릿에 텍스트·이미지 넣고 릴스·스토리·피드 크기 원클릭 변환",
+        "명함 제작 → AI로 디자인 생성 후 인쇄 주문까지 한 곳에서 처리",
+        "프레젠테이션 → 'AI 소개 발표' 주제 입력하면 디자인된 슬라이드 자동 생성"
+      ],
+      "trending": false
+    },
+    {
+      "id": "julius_ai",
+      "name": "Julius AI",
+      "category": "data",
+      "categoryLabel": "데이터·시각화",
+      "bestFor": "엑셀·CSV 데이터를 AI에게 분석 요청하고 차트를 바로 만들 때",
+      "url": "https://julius.ai",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (제한적)",
+        "paid_from": "월 $22"
+      },
+      "fit_reasons": {
+        "beginner": "엑셀 파일 올리고 '분석해줘'라고만 해도 차트가 나와요",
+        "work": "보고서용 데이터 분석을 코딩 없이 빠르게 처리 가능",
+        "free_only": "무료로 기본 분석·시각화 기능 체험 가능",
+        "today": "파일 업로드 후 바로 첫 분석 시작 가능",
+        "study": "통계 수업 과제에서 데이터 분석·차트 생성을 코딩 없이 가능",
+        "hobby": "가계부, 운동 기록 등 개인 데이터를 분석하고 시각화 가능",
+        "business": "매출 데이터, 고객 데이터를 코딩 없이 분석해서 인사이트 도출",
+        "team": "팀원 누구나 데이터 분석 가능, 분석가 의존도 감소"
+      },
+      "first_step": {
+        "action": "julius.ai 접속 후 파일 업로드",
+        "prompt_example": "엑셀 파일 업로드 후 \"월별 매출 추이 차트 만들어줘\" 입력"
+      },
+      "praisedKeywords": [
+        "코딩 없는 데이터 분석",
+        "자동 차트 생성",
+        "다양한 파일 형식 지원",
+        "Python/R 코드 자동 생성",
+        "Google Sheets 연동"
+      ],
+      "criticizedKeywords": [
+        "대용량 데이터 처리 한계",
+        "무료 플랜 제한",
+        "한국어 분석 결과 번역 품질 아쉬움"
+      ],
+      "howToStart": [
+        "julius.ai 접속 → 무료 계정 생성",
+        "엑셀·CSV·구글 시트 파일 업로드",
+        "원하는 분석을 자연어로 요청 → 차트·인사이트 자동 생성"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://julius.ai"
+        }
+      ],
+      "usageTips": [
+        "매출 분석 → 엑셀 파일 업로드 후 '월별 매출 추이와 성장률 차트' 요청",
+        "설문 결과 → CSV 업로드 후 '응답 분포 파이차트 + 교차분석' 요청",
+        "인사 데이터 → '부서별 퇴사율 비교 차트' 요청으로 HR 보고서용 시각화 생성"
+      ],
+      "trending": false
+    },
+    {
+      "id": "rows",
+      "name": "Rows",
+      "category": "data",
+      "categoryLabel": "데이터·시각화",
+      "bestFor": "AI가 내장된 스프레드시트로 데이터 분석과 자동화를 함께 하고 싶을 때",
+      "url": "https://rows.com",
+      "difficulty": "보통",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (기본 기능)",
+        "paid_from": "월 $59"
+      },
+      "fit_reasons": {
+        "beginner": "엑셀처럼 사용하면서 AI 분석 기능을 추가로 쓸 수 있어요",
+        "work": "팀과 공유하는 데이터 대시보드를 AI로 자동 생성 가능",
+        "free_only": "무료 플랜으로 기본 기능 사용 가능",
+        "today": "가입 후 바로 시트 생성 시작 가능",
+        "study": "엑셀처럼 사용하면서 AI 분석까지 한번에 할 수 있어요",
+        "hobby": "개인 재무 관리, 취미 데이터 추적을 AI 스프레드시트로 관리",
+        "business": "팀 대시보드를 AI로 자동 생성해서 실시간 KPI 모니터링 가능",
+        "team": "공유 스프레드시트에서 AI 분석 기능을 팀 전체가 활용 가능"
+      },
+      "first_step": {
+        "action": "rows.com 접속 후 새 시트 생성",
+        "prompt_example": "데이터 입력 후 AI 분석 탭에서 인사이트 요청"
+      },
+      "praisedKeywords": [
+        "AI 내장 스프레드시트",
+        "자동 대시보드",
+        "외부 데이터 연동",
+        "자동 대시보드 생성",
+        "API 데이터 연동"
+      ],
+      "criticizedKeywords": [
+        "Excel 대비 기능 제한",
+        "팀 플랜은 비용 높음",
+        "한국어 인터페이스 미지원"
+      ],
+      "howToStart": [
+        "rows.com 접속 → 무료 계정 생성",
+        "새 시트 생성 후 데이터 입력 또는 파일 가져오기",
+        "AI Ask 기능으로 '이 데이터에서 트렌드 찾아줘' 요청"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://rows.com"
+        }
+      ],
+      "usageTips": [
+        "KPI 대시보드 → 매출 데이터 입력 후 AI로 주간·월간 대시보드 자동 생성",
+        "마케팅 분석 → 광고 성과 데이터를 API로 자동 수집해서 실시간 트래킹",
+        "재무 리포트 → 분기 데이터 입력 후 'AI로 트렌드 분석' 요청"
+      ],
+      "trending": false
+    },
+    {
+      "id": "chartgpt",
+      "name": "ChartGPT",
+      "category": "data",
+      "categoryLabel": "데이터·시각화",
+      "bestFor": "텍스트 또는 데이터 입력만으로 즉시 차트를 만들고 싶을 때",
+      "url": "https://www.chartgpt.dev",
+      "difficulty": "쉬움",
+      "solo_or_team": "solo",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료",
+        "paid_from": "무료로 대부분 사용 가능"
+      },
+      "fit_reasons": {
+        "beginner": "데이터 붙여넣고 어떤 차트 원하는지 말하면 바로 생성돼요",
+        "work": "보고서에 넣을 차트를 빠르게 만들 수 있어요",
+        "free_only": "대부분 기능이 무료예요",
+        "today": "가입 없이도 바로 차트 생성 가능",
+        "study": "과제·발표에 넣을 차트를 데이터만 넣으면 바로 만들 수 있어요",
+        "hobby": "블로그·SNS에 넣을 인포그래픽 차트를 빠르게 생성",
+        "business": "보고서·제안서에 넣을 차트를 도구 설치 없이 웹에서 바로 제작",
+        "team": "팀원 누구나 차트 제작 가능, 디자이너·분석가 의존도 감소"
+      },
+      "first_step": {
+        "action": "chartgpt.dev 접속",
+        "prompt_example": "데이터 붙여넣고 \"막대 그래프로 만들어줘\" 입력"
+      },
+      "praisedKeywords": [
+        "즉시 차트 생성",
+        "무료",
+        "다양한 차트 유형",
+        "가입 없이 사용 가능",
+        "다양한 차트 유형"
+      ],
+      "criticizedKeywords": [
+        "복잡한 분석 기능 없음",
+        "데이터 연동 제한",
+        "복잡한 데이터셋 처리 한계",
+        "데이터 보안 정책 불명확"
+      ],
+      "howToStart": [
+        "chartgpt.dev 접속",
+        "데이터를 텍스트로 붙여넣거나 파일 업로드",
+        "원하는 차트 유형을 설명하면 즉시 생성"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://www.chartgpt.dev"
+        }
+      ],
+      "usageTips": [
+        "발표 자료 → 실적 데이터 붙여넣고 '막대+선 복합 차트' 요청으로 즉시 생성",
+        "블로그 → 비교 데이터를 '가로 막대 차트로 만들어줘' 입력 후 이미지 다운로드",
+        "회의 자료 → 간단한 수치를 '파이차트로 시각화' 요청해서 1분 안에 차트 확보"
+      ],
+      "trending": false
+    },
+    {
+      "id": "ms_copilot",
+      "name": "Microsoft Copilot",
+      "category": "office",
+      "categoryLabel": "오피스·문서",
+      "bestFor": "Word·Excel·PowerPoint·Teams에서 AI를 바로 활용하고 싶을 때",
+      "url": "https://copilot.microsoft.com",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (Bing AI 포함)",
+        "paid_from": "Microsoft 365 월 약 13,000원"
+      },
+      "fit_reasons": {
+        "beginner": "이미 쓰고 있는 Word·Excel에 AI가 추가돼서 새로 배울 게 없어요",
+        "work": "공공기관·기업 Microsoft 365 환경에서 바로 사용 가능",
+        "free_only": "Bing 기반 Copilot 무료로 기본 기능 사용 가능",
+        "today": "Microsoft 계정만 있으면 지금 바로 시작 가능",
+        "study": "Word로 리포트 작성, Excel로 데이터 분석 시 AI 도움을 바로 받을 수 있어요",
+        "hobby": "개인 일정 관리, 가계부 Excel 분석 등 일상에서 바로 활용",
+        "business": "기업 보안 정책을 충족하는 AI 도구로 사내 도입이 용이해요",
+        "team": "Teams 회의 요약, 공유 문서 AI 편집 등 팀 협업에 최적화"
+      },
+      "first_step": {
+        "action": "Word 또는 Excel에서 Copilot 아이콘 클릭",
+        "prompt_example": "Word에서 \"이 보고서 요약해줘\" 입력"
+      },
+      "praisedKeywords": [
+        "Word·Excel·PPT 통합",
+        "Teams 회의 요약",
+        "기업 보안 지원",
+        "기업 보안·컴플라이언스 충족",
+        "Excel 데이터 분석 AI"
+      ],
+      "criticizedKeywords": [
+        "유료 Copilot은 비용 높음",
+        "Microsoft 365 구독 필요",
+        "응답 품질이 ChatGPT/Claude보다 아쉬울 때 있음"
+      ],
+      "howToStart": [
+        "Microsoft 계정으로 copilot.microsoft.com 접속 (무료)",
+        "또는 Microsoft 365 구독 후 Word·Excel에서 Copilot 탭 활성화",
+        "문서 열고 'Copilot으로 초안 작성' 또는 '요약' 선택"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://copilot.microsoft.com"
+        }
+      ],
+      "usageTips": [
+        "회의 요약 → Teams 회의 후 Copilot이 자동으로 회의록·액션 아이템 정리",
+        "Excel 분석 → 데이터 시트에서 '추세 분석해줘' 입력하면 차트+인사이트 자동 생성",
+        "PPT 제작 → Word 기획서를 열고 'PPT로 변환해줘' 요청하면 슬라이드 자동 생성"
+      ],
+      "trending": false
+    },
+    {
+      "id": "google_workspace_ai",
+      "name": "Google Workspace AI (Gemini)",
+      "category": "office",
+      "categoryLabel": "오피스·문서",
+      "bestFor": "Gmail·Docs·Sheets·Slides에서 AI를 바로 활용하고 싶을 때",
+      "url": "https://workspace.google.com/intl/ko/features/",
+      "difficulty": "쉬움",
+      "solo_or_team": "both",
+      "pricing": {
+        "has_free": true,
+        "free_tier": "무료 (Google 계정 포함)",
+        "paid_from": "Workspace Business 월 약 15,000원"
+      },
+      "fit_reasons": {
+        "beginner": "이미 쓰는 Gmail·Google Docs에서 AI 기능이 바로 사용 가능해요",
+        "work": "공공기관·학교 Google 환경에서 추가 설치 없이 바로 사용",
+        "free_only": "기본 Gemini 기능은 Google 계정으로 무료 사용 가능",
+        "today": "Google 계정만 있으면 지금 바로 사용 가능",
+        "study": "Google Docs로 과제, Sheets로 데이터 분석 시 AI 도움 바로 활용",
+        "hobby": "개인 문서, 스프레드시트 작업에 AI 기능을 무료로 사용 가능",
+        "business": "Google Workspace를 쓰는 조직이라면 추가 비용 없이 AI 활용 가능",
+        "team": "팀 Google Drive 문서에서 AI 기능을 모든 팀원이 동시에 활용 가능"
+      },
+      "first_step": {
+        "action": "Google Docs에서 Gemini 아이콘 클릭",
+        "prompt_example": "\"이 문서 내용으로 이메일 초안 작성해줘\" 입력"
+      },
+      "praisedKeywords": [
+        "Gmail·Docs·Sheets 통합",
+        "Drive 파일 분석",
+        "무료 기본 기능",
+        "Google Meet 회의 요약",
+        "Sheets 자동 수식 생성"
+      ],
+      "criticizedKeywords": [
+        "고급 기능은 유료 Workspace 필요",
+        "개인정보 Google 저장",
+        "Microsoft Office 호환성 가끔 문제"
+      ],
+      "howToStart": [
+        "Google Docs·Gmail·Sheets 열기 → Gemini 아이콘 클릭",
+        "원하는 작업 입력 (예: '이 이메일 요약해줘', '표로 정리해줘')",
+        "결과 검토 후 문서에 삽입"
+      ],
+      "references": [
+        {
+          "label": "공식 사이트",
+          "url": "https://workspace.google.com"
+        }
+      ],
+      "usageTips": [
+        "공문서 작성 → Google Docs에서 '공문 형식으로 정리해줘' Gemini 요청",
+        "데이터 정리 → Sheets에서 '이 데이터 피벗 테이블로 만들어줘' AI 요청",
+        "이메일 답장 → Gmail에서 '정중하게 거절하는 답장 써줘' Gemini로 초안 생성"
+      ],
+      "trending": false
     }
   ]
 }

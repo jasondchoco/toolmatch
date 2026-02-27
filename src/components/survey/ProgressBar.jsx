@@ -1,8 +1,8 @@
 export default function ProgressBar({ current, total }) {
-  const pct = (current / total) * 100
+  const value = current / total
   return (
     <div className="survey-progress">
-      <div className="survey-progress__bar" style={{ width: `${pct}%` }} />
+      <md-linear-progress value={value} buffer={1}></md-linear-progress>
     </div>
   )
 }

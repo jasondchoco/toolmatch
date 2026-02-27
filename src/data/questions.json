@@ -1,101 +1,85 @@
 {
-  "version": "2.1",
+  "version": "3.0",
   "questions": [
     {
-      "id": "q_role",
+      "id": "q_category",
       "order": 1,
-      "text": "지금 상황에 가장 가까운 걸 골라주세요",
-      "subtext": "딱 맞지 않아도 괜찮아요",
+      "text": "AI로 뭘 해보고 싶어요?",
+      "subtext": "최대 2개까지 고를 수 있어요",
+      "multiSelect": true,
+      "maxSelect": 2,
       "options": [
-        { "value": "side_builder", "label": "사이드 프로젝트를 해보고 싶어요" },
-        { "value": "idea_demo", "label": "아이디어는 있는데 만들 줄 몰라요" },
-        { "value": "founder", "label": "창업 중이에요" },
-        { "value": "pm", "label": "PM / 전략기획 직군이에요" },
-        { "value": "marketer", "label": "마케터 / 콘텐츠 담당이에요" },
-        { "value": "dev", "label": "개발자예요 (혼자 작업)" },
-        { "value": "lead", "label": "개발팀 리드 / 매니저예요" },
-        { "value": "career_ai", "label": "AI 스킬로 커리어를 올리고 싶어요" }
+        { "value": "writing", "label": "글쓰기·편집", "icon": "✍️", "description": "보고서, 이메일, 블로그, 기획서 작성" },
+        { "value": "image", "label": "이미지 생성", "icon": "🎨", "description": "그림, 포스터, 로고, 사진 편집" },
+        { "value": "video", "label": "영상 만들기", "icon": "🎬", "description": "영상 제작, 편집, 숏폼 콘텐츠" },
+        { "value": "music", "label": "음악 만들기", "icon": "🎵", "description": "작곡, 배경음악, 효과음 제작" },
+        { "value": "voice", "label": "음성·보이스", "icon": "🎙️", "description": "나레이션, 팟캐스트, 음성 변환" },
+        { "value": "coding", "label": "코딩·개발", "icon": "💻", "description": "앱 만들기, 코드 작성, 자동화" },
+        { "value": "automation", "label": "업무 자동화", "icon": "⚡", "description": "반복 작업 줄이기, 앱 연결" },
+        { "value": "research", "label": "리서치·분석", "icon": "🔍", "description": "자료 조사, 정보 검색, 논문 분석" },
+        { "value": "presentation", "label": "발표·슬라이드", "icon": "📊", "description": "PPT, 프레젠테이션, 제안서" },
+        { "value": "data", "label": "데이터·시각화", "icon": "📈", "description": "엑셀 분석, 차트, 대시보드" },
+        { "value": "office", "label": "오피스·문서", "icon": "📝", "description": "Word, Excel, Google Docs 활용" }
       ]
     },
     {
-      "id": "q_ai_experience",
+      "id": "q_experience",
       "order": 2,
       "text": "AI 도구를 얼마나 써보셨나요?",
       "subtext": "ChatGPT, Claude, Gemini 등 아무거나 포함",
+      "multiSelect": false,
       "options": [
-        { "value": "none", "label": "아직 안 써봤어요", "aiLevel": "beginner" },
-        { "value": "tried", "label": "ChatGPT 같은 건 좀 써봤어요", "aiLevel": "intermediate" },
-        { "value": "active", "label": "여러 AI 도구를 쓰고 있어요", "aiLevel": "advanced" }
+        { "value": "beginner", "label": "완전 처음이에요" },
+        { "value": "tried", "label": "몇 번 써봤어요" },
+        { "value": "active", "label": "자주 쓰고 있어요" }
       ]
     },
     {
-      "id": "q_code_comfort",
+      "id": "q_context",
       "order": 3,
-      "text": "코드 작성이나 수정, 얼마나 편하세요?",
-      "subtext": "AI 도구마다 필요한 기술 수준이 달라서 여쭤봐요",
+      "text": "주로 어디서 쓸 건가요?",
+      "subtext": "가장 가까운 하나만 골라주세요",
+      "multiSelect": false,
       "options": [
-        { "value": "none", "label": "전혀 못 함", "skill": "low" },
-        { "value": "basic", "label": "복사-붙여넣기 정도", "skill": "low" },
-        { "value": "simple", "label": "간단한 수정은 가능", "skill": "med" },
-        { "value": "comfortable", "label": "익숙한 편", "skill": "high" },
-        { "value": "expert", "label": "전문 개발자", "skill": "high" }
-      ]
-    },
-    {
-      "id": "q_team",
-      "order": 4,
-      "text": "함께 일하는 팀 규모는?",
-      "subtext": "개인 프로젝트면 '혼자' 선택",
-      "options": [
-        { "value": "solo", "label": "혼자" },
-        { "value": "small", "label": "2~3명" },
-        { "value": "team", "label": "4명 이상" }
-      ]
-    },
-    {
-      "id": "q_output",
-      "order": 5,
-      "text": "AI로 가장 먼저 해보고 싶은 건?",
-      "subtext": "하나만 골라주세요",
-      "options": [
-        { "value": "demo", "label": "뭔가 만들어보기" },
-        { "value": "doc", "label": "글·자료 정리하기" },
-        { "value": "automation", "label": "반복 작업 줄이기" },
-        { "value": "video", "label": "콘텐츠 만들기 (영상·이미지·음성)" },
-        { "value": "explore", "label": "아직 잘 모르겠어요" }
-      ]
-    },
-    {
-      "id": "q_security",
-      "order": 6,
-      "text": "AI에 넣는 정보가 민감한가요?",
-      "subtext": "회사 자료나 개인정보를 다루는 경우",
-      "options": [
-        { "value": "low", "label": "크게 신경 안 씀" },
-        { "value": "medium", "label": "보통" },
-        { "value": "high", "label": "매우 민감 (사내 정책 엄격)" }
-      ]
-    },
-    {
-      "id": "q_ecosystem",
-      "order": 7,
-      "text": "평소 작업 환경이 어떤가요?",
-      "subtext": "회사나 학교에서 주로 쓰는 도구 기준",
-      "options": [
-        { "value": "google", "label": "Google Workspace (Gmail, Drive, Docs)" },
-        { "value": "microsoft", "label": "Microsoft 365 (Outlook, Teams)" },
-        { "value": "any", "label": "딱히 정해진 건 없어요" }
+        { "value": "work", "label": "직장·업무" },
+        { "value": "study", "label": "학업·공부" },
+        { "value": "hobby", "label": "개인 취미·창작" },
+        { "value": "business", "label": "사업·부업" }
       ]
     },
     {
       "id": "q_urgency",
-      "order": 8,
-      "text": "결과가 언제까지 필요한가요?",
+      "order": 4,
+      "text": "얼마나 빨리 시작하고 싶어요?",
       "subtext": "",
+      "multiSelect": false,
       "options": [
-        { "value": "today", "label": "지금 당장 / 오늘" },
-        { "value": "this_week", "label": "이번 주" },
-        { "value": "this_month", "label": "이번 달" }
+        { "value": "today", "label": "지금 바로" },
+        { "value": "this_week", "label": "이번 주 안에" },
+        { "value": "exploring", "label": "천천히 탐색 중" }
+      ]
+    },
+    {
+      "id": "q_budget",
+      "order": 5,
+      "text": "예산은 어느 정도예요?",
+      "subtext": "",
+      "multiSelect": false,
+      "options": [
+        { "value": "free_only", "label": "무료만 쓸래요" },
+        { "value": "small_budget", "label": "월 1~2만원 정도" },
+        { "value": "any_budget", "label": "상관없어요" }
+      ]
+    },
+    {
+      "id": "q_solo_team",
+      "order": 6,
+      "text": "혼자 쓸 건가요, 같이 쓸 건가요?",
+      "subtext": "",
+      "multiSelect": false,
+      "options": [
+        { "value": "solo", "label": "나 혼자" },
+        { "value": "team", "label": "팀·동료와 함께" }
       ]
     }
   ]

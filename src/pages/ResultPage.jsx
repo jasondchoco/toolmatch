@@ -3,15 +3,12 @@ import { classify } from '../engine/classifier.js'
 import { recommend } from '../engine/recommender.js'
 import { loadProfileFromUrl, generateShareUrl } from '../utils/shareUrl.js'
 import { sendTrackingEvent, getSessionId, nowKST } from '../utils/tracker.js'
-import SummaryCard from '../components/result/SummaryCard.jsx'
-import Playbook from '../components/result/Playbook.jsx'
-import ToolDetail from '../components/result/ToolDetail.jsx'
-import ShareExport from '../components/result/ShareExport.jsx'
+import { generateNarrative } from '../utils/narrative.js'
+import StoryCard from '../components/result/SummaryCard.jsx'
+import StartGuide from '../components/result/Playbook.jsx'
 import InlineFeedback from '../components/result/InlineFeedback.jsx'
 
-export default function ResultPage({ answers, onRestart, onShare }) {
-  const isSharedLink = !answers && !!loadProfileFromUrl()
-
+export default function ResultPage({ answers, onRestart, onEdit }) {
   const result = useMemo(() => {
     const urlProfile = loadProfileFromUrl()
     if (urlProfile) return recommend(urlProfile)
@@ -19,7 +16,7 @@ export default function ResultPage({ answers, onRestart, onShare }) {
       const profile = classify(answers)
       return recommend(profile)
     }
-    return recommend({ persona: 'idea_demo', skill: 'low' })
+    return recommend({ categories: ['writing'], experience: 'beginner', context: 'work', urgency: 'this_week', budget: 'any_budget', soloTeam: 'solo' })
   }, [answers])
 
   const tracked = useRef(false)
@@ -35,26 +32,28 @@ export default function ResultPage({ answers, onRestart, onShare }) {
     if (tracked.current || !result.profile) return
     tracked.current = true
 
+    const allPrimary = result.categories?.flatMap((c) => c.primary.map((t) => t.name)) || []
+    const allAlso = result.categories?.flatMap((c) => c.also.map((t) => t.name)) || []
+
     sendTrackingEvent({
       timestamp: nowKST(),
       type: 'view',
       sessionId: getSessionId(),
       rating: '',
       comment: '',
-      q_role: answers?.q_role || '',
-      q_goal: answers?.q_goal || '',
-      q_code_comfort: answers?.q_code_comfort || '',
-      q_team: answers?.q_team || '',
-      q_output: answers?.q_output || '',
-      q_security: answers?.q_security || '',
-      q_ecosystem: answers?.q_ecosystem || '',
+      q_category: answers?.q_category?.join(',') || '',
+      q_experience: answers?.q_experience || '',
+      q_context: answers?.q_context || '',
       q_urgency: answers?.q_urgency || '',
-      persona: result.profile.persona || '',
-      skill: result.profile.skill || '',
-      aiLevel: result.profile.aiLevel || '',
-      outputType: result.profile.outputType || '',
-      primary: result.primary.map(t => t.name).join(', '),
-      also: result.also.map(t => t.name).join(', '),
+      q_budget: answers?.q_budget || '',
+      q_solo_team: answers?.q_solo_team || '',
+      categories: result.profile.categories?.join(',') || '',
+      experience: result.profile.experience || '',
+      context: result.profile.context || '',
+      budget: result.profile.budget || '',
+      soloTeam: result.profile.soloTeam || '',
+      primary: allPrimary.join(', '),
+      also: allAlso.join(', '),
       source: answers ? 'survey' : 'shared_link',
       shared: '',
       resultUrl: window.location.href,
@@ -62,31 +61,45 @@ export default function ResultPage({ answers, onRestart, onShare }) {
     })
   }, [result, answers])
 
+  const narrative = result.profile ? generateNarrative(result.profile) : null
+
   return (
-    <div>
-      {isSharedLink && (
-        <div className="shared-banner">
-          <p>누군가가 공유한 AI 도구 추천 결과예요.</p>
-          <button className="btn btn--primary btn--small" onClick={onRestart}>
-            나도 해보기
-          </button>
+    <div id="result-export-area">
+      {narrative && (
+        <div className="result-narrative">
+          <p className="result-narrative__line1">{narrative.line1} {narrative.line2}</p>
         </div>
       )}
 
-      <div id="result-export-area">
-        <SummaryCard
-          result={result}
-          shareButton={<ShareExport profile={result.profile} result={result} onShare={onShare} />}
-        />
+      {result.categories?.map((cat, i) => (
+        <div key={cat.key}>
+          <StoryCard category={cat} />
 
-        <Playbook result={result} />
-      </div>
+          <StartGuide tool={cat.primary[0]} firstStep={cat.firstStep} />
+
+          {cat.primary[0]?.url && (
+            <a
+              href={cat.primary[0].url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="result-cta-bottom"
+            >
+              지금 바로 시작하기 →
+            </a>
+          )}
+
+          {i < result.categories.length - 1 && <hr className="section-divider" />}
+        </div>
+      ))}
 
       <InlineFeedback answers={answers} />
 
-      <ToolDetail primaryTools={result.primary} alsoTools={result.also} />
-
       <div className="result-restart">
+        {answers && onEdit && (
+          <button className="btn btn--prev btn--small" onClick={onEdit}>
+            ✏️ 답변 수정하기
+          </button>
+        )}
         <button className="btn btn--text" onClick={onRestart}>
           처음부터 다시 하기
         </button>
