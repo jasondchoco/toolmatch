@@ -1,6 +1,28 @@
 import OptionButton from './OptionButton.jsx'
 
 export default function QuestionCard({ question, currentIndex, total, selectedValue, onSelect }) {
+  const isMultiSelect = question.multiSelect === true
+  const isCardType = question.options.some((opt) => opt.icon)
+  const selectedArr = isMultiSelect ? (Array.isArray(selectedValue) ? selectedValue : []) : []
+
+  const handleClick = (value) => {
+    if (isMultiSelect) {
+      const maxSelect = question.maxSelect || Infinity
+      if (selectedArr.includes(value)) {
+        onSelect(selectedArr.filter((v) => v !== value))
+      } else if (selectedArr.length < maxSelect) {
+        onSelect([...selectedArr, value])
+      }
+    } else {
+      onSelect(value)
+    }
+  }
+
+  const isSelected = (value) => {
+    if (isMultiSelect) return selectedArr.includes(value)
+    return selectedValue === value
+  }
+
   return (
     <div>
       <p className="survey-step">{currentIndex + 1} / {total}</p>
@@ -10,13 +32,16 @@ export default function QuestionCard({ question, currentIndex, total, selectedVa
       ) : (
         <div style={{ marginBottom: 24 }} />
       )}
-      <div className="survey-options">
+      <div className={isCardType ? 'category-grid' : 'survey-options'}>
         {question.options.map((opt) => (
           <OptionButton
             key={opt.value}
             label={opt.label}
-            selected={selectedValue === opt.value}
-            onClick={() => onSelect(opt.value)}
+            icon={opt.icon}
+            description={opt.description}
+            selected={isSelected(opt.value)}
+            onClick={() => handleClick(opt.value)}
+            variant={isCardType ? 'card' : 'default'}
           />
         ))}
       </div>

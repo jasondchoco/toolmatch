@@ -5,9 +5,9 @@ import { copyText } from '../../utils/clipboard.js'
 import { showToast } from '../common/Toast.jsx'
 
 function buildShareText(result) {
-  const persona = result.persona?.label || ''
-  const tools = result.primary.map((t) => t.name).join(', ')
-  return `나는 "${persona}" 유형! AI 도구 추천 결과: ${tools}\n직접 해보기 →`
+  const catLabels = result.categories?.map((c) => c.label).join(', ') || ''
+  const tools = result.categories?.flatMap((c) => c.primary.map((t) => t.name)).join(', ') || ''
+  return `나는 "${catLabels}"에 관심! AI 도구 추천: ${tools}\n직접 해보기 →`
 }
 
 export default function ShareExport({ profile, result, onShare }) {
@@ -20,7 +20,6 @@ export default function ShareExport({ profile, result, onShare }) {
 
   const toggle = useCallback(() => setOpen((v) => !v), [])
 
-  // 바깥 클릭 시 닫기
   useEffect(() => {
     if (!open) return
     const handleClick = (e) => {

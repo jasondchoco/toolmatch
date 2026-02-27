@@ -21,17 +21,23 @@ function reducer(state, action) {
   }
 }
 
-export default function SurveyPage({ onComplete }) {
+export default function SurveyPage({ onComplete, initialAnswers }) {
   const [state, dispatch] = useReducer(reducer, {
     step: 0,
-    answers: {},
+    answers: initialAnswers || {},
   })
   const [animating, setAnimating] = useState(false)
 
   const { step, answers } = state
   const question = questions[step]
   const isLast = step === questions.length - 1
-  const hasAnswer = answers[question.id] !== undefined
+  const isMultiSelect = question.multiSelect === true
+
+  const currentAnswer = answers[question.id]
+  const hasAnswer = isMultiSelect
+    ? Array.isArray(currentAnswer) && currentAnswer.length > 0
+    : currentAnswer !== undefined
+
   const answeredCount = Object.keys(answers).length
 
   const animateNext = useCallback(() => {
@@ -61,10 +67,14 @@ export default function SurveyPage({ onComplete }) {
 
   const handleOptionSelect = useCallback((value) => {
     dispatch({ type: 'SELECT', questionId: question.id, value })
-    if (!isLast) {
+    // multiSelect는 자동 advance 안 함
+    if (!isMultiSelect && !isLast) {
       setTimeout(() => animateNext(), 350)
     }
-  }, [question.id, isLast, animateNext])
+  }, [question.id, isMultiSelect, isLast, animateNext])
+
+  const showNextButton = isMultiSelect && hasAnswer && !isLast
+  const showResultButton = isLast && hasAnswer
 
   return (
     <div>
@@ -78,19 +88,35 @@ export default function SurveyPage({ onComplete }) {
           onSelect={handleOptionSelect}
         />
       </div>
-      {isLast && hasAnswer ? (
+      {showResultButton ? (
         <div style={{ marginTop: 32 }}>
-          <button className="btn btn--primary" onClick={handleNext} style={{ width: '100%' }}>
+          <md-filled-button
+            onClick={handleNext}
+            style={{ width: '100%', '--md-filled-button-container-shape': '20px' }}
+          >
             결과 보기
-          </button>
+          </md-filled-button>
         </div>
-      ) : step > 0 ? (
-        <div className="survey-nav">
-          <button className="btn btn--small" onClick={handlePrev}>
-            ← 이전
-          </button>
+      ) : showNextButton ? (
+        <div style={{ marginTop: 32 }}>
+          <md-filled-button
+            onClick={handleNext}
+            style={{ width: '100%', '--md-filled-button-container-shape': '20px' }}
+          >
+            다음
+          </md-filled-button>
         </div>
       ) : null}
+      {step > 0 && !showResultButton && !showNextButton && (
+        <div className="survey-nav">
+          <button className="btn btn--prev" onClick={handlePrev}>← 이전</button>
+        </div>
+      )}
+      {step > 0 && (showResultButton || showNextButton) && (
+        <div className="survey-nav" style={{ marginTop: 12 }}>
+          <button className="btn btn--prev" onClick={handlePrev}>← 이전</button>
+        </div>
+      )}
     </div>
   )
 }
